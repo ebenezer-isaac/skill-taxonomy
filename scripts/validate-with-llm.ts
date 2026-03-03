@@ -17,6 +17,7 @@
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
+import { z } from 'zod';
 import { loadTaxonomy } from './common';
 
 // Load .env file
@@ -40,7 +41,7 @@ loadEnv();
 
 // Configuration
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-3.0-flash-preview';
+const GEMINI_MODEL = 'gemini-3-flash-preview';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
 // Rate limiting - Gemini Tier 1: 1500 RPM, but we pace conservatively
@@ -58,30 +59,57 @@ const RESUME_MODE = process.argv.includes('--resume');
 const SINGLE_SKILL = process.argv.find(a => a.startsWith('--skill='))?.split('=')[1];
 const DRY_RUN = process.argv.includes('--dry-run');
 
+// Zod schema for LLM response validation
+const LLMResponseSchema = z.object({
+  isValidSkill: z.boolean(),
+  confidence: z.enum(['high', 'medium', 'low']),
+  category: z.enum([
+    'programming-language', 'framework', 'library', 'tool', 'platform',
+    'database', 'cloud', 'methodology', 'soft-skill', 'domain-knowledge',
+    'certification', 'other', 'invalid'
+  ]),
+  validAliases: z.array(z.string()),
+  invalidAliases: z.array(z.string()),
+  suggestedAliases: z.array(z.string()),
+  shouldRemove: z.boolean(),
+  shouldMergeWith: z.string().nullable(),
+  notes: z.string(),
+});
+
+type LLMResponse = z.infer<typeof LLMResponseSchema>;
+
+// JSON Schema for Gemini structured output (matches Zod schema)
+const GEMINI_RESPONSE_SCHEMA = {
+  type: 'object',
+  properties: {
+    isValidSkill: { type: 'boolean' },
+    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
+    category: {
+      type: 'string',
+      enum: [
+        'programming-language', 'framework', 'library', 'tool', 'platform',
+        'database', 'cloud', 'methodology', 'soft-skill', 'domain-knowledge',
+        'certification', 'other', 'invalid'
+      ]
+    },
+    validAliases: { type: 'array', items: { type: 'string' } },
+    invalidAliases: { type: 'array', items: { type: 'string' } },
+    suggestedAliases: { type: 'array', items: { type: 'string' } },
+    shouldRemove: { type: 'boolean' },
+    shouldMergeWith: { type: 'string', nullable: true },
+    notes: { type: 'string' },
+  },
+  required: [
+    'isValidSkill', 'confidence', 'category', 'validAliases',
+    'invalidAliases', 'suggestedAliases', 'shouldRemove', 'shouldMergeWith', 'notes'
+  ],
+};
+
 /** Validation result for a single skill */
-interface SkillValidation {
+interface SkillValidation extends LLMResponse {
   canonical: string;
   aliases: string[];
   timestamp: string;
-  
-  // LLM assessment
-  isValidSkill: boolean;
-  confidence: 'high' | 'medium' | 'low';
-  category: 'programming-language' | 'framework' | 'library' | 'tool' | 'platform' | 
-            'database' | 'cloud' | 'methodology' | 'soft-skill' | 'domain-knowledge' | 
-            'certification' | 'other' | 'invalid';
-  
-  // Alias analysis
-  validAliases: string[];
-  invalidAliases: string[];
-  suggestedAliases: string[];
-  
-  // Recommendations
-  shouldRemove: boolean;
-  shouldMergeWith?: string;
-  notes: string;
-  
-  // Raw response for debugging
   rawResponse?: string;
 }
 
@@ -98,8 +126,8 @@ function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/** Call Gemini API */
-async function callGemini(prompt: string): Promise<string> {
+/** Call Gemini API with structured output */
+async function callGemini(prompt: string): Promise<LLMResponse> {
   if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY environment variable not set');
   }
@@ -110,8 +138,10 @@ async function callGemini(prompt: string): Promise<string> {
     body: JSON.stringify({
       contents: [{ parts: [{ text: prompt }] }],
       generationConfig: {
-        temperature: 0.1, // Low temperature for consistent analysis
+        temperature: 0.1,
         maxOutputTokens: 1024,
+        responseMimeType: 'application/json',
+        responseSchema: GEMINI_RESPONSE_SCHEMA,
       },
     }),
   });
@@ -124,8 +154,14 @@ async function callGemini(prompt: string): Promise<string> {
   const data = await response.json() as {
     candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
   };
-  
-  return data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!text) {
+    throw new Error('Empty response from Gemini');
+  }
+
+  const parsed = JSON.parse(text);
+  return LLMResponseSchema.parse(parsed);
 }
 
 /** Build validation prompt for a skill */
@@ -136,41 +172,38 @@ Analyze this skill entry:
 - Canonical name: "${canonical}"
 - Aliases: ${JSON.stringify(aliases)}
 
-Respond in this exact JSON format (no markdown, just raw JSON):
-{
-  "isValidSkill": true/false,
-  "confidence": "high" | "medium" | "low",
-  "category": "programming-language" | "framework" | "library" | "tool" | "platform" | "database" | "cloud" | "methodology" | "soft-skill" | "domain-knowledge" | "certification" | "other" | "invalid",
-  "validAliases": ["list of aliases that are correct synonyms/variants"],
-  "invalidAliases": ["list of aliases that should NOT map to this skill"],
-  "suggestedAliases": ["2-5 common aliases that are MISSING"],
-  "shouldRemove": true/false,
-  "shouldMergeWith": "canonical name if this should merge with another skill, or null",
-  "notes": "Brief explanation of your assessment"
-}
-
 Rules:
-1. A valid skill is something that appears on tech job descriptions or resumes
-2. Aliases must be TRUE synonyms or common variants (e.g., "js" for "javascript")
-3. Do NOT include related-but-different skills as aliases (e.g., "react" is not an alias for "javascript")
-4. Be conservative with suggestedAliases - only obvious ones
-5. shouldRemove = true only if this isn't a real skill/technology
-6. Check for common abbreviations, version variants (v2, 3.x), and common misspellings`;
+1. isValidSkill: true if this appears on tech job descriptions or resumes
+2. validAliases: aliases that are TRUE synonyms/variants (e.g., "js" for "javascript")
+3. invalidAliases: aliases that should NOT map to this skill
+4. suggestedAliases: 2-5 obvious missing aliases (abbreviations, versions, misspellings)
+5. shouldRemove: true only if this isn't a real skill/technology
+6. shouldMergeWith: canonical name if this duplicates another skill, else null
+7. Do NOT include related-but-different skills as aliases`;
 }
 
-/** Parse LLM response into structured result */
-function parseResponse(
-  canonical: string, 
-  aliases: string[], 
-  rawResponse: string
+/** Parse LLM response into full validation result */
+function toValidation(
+  canonical: string,
+  aliases: string[],
+  llmResponse: LLMResponse,
+  rawResponse?: string
 ): SkillValidation {
-  const timestamp = new Date().toISOString();
-  
-  // Default result for parse failures
-  const defaultResult: SkillValidation = {
+  return {
     canonical,
     aliases,
-    timestamp,
+    timestamp: new Date().toISOString(),
+    ...llmResponse,
+    rawResponse,
+  };
+}
+
+/** Create default validation for errors */
+function defaultValidation(canonical: string, aliases: string[], error: string): SkillValidation {
+  return {
+    canonical,
+    aliases,
+    timestamp: new Date().toISOString(),
     isValidSkill: true,
     confidence: 'low',
     category: 'other',
@@ -178,61 +211,15 @@ function parseResponse(
     invalidAliases: [],
     suggestedAliases: [],
     shouldRemove: false,
-    notes: 'Failed to parse LLM response',
-    rawResponse,
+    shouldMergeWith: null,
+    notes: `Validation error: ${error}`,
   };
-
-  try {
-    // Extract JSON from response (handle markdown code blocks)
-    let jsonStr = rawResponse.trim();
-    if (jsonStr.startsWith('```json')) {
-      jsonStr = jsonStr.slice(7);
-    }
-    if (jsonStr.startsWith('```')) {
-      jsonStr = jsonStr.slice(3);
-    }
-    if (jsonStr.endsWith('```')) {
-      jsonStr = jsonStr.slice(0, -3);
-    }
-    jsonStr = jsonStr.trim();
-
-    const parsed = JSON.parse(jsonStr) as {
-      isValidSkill?: boolean;
-      confidence?: string;
-      category?: string;
-      validAliases?: string[];
-      invalidAliases?: string[];
-      suggestedAliases?: string[];
-      shouldRemove?: boolean;
-      shouldMergeWith?: string | null;
-      notes?: string;
-    };
-
-    return {
-      canonical,
-      aliases,
-      timestamp,
-      isValidSkill: parsed.isValidSkill ?? true,
-      confidence: (parsed.confidence as 'high' | 'medium' | 'low') ?? 'medium',
-      category: (parsed.category as SkillValidation['category']) ?? 'other',
-      validAliases: parsed.validAliases ?? aliases,
-      invalidAliases: parsed.invalidAliases ?? [],
-      suggestedAliases: parsed.suggestedAliases ?? [],
-      shouldRemove: parsed.shouldRemove ?? false,
-      shouldMergeWith: parsed.shouldMergeWith ?? undefined,
-      notes: parsed.notes ?? '',
-      rawResponse,
-    };
-  } catch {
-    console.warn(`  ⚠ Failed to parse response for "${canonical}"`);
-    return defaultResult;
-  }
 }
 
 /** Load existing results */
 function loadResults(): Map<string, SkillValidation> {
   const results = new Map<string, SkillValidation>();
-  
+
   if (fs.existsSync(RESULTS_FILE)) {
     try {
       const content = fs.readFileSync(RESULTS_FILE, 'utf-8');
@@ -244,7 +231,7 @@ function loadResults(): Map<string, SkillValidation> {
       console.warn('Could not load existing results');
     }
   }
-  
+
   return results;
 }
 
@@ -395,8 +382,8 @@ async function main(): Promise<void> {
       return;
     }
 
-    const response = await callGemini(prompt);
-    const result = parseResponse(entry[0], entry[1], response);
+    const llmResponse = await callGemini(prompt);
+    const result = toValidation(entry[0], entry[1], llmResponse);
     
     console.log('\n📋 Result:');
     console.log(JSON.stringify(result, null, 2));
@@ -440,8 +427,8 @@ async function main(): Promise<void> {
 
     try {
       const prompt = buildPrompt(canonical, aliases);
-      const response = await callGemini(prompt);
-      const result = parseResponse(canonical, aliases, response);
+      const llmResponse = await callGemini(prompt);
+      const result = toValidation(canonical, aliases, llmResponse);
       
       results.set(canonical, result);
       processed++;
@@ -466,7 +453,11 @@ async function main(): Promise<void> {
 
     } catch (error) {
       errors++;
-      console.error(`   ❌ Error: ${error}`);
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.error(`   ❌ Error: ${errorMessage}`);
+      
+      // Save default validation with error note
+      results.set(canonical, defaultValidation(canonical, aliases, errorMessage));
       
       // Save progress on error
       saveResults(results);

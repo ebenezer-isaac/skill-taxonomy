@@ -1,0 +1,44 @@
+{
+  "name": "@llmconveyors/skill-taxonomy",
+  "version": "1.0.0",
+  "description": "Open-source skill taxonomy for ATS resume scoring — 263 canonical skills with 569 total aliases",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "src/skill-taxonomy.json"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate": "tsx scripts/validate.ts",
+    "import:esco": "tsx scripts/import-esco.ts",
+    "import:onet": "tsx scripts/import-onet.ts",
+    "import:survey": "tsx scripts/import-stackoverflow.ts",
+    "import:linkedin": "tsx scripts/import-linkedin.ts",
+    "import:verticals": "tsx scripts/import-verticals.ts",
+    "expand:aliases": "tsx scripts/expand-aliases.ts",
+    "promote:misses": "tsx scripts/promote-misses.ts"
+  },
+  "keywords": [
+    "ats",
+    "resume",
+    "skills",
+    "taxonomy",
+    "keyword-matching",
+    "hiring",
+    "recruitment"
+  ],
+  "author": "Ebenezer Isaac",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ebenezer-isaac/skill-taxonomy"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  }
+}

@@ -3,7 +3,7 @@ import type { SkillTaxonomy, TaxonomyStats } from './types';
 
 export type { SkillTaxonomy, TaxonomyStats } from './types';
 
-/** The full skill taxonomy — 263 canonical entries with aliases. */
+/** The full skill taxonomy with canonical entries and aliases. */
 export const taxonomy: SkillTaxonomy = rawTaxonomy;
 
 /**

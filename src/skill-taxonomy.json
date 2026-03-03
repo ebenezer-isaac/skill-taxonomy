@@ -1,290 +1,4624 @@
 {
-  "javascript": ["js", "ecmascript", "es6", "es2015", "es2016", "es2017", "es2020", "es2021", "es2022", "vanilla js"],
-  "typescript": ["ts"],
-  "python": ["py", "python3", "python2"],
-  "java": ["jdk", "jre", "j2ee", "jee"],
-  "c#": ["csharp", "c sharp", ".net", "dotnet"],
-  "c++": ["cpp", "cplusplus", "c plus plus"],
-  "c": [],
-  "go": ["golang"],
-  "rust": ["rustlang"],
-  "ruby": ["rb"],
-  "php": [],
-  "swift": [],
-  "kotlin": ["kt"],
-  "scala": [],
-  "r": ["rlang"],
-  "matlab": [],
-  "perl": [],
-  "lua": [],
-  "dart": [],
-  "elixir": [],
-  "clojure": ["clj"],
-  "haskell": [],
-  "erlang": [],
-
-  "react": ["reactjs", "react.js", "react js"],
-  "angular": ["angularjs", "angular.js", "angular 2", "ng"],
-  "vue": ["vuejs", "vue.js", "vue js", "vue 3"],
-  "svelte": ["sveltekit"],
-  "next.js": ["nextjs", "next js", "next"],
-  "nuxt.js": ["nuxtjs", "nuxt"],
-  "gatsby": ["gatsbyjs"],
-  "remix": [],
+  ".htaccess": [
+    ".htaccess"
+  ],
+  ".net core": [
+    ".net-core"
+  ],
+  "21 cfr part 11": [
+    "electronic records",
+    "electronic signatures"
+  ],
+  "3d": [
+    "3d"
+  ],
+  "3d-cnn": [
+    "3d convolutional neural network",
+    "three-dimensional cnn"
+  ],
+  "a/b deployment": [
+    "ab deployment"
+  ],
+  "a/b testing": [
+    "ab testing",
+    "split testing"
+  ],
+  "a/b testing ml": [
+    "model a/b testing"
+  ],
+  "aave": [
+    "aave protocol"
+  ],
+  "absorb (learning management systems)": [],
+  "abstract": [
+    "abstract design"
+  ],
+  "accessibility": [
+    "a11y",
+    "wcag",
+    "web accessibility"
+  ],
+  "ach": [
+    "automated clearing house"
+  ],
+  "acquire system component": [],
+  "actionscript 3": [
+    "actionscript-3"
+  ],
+  "active directory": [
+    "active-directory",
+    "ad"
+  ],
+  "activerecord": [
+    "activerecord"
+  ],
+  "adapt developed game to the market": [],
+  "adapt to new technology used in cars": [],
+  "adjust ict system capacity": [],
+  "administer ict system": [],
+  "adobe after effects": [
+    "ae",
+    "after effects"
+  ],
+  "adobe animate": [
+    "animate"
+  ],
+  "adobe creative suite": [
+    "adobe cc",
+    "creative cloud"
+  ],
+  "adobe experience manager": [
+    "adobe cq",
+    "aem",
+    "aem assets",
+    "aem cloud",
+    "aem forms",
+    "aem sites",
+    "cq5"
+  ],
+  "adobe illustrator": [
+    "illustrator"
+  ],
+  "adobe indesign": [
+    "id",
+    "indesign"
+  ],
+  "adobe lightroom": [
+    "lightroom",
+    "lr"
+  ],
+  "adobe photoshop": [
+    "photoshop"
+  ],
+  "adobe premiere": [
+    "premiere",
+    "premiere pro"
+  ],
+  "adobe xd": [
+    "experience design",
+    "xd"
+  ],
+  "adolescent psychological development": [],
+  "adult education": [],
+  "adverse event reporting": [
+    "drug safety",
+    "pharmacovigilance"
+  ],
+  "advise on curriculum development": [],
+  "advise on economic development": [],
+  "advise on learning methods": [],
+  "advise on mine development": [],
+  "advise on security risk management": [],
+  "advise on social security benefits": [],
+  "advise on strengthening security": [],
+  "advise on the selection of security staff": [],
+  "adyen": [
+    "adyen api"
+  ],
+  "agentic ai": [
+    "agent frameworks",
+    "agent orchestration",
+    "ai agents",
+    "autonomous agents"
+  ],
+  "agile": [
+    "agile methodology"
+  ],
+  "agile development": [],
+  "agile project management": [],
+  "ai behavior": [
+    "behavior tree",
+    "fsm",
+    "game ai"
+  ],
+  "airbyte": [
+    "airbyte sync"
+  ],
+  "aircrack (penetration testing tool)": [],
+  "airport planning": [],
+  "ajax": [],
+  "ajax framework": [],
+  "aks": [
+    "azure kubernetes service"
+  ],
+  "alarm systems": [],
+  "alation": [
+    "alation catalog"
+  ],
+  "alchemy": [
+    "alchemy api"
+  ],
+  "algorithmic trading": [
+    "algo trading",
+    "automated trading",
+    "systematic trading"
+  ],
+  "align efforts towards business development": [],
+  "align software with system architectures": [],
+  "allscripts": [
+    "allscripts ehr"
+  ],
+  "amazon ec2": [
+    "amazon-ec2"
+  ],
+  "amazon s3": [
+    "amazon-s3"
+  ],
+  "amazon sns": [
+    "sns"
+  ],
+  "amazon sqs": [
+    "sqs"
+  ],
+  "amazon web services": [
+    "amazon-web-services",
+    "aws"
+  ],
+  "amazon web services (aws)": [],
+  "aml": [
+    "aml compliance",
+    "anti-money laundering"
+  ],
+  "analyse big data": [],
+  "analyse call centre activities": [],
+  "analyse data about clients": [],
+  "analyse data for aeronautical publications": [],
+  "analyse data for policy decisions in trade": [],
+  "analyse drill engineering": [],
+  "analyse ecological data": [],
+  "analyse environmental data": [],
+  "analyse gambling data": [],
+  "analyse large-scale data in healthcare": [],
+  "analyse network bandwidth requirements": [],
+  "analyse oil operations data": [],
+  "analyse pipeline database information": [],
+  "analyse potential threats against national security": [],
+  "analyse scientific data": [],
+  "analyse software specifications": [],
+  "analyse supplier's information on vehicle parts": [],
+  "analyse test data": [],
+  "analyse transport business networks": [],
+  "analyse weather forecast": [],
+  "analytical chemistry": [],
+  "android": [],
+  "android (mobile operating systems)": [],
+  "android activity": [
+    "android-activity"
+  ],
+  "android development": [],
+  "android fragments": [
+    "android-fragments"
+  ],
+  "android intent": [
+    "android-intent"
+  ],
+  "android layout": [
+    "android-layout"
+  ],
+  "android listview": [
+    "android-listview"
+  ],
+  "android recyclerview": [
+    "android-recyclerview"
+  ],
+  "android studio": [
+    "android-studio"
+  ],
+  "angular": [
+    "angular 2",
+    "angular.js",
+    "angularjs",
+    "ng"
+  ],
+  "angular material": [
+    "angular-material"
+  ],
+  "angularjs directive": [
+    "angularjs-directive"
+  ],
+  "animation": [
+    "animation"
+  ],
+  "animation system": [
+    "animation blending",
+    "skeletal animation"
+  ],
+  "ansible": [
+    "ansible automation",
+    "ansible playbook"
+  ],
+  "ant": [
+    "ant"
+  ],
+  "anthropology": [],
+  "anticipate change in car technology": [],
+  "apache": [
+    "apache"
+  ],
+  "apache airflow": [
+    "airflow",
+    "airflow dag"
+  ],
+  "apache flex": [
+    "apache-flex"
+  ],
+  "apache flink": [
+    "flink"
+  ],
+  "apache hadoop": [
+    "hadoop"
+  ],
+  "apache kafka": [
+    "apache-kafka",
+    "kafka"
+  ],
+  "apache maven": [],
+  "apache spark": [
+    "apache-spark",
+    "pyspark",
+    "spark"
+  ],
+  "apache spark sql": [
+    "apache-spark-sql"
+  ],
+  "apache superset": [
+    "superset"
+  ],
+  "apache tomcat": [],
+  "apl": [],
+  "application usability": [],
+  "apply 3d imaging techniques": [],
+  "apply information security policies": [],
+  "apply statistical analysis techniques": [],
+  "apply system organisational policies": [],
+  "apply veterinary epidemiology": [],
+  "aquaculture production planning software": [],
+  "arbitrum": [
+    "arbitrum one"
+  ],
+  "architecture": [
+    "architecture"
+  ],
+  "archive scientific documentation": [],
+  "arduino": [
+    "arduino ide",
+    "arduino mega",
+    "arduino nano",
+    "arduino uno"
+  ],
+  "argo cd": [
+    "argocd"
+  ],
+  "aria": [
+    "accessible rich internet applications",
+    "wai-aria"
+  ],
+  "arm cortex": [
+    "arm cortex-m",
+    "arm microcontroller"
+  ],
+  "arm templates": [
+    "azure resource manager"
+  ],
+  "arrange security of goods for auction": [],
+  "arraylist": [
+    "arraylist"
+  ],
+  "artificial intelligence": [
+    "ai"
+  ],
+  "artificially age furniture": [],
+  "asana": [],
+  "asp.net": [
+    "asp.net core",
+    "aspnet",
+    "aspnet core"
+  ],
+  "asp.net core mvc": [
+    "asp.net-core-mvc"
+  ],
+  "asp.net mvc": [
+    "asp.net-mvc"
+  ],
+  "asp.net mvc 3": [
+    "asp.net-mvc-3"
+  ],
+  "asp.net mvc 4": [
+    "asp.net-mvc-4"
+  ],
+  "asp.net mvc 5": [
+    "asp.net-mvc-5"
+  ],
+  "asp.net web api": [
+    "asp.net-web-api"
+  ],
+  "assemble machines": [],
+  "assembly": [
+    "assembly"
+  ],
+  "assembly (computer programming)": [],
+  "assess carriers": [],
+  "assess students' preliminary learning experiences": [],
+  "assess telecommunication infrastructure issues": [],
+  "assess the development of youth": [],
+  "assess the feasibility of implementing developments": [],
+  "assessment of risks and threats": [],
+  "assist clients with personal development": [],
+  "assist in children's development of basic personal skills": [],
+  "assist students in their learning": [],
   "astro": [],
-  "solid.js": ["solidjs"],
-
-  "node.js": ["nodejs", "node", "node js"],
-  "express": ["expressjs", "express.js"],
-  "nestjs": ["nest.js", "nest"],
-  "fastify": [],
-  "koa": ["koajs"],
-  "django": [],
-  "flask": [],
-  "fastapi": ["fast api"],
-  "spring": ["spring boot", "spring framework", "springboot"],
-  "ruby on rails": ["rails", "ror"],
-  "laravel": [],
-  "asp.net": ["aspnet", "asp.net core", "aspnet core"],
-
-  "html": ["html5"],
-  "css": ["css3"],
-  "sass": ["scss"],
-  "less": [],
-  "tailwind css": ["tailwindcss", "tailwind"],
+  "async await": [
+    "async-await"
+  ],
+  "athenahealth": [
+    "athena health"
+  ],
+  "atlan": [
+    "atlan catalog"
+  ],
+  "atomic design": [
+    "atomic design system"
+  ],
+  "audio": [
+    "audio"
+  ],
+  "audio editing software": [],
+  "audit management": [
+    "internal audit"
+  ],
+  "audit techniques": [],
+  "auth0": [
+    "auth zero"
+  ],
+  "authentication": [
+    "authentication"
+  ],
+  "autocomplete": [
+    "autocomplete"
+  ],
+  "automated market maker": [
+    "amm",
+    "dex"
+  ],
+  "automatic meter reading": [],
+  "automation": [
+    "automation"
+  ],
+  "automl": [
+    "automated machine learning"
+  ],
+  "avalanche": [
+    "avax"
+  ],
+  "avocode": [
+    "avocode design"
+  ],
+  "avr": [
+    "atmega",
+    "avr microcontroller"
+  ],
+  "awk": [
+    "awk"
+  ],
+  "aws greengrass": [
+    "greengrass"
+  ],
+  "aws iot": [
+    "amazon iot",
+    "aws iot core"
+  ],
+  "aws lambda": [
+    "aws-lambda"
+  ],
+  "axios": [
+    "axios"
+  ],
+  "azure active directory": [
+    "azure-active-directory"
+  ],
+  "azure devops": [
+    "azure pipelines",
+    "azure-devops"
+  ],
+  "azure functions": [
+    "azure-functions"
+  ],
+  "azure iot": [
+    "azure iot central",
+    "azure iot hub"
+  ],
+  "azure ml": [
+    "azure machine learning"
+  ],
+  "babel": [],
+  "backbone.js": [
+    "backbone.js"
+  ],
+  "backstage": [
+    "backstage.io",
+    "spotify backstage"
+  ],
+  "balance database resources": [],
+  "bare metal": [
+    "bare metal programming"
+  ],
+  "base": [
+    "base chain"
+  ],
+  "basel iii": [
+    "basel",
+    "basel compliance"
+  ],
+  "bash": [
+    "sh",
+    "shell script",
+    "shell scripting"
+  ],
+  "batch file": [
+    "batch-file"
+  ],
+  "beautifulsoup": [
+    "beautifulsoup"
+  ],
+  "bert": [
+    "bert model",
+    "bidirectional encoder"
+  ],
+  "bicep": [
+    "azure bicep"
+  ],
+  "bigcommerce": [
+    "big commerce"
+  ],
+  "bigquery": [
+    "big query",
+    "bq"
+  ],
+  "binance smart chain": [
+    "bnb chain",
+    "bsc"
+  ],
+  "binding": [
+    "binding"
+  ],
+  "biosecurity": [],
+  "biosecurity related to animals": [],
+  "biostatistics": [
+    "clinical biostatistics"
+  ],
+  "bitbucket": [],
+  "bitmap": [
+    "bitmap"
+  ],
+  "black-scholes": [
+    "black scholes model",
+    "options pricing"
+  ],
+  "blackarch": [],
+  "blackberry": [],
+  "blazor": [
+    "blazor"
+  ],
+  "blockchain": [],
+  "bloomberg terminal": [
+    "bbg",
+    "bloomberg",
+    "bloomberg api"
+  ],
+  "blue team": [
+    "blue teaming"
+  ],
+  "blue-green deployment": [
+    "blue green",
+    "blue/green"
+  ],
+  "bluetooth": [
+    "ble",
+    "bluetooth",
+    "bluetooth low energy"
+  ],
+  "boost": [
+    "boost"
+  ],
+  "bootloader": [
+    "bootloader development"
+  ],
   "bootstrap": [],
-  "material ui": ["mui", "material-ui"],
-  "styled components": ["styled-components"],
-  "chakra ui": ["chakra"],
-  "carbon design system": ["carbon ds", "ibm carbon", "carbon components"],
-
-  "sql": ["structured query language"],
-  "postgresql": ["postgres", "psql", "pg"],
-  "mysql": ["mariadb"],
-  "mongodb": ["mongo"],
-  "redis": [],
-  "elasticsearch": ["elastic search", "elastic", "es"],
-  "sqlite": [],
-  "oracle database": ["oracle db", "oracle"],
-  "microsoft sql server": ["mssql", "sql server", "ms sql"],
-  "dynamodb": ["dynamo db", "dynamo"],
+  "bootstrap 4": [
+    "bootstrap-4"
+  ],
+  "braintree": [
+    "braintree api"
+  ],
+  "brightspace (learning management systems)": [],
+  "browser": [
+    "browser"
+  ],
+  "bug bounty": [
+    "bug bounty hunting"
+  ],
+  "build": [
+    "build"
+  ],
+  "build a network of contacts with suppliers of tourist services": [],
+  "build contacts to maintain news flow": [],
+  "build recommender systems": [],
+  "buildkite": [
+    "buildkite ci"
+  ],
+  "bun": [],
+  "burp suite": [
+    "burp",
+    "portswigger"
+  ],
+  "business ict systems": [],
+  "business intelligence": [],
+  "button": [
+    "button"
+  ],
+  "c": [],
+  "c#": [
+    ".net",
+    "c sharp",
+    "csharp",
+    "dotnet"
+  ],
+  "c# 4.0": [
+    "c#-4.0"
+  ],
+  "c++": [
+    "c plus plus",
+    "cplusplus",
+    "cpp"
+  ],
+  "c++11": [
+    "c++11"
+  ],
+  "ca datacom/db": [],
+  "caching": [
+    "caching"
+  ],
+  "cad software": [],
+  "cadd software": [],
+  "cae software": [],
+  "caffe": [
+    "caffe2"
+  ],
+  "cain and abel (penetration testing tool)": [],
+  "cairo": [
+    "starknet cairo"
+  ],
+  "cakephp": [
+    "cakephp"
+  ],
+  "calculate quotations for security devices services": [],
+  "cam software": [],
+  "can bus": [
+    "can protocol",
+    "controller area network"
+  ],
+  "canary deployment": [
+    "canary release",
+    "progressive delivery"
+  ],
+  "canvas": [
+    "canvas"
+  ],
+  "canvas (learning management systems)": [],
+  "capacitor": [],
+  "captioning software": [],
+  "carbon design system": [
+    "carbon components",
+    "carbon ds",
+    "ibm carbon"
+  ],
+  "card processing": [
+    "card payments",
+    "chip and pin",
+    "emv"
+  ],
+  "card sorting": [
+    "card sort"
+  ],
+  "cardano": [
+    "ada"
+  ],
+  "carry out artificial insemination of livestock": [],
+  "carry out covert security observations": [],
+  "carry out job analysis": [],
+  "carry out sales analysis": [],
+  "carry out security activities with a dog": [],
+  "carry out social work research": [],
+  "casb": [
+    "cloud access security broker"
+  ],
   "cassandra": [],
-  "neo4j": [],
-  "firebase": ["firestore"],
-  "supabase": [],
-  "prisma": [],
-  "sequelize": [],
-  "typeorm": [],
-  "drizzle": [],
-  "mongoose": [],
-  "knex": ["knex.js"],
-
-  "amazon web services": ["aws"],
-  "google cloud platform": ["gcp", "google cloud"],
-  "microsoft azure": ["azure"],
-  "heroku": [],
-  "vercel": [],
-  "netlify": [],
-  "cloudflare": ["cf"],
-  "digitalocean": ["digital ocean"],
-
-  "docker": ["containerization", "containers"],
-  "kubernetes": ["k8s", "kube", "container orchestration"],
-  "terraform": [],
-  "ansible": [],
-  "puppet": [],
-  "chef": [],
-  "vagrant": [],
-  "helm": [],
-  "pulumi": [],
-  "infrastructure as code": ["iac", "infrastructure automation"],
-  "systemd": ["systemctl", "system daemon", "init system"],
-
-  "continuous integration": ["ci", "ci/cd", "cicd"],
-  "jenkins": [],
-  "github actions": ["gh actions"],
-  "gitlab ci": ["gitlab ci/cd"],
-  "circleci": ["circle ci"],
-  "travis ci": ["travisci"],
-  "argo cd": ["argocd"],
+  "casting": [
+    "casting"
+  ],
+  "ccpa": [
+    "california consumer privacy act"
+  ],
+  "cda": [
+    "c-cda",
+    "clinical document architecture"
+  ],
+  "cdk": [
+    "aws cdk",
+    "cloud development kit"
+  ],
+  "cdktf": [
+    "cdk for terraform"
+  ],
+  "cerner": [
+    "cerner millennium",
+    "oracle cerner"
+  ],
+  "cert-manager": [
+    "cert manager",
+    "certificate management"
+  ],
+  "chainlink": [
+    "chainlink oracle"
+  ],
+  "chakra ui": [
+    "chakra"
+  ],
+  "change power distribution systems": [],
+  "chaos engineering": [
+    "chaos mesh",
+    "chaos monkey",
+    "litmus chaos"
+  ],
+  "character encoding": [
+    "character-encoding"
+  ],
+  "charts": [
+    "charts"
+  ],
+  "check implementation security plan": [],
+  "check methods": [],
+  "checkbox": [
+    "checkbox"
+  ],
+  "checkout": [
+    "checkout flow",
+    "one-page checkout"
+  ],
+  "chef": [
+    "chef infra"
+  ],
+  "chef (tools for software configuration management)": [],
+  "children's physical development": [],
+  "chrome extension": [
+    "browser extension",
+    "chrome plugin",
+    "manifest v3",
+    "web extension"
+  ],
+  "circleci": [
+    "circle ci"
+  ],
+  "cis controls": [
+    "cis benchmarks"
+  ],
+  "cisco": [],
+  "city road network": [],
+  "clean architecture": [],
+  "clean road vehicles": [],
+  "clean vending machines": [],
+  "clickhouse": [
+    "click house"
+  ],
+  "clinical decision support": [
+    "cds",
+    "cdss"
+  ],
+  "clinical perfusion": [],
+  "clinical trials": [
+    "clinical data management",
+    "clinical research",
+    "ctms"
+  ],
+  "clio": [
+    "clio legal"
+  ],
+  "clojure": [
+    "clj"
+  ],
   "cloud build": [],
-
+  "cloud security": [
+    "cloud sec"
+  ],
+  "cloud technologies": [],
+  "cloudflare": [
+    "cf"
+  ],
+  "cloudformation": [
+    "aws cloudformation",
+    "cfn"
+  ],
+  "cmake": [
+    "cmake"
+  ],
+  "cmd": [
+    "cmd"
+  ],
+  "cmmc": [
+    "cybersecurity maturity model"
+  ],
+  "cnapp": [
+    "cloud native application protection"
+  ],
+  "cobol": [],
+  "cocoa": [
+    "cocoa"
+  ],
+  "cocoa touch": [
+    "cocoa-touch"
+  ],
+  "codeigniter": [
+    "codeigniter"
+  ],
+  "codenvy": [],
+  "coffeescript": [],
+  "collaborate in the development of marketing strategies": [],
+  "collaborate with designers": [],
+  "collaborate with stakeholders in leading community arts": [],
+  "collaborate with technical experts on artworks": [],
+  "collect data using gps": [],
+  "collect financial data": [],
+  "collect ict data": [],
+  "collect mapping data": [],
+  "collect samples for analysis": [],
+  "collection management software": [],
+  "collections": [
+    "collections"
+  ],
+  "collibra": [
+    "collibra governance"
+  ],
+  "collision detection": [
+    "collision system"
+  ],
+  "colors": [
+    "colors"
+  ],
+  "combobox": [
+    "combobox"
+  ],
+  "comet": [
+    "comet ml"
+  ],
+  "command line": [
+    "command-line"
+  ],
+  "commercetools": [
+    "commerce tools"
+  ],
+  "common lisp": [],
+  "communication": [
+    "verbal communication",
+    "written communication"
+  ],
+  "compilation": [
+    "compilation"
+  ],
+  "compile data for navigation publications": [],
+  "compile gis-data": [],
+  "compiler errors": [
+    "compiler-errors"
+  ],
+  "component documentation": [
+    "design documentation"
+  ],
+  "compose description for web elements": [],
+  "compound": [
+    "compound finance"
+  ],
+  "computational linguistics": [],
+  "compute shaders": [
+    "compute shader"
+  ],
+  "computer engineering": [],
+  "computer programming": [],
+  "computer science": [],
+  "computer vision": [
+    "computer-vision",
+    "cv"
+  ],
+  "concourse": [
+    "concourse ci"
+  ],
+  "concurrency": [
+    "concurrency"
+  ],
+  "conditional statements": [
+    "conditional-statements"
+  ],
+  "conduct airport security screening": [],
+  "conduct analysis of ship data": [],
+  "conduct continuing professional development workshops": [],
+  "conduct environmental surveys": [],
+  "conduct mobile marketing": [],
+  "conduct physiotherapy assessment": [],
+  "conduct safe aircraft marshalling": [],
+  "conduct security screenings": [],
+  "configuration": [
+    "configuration"
+  ],
+  "confluence": [],
+  "construct": [
+    "construct 3"
+  ],
+  "construct individual learning plans": [],
+  "consul": [
+    "consul connect",
+    "hashicorp consul"
+  ],
+  "consult students on learning content": [],
+  "container security": [
+    "kubernetes security"
+  ],
+  "continuous integration": [
+    "ci",
+    "ci/cd",
+    "cicd"
+  ],
+  "contract management": [
+    "clm",
+    "contract lifecycle management"
+  ],
+  "contribute to development of biometric systems": [],
+  "contribute to the development of a sporting estate": [],
+  "contribute to the programmer's reflection process": [],
+  "controller": [
+    "controller"
+  ],
+  "convolutional neural network": [
+    "cnn",
+    "convnet"
+  ],
+  "cookies": [
+    "cookies"
+  ],
+  "coordinate patrols": [],
+  "coordinate remote communications": [],
+  "coordinate security": [],
+  "cordova": [
+    "cordova"
+  ],
+  "core banking": [
+    "cbs",
+    "core banking system"
+  ],
+  "core data": [
+    "core-data"
+  ],
+  "cors": [
+    "cors"
+  ],
+  "cosmos": [
+    "atom",
+    "cosmos sdk"
+  ],
+  "cost metrics": [],
+  "counsel on end-of-life care": [],
+  "count": [
+    "count"
+  ],
+  "cpt codes": [
+    "cpt",
+    "current procedural terminology"
+  ],
+  "cqrs": [
+    "command query responsibility segregation"
+  ],
+  "create a prevention security plan for the store": [],
+  "create artificial light": [],
+  "create clay figures": [],
+  "create cultural venue learning strategies": [],
+  "create cultural venue outreach policies": [],
+  "create data sets": [],
+  "create database diagrams": [],
+  "create game testing software": [],
+  "create scorm packages": [],
+  "create software design": [],
+  "credit risk": [
+    "credit risk modeling"
+  ],
+  "crime scene preservation": [],
+  "cron": [
+    "cron"
+  ],
+  "cross-functional": [
+    "cross functional",
+    "cross-functional collaboration"
+  ],
+  "crossplane": [
+    "crossplane kubernetes"
+  ],
+  "crowdstrike": [
+    "crowdstrike falcon"
+  ],
+  "cryengine": [
+    "cry engine"
+  ],
+  "cryptography": [
+    "cryptography"
+  ],
+  "cspm": [
+    "cloud security posture management"
+  ],
+  "css": [
+    "css3"
+  ],
+  "css selectors": [
+    "css-selectors"
+  ],
+  "ctf": [
+    "capture the flag"
+  ],
+  "cuda": [
+    "cuda"
+  ],
+  "curl": [
+    "curl"
+  ],
+  "customer journey mapping": [
+    "journey map",
+    "user journey"
+  ],
+  "customise software for drive system": [],
+  "cwpp": [
+    "cloud workload protection"
+  ],
+  "cyber security": [
+    "cybersecurity",
+    "information security",
+    "infosec",
+    "it security",
+    "network security"
+  ],
+  "cypress": [],
+  "d3.js": [
+    "d3.js"
+  ],
+  "dagster": [
+    "dagster io"
+  ],
+  "dark launch": [
+    "dark launching"
+  ],
+  "dart": [],
+  "data binding": [
+    "data-binding"
+  ],
+  "data catalog": [
+    "data cataloging",
+    "data discovery"
+  ],
+  "data engineering": [
+    "data pipeline",
+    "data pipelines"
+  ],
+  "data fabric": [
+    "data fabric architecture"
+  ],
+  "data governance": [
+    "data ownership",
+    "data stewardship"
+  ],
+  "data lake": [
+    "data lakehouse",
+    "lakehouse architecture"
+  ],
+  "data lineage": [
+    "lineage tracking"
+  ],
+  "data mesh": [
+    "data mesh architecture",
+    "domain-driven data"
+  ],
+  "data mining": [],
+  "data mining methods": [],
+  "data protection": [],
+  "data quality": [
+    "data quality management",
+    "dq"
+  ],
+  "data quality assessment": [],
+  "data storage": [],
+  "data structures": [
+    "data-structures"
+  ],
+  "data vault": [
+    "dan linstedt",
+    "data vault 2.0"
+  ],
+  "data versioning": [
+    "data version control",
+    "dvc"
+  ],
+  "data warehouse": [
+    "data warehousing",
+    "dwh",
+    "enterprise data warehouse"
+  ],
+  "database": [],
+  "database design": [
+    "database-design"
+  ],
+  "database development tools": [],
+  "database management systems": [],
+  "database quality standards": [],
+  "databricks": [
+    "databricks lakehouse",
+    "delta lake"
+  ],
+  "datadog": [
+    "datadog apm",
+    "dd"
+  ],
+  "datagrid": [
+    "datagrid"
+  ],
+  "datagridview": [
+    "datagridview"
+  ],
+  "datahub": [
+    "linkedin datahub"
+  ],
+  "datatable": [
+    "datatable"
+  ],
+  "datatables": [
+    "datatables"
+  ],
+  "datepicker": [
+    "datepicker"
+  ],
+  "db2": [],
+  "dbt": [
+    "data build tool",
+    "dbt cloud",
+    "dbt core"
+  ],
+  "debug software": [],
+  "decentralized finance": [
+    "defi"
+  ],
+  "decorate nails": [],
+  "deep learning": [
+    "deep-learning",
+    "dl",
+    "neural networks"
+  ],
+  "define database physical structure": [],
+  "define firewall rules": [],
+  "define ict network design policies": [],
+  "define security policies": [],
+  "defold": [
+    "defold engine"
+  ],
+  "deliver online training": [],
+  "deliver visual presentation of data": [],
+  "delphi": [
+    "delphi"
+  ],
+  "demonstrate functionality of software products": [],
+  "demonstrate willingness to learn": [],
+  "dentistry science": [],
+  "dependency injection": [
+    "dependency-injection"
+  ],
+  "deployment": [
+    "deployment"
+  ],
+  "derivatives pricing": [
+    "derivatives",
+    "exotic options"
+  ],
+  "design computer network": [],
+  "design database backup specifications": [],
+  "design database scheme": [],
+  "design information system": [],
+  "design medical supportive devices": [],
+  "design patterns": [
+    "design-patterns"
+  ],
+  "design systems": [
+    "component library",
+    "pattern library"
+  ],
+  "design thinking": [
+    "design sprint",
+    "hcd",
+    "human-centered design",
+    "ibm design thinking"
+  ],
+  "design tokens": [
+    "design token"
+  ],
+  "design ventilation network": [],
+  "develop an artistic network": [],
+  "develop automated software tests": [],
+  "develop data processing applications": [],
+  "develop e-learning plan": [],
+  "develop employee retention programs": [],
+  "develop environmental policy": [],
+  "develop footwear collection": [],
+  "develop geological databases": [],
+  "develop ict test suite": [],
+  "develop information security strategy": [],
+  "develop instrumentation systems": [],
+  "develop investigation strategy": [],
+  "develop irrigation strategies": [],
+  "develop library educational programs": [],
+  "develop military intelligence records": [],
+  "develop mobility programmes": [],
+  "develop new installations": [],
+  "develop policies for nutritional programs": [],
+  "develop professional network": [],
+  "develop program ideas": [],
+  "develop programming schedule": [],
+  "develop recycling programs": [],
+  "develop reporting software": [],
+  "develop security concepts": [],
+  "develop sewerage networks": [],
+  "develop social security programmes": [],
+  "develop software prototype": [],
+  "develop statistical software": [],
+  "develop store design": [],
+  "develop technical glossaries": [],
+  "develop terminology databases": [],
+  "develop translation memory software": [],
+  "develop wildlife programmes": [],
+  "development delays": [],
+  "development trends in radiography": [],
+  "developmental possibilities in music therapy interventions": [],
+  "developmental psychology": [],
+  "devise": [
+    "devise"
+  ],
+  "devops": [],
+  "devsecops": [
+    "dev sec ops",
+    "security automation"
+  ],
+  "dicom": [
+    "dicom viewer",
+    "digital imaging and communications in medicine"
+  ],
+  "diffusion models": [
+    "ddpm",
+    "stable diffusion"
+  ],
+  "digital forensics": [
+    "dfir",
+    "forensic analysis"
+  ],
+  "digitalocean": [
+    "digital ocean"
+  ],
+  "dimension table": [
+    "conformed dimensions",
+    "dimension tables"
+  ],
+  "dimensional modeling": [
+    "kimball methodology",
+    "star schema"
+  ],
+  "directory": [
+    "directory"
+  ],
+  "directx": [
+    "direct3d",
+    "dx11",
+    "dx12"
+  ],
+  "disassemble machines": [],
+  "disassemble mobile devices": [],
+  "discord": [
+    "discord"
+  ],
+  "discord.js": [
+    "discord api",
+    "discord bot"
+  ],
+  "discord.py": [
+    "discord.py"
+  ],
+  "dismantle concrete pumps": [],
+  "disorders of vital functions": [],
+  "distribute control signals": [],
+  "distributed computing": [],
+  "distributed directory information services": [],
+  "django": [],
+  "django forms": [
+    "django-forms"
+  ],
+  "django models": [
+    "django-models"
+  ],
+  "django rest framework": [
+    "django-rest-framework"
+  ],
+  "django templates": [
+    "django-templates"
+  ],
+  "django views": [
+    "django-views"
+  ],
+  "dll": [
+    "dll"
+  ],
+  "dma": [
+    "direct memory access"
+  ],
+  "dns": [
+    "dns"
+  ],
+  "docker": [
+    "containerization",
+    "containers"
+  ],
+  "docker compose": [
+    "docker-compose"
+  ],
+  "dockerfile": [
+    "dockerfile"
+  ],
+  "doctrine orm": [
+    "doctrine-orm"
+  ],
+  "document automation": [
+    "legal document automation"
+  ],
+  "document security incidents in the store": [],
+  "docusign": [
+    "docu sign",
+    "e-signature"
+  ],
+  "dodd-frank": [
+    "dodd frank act"
+  ],
+  "dom": [
+    "dom"
+  ],
+  "domain-driven design": [
+    "ddd"
+  ],
+  "domo": [
+    "domo bi"
+  ],
+  "download": [
+    "download"
+  ],
+  "dplyr": [
+    "dplyr"
+  ],
+  "draw up artistic programming policy": [],
+  "dremio": [
+    "dremio data lake"
+  ],
+  "drive mobile heavy construction equipment": [],
+  "drizzle": [],
+  "drone ci": [
+    "drone"
+  ],
+  "drop down menu": [
+    "drop-down-menu"
+  ],
+  "drupal": [
+    "drupal"
+  ],
+  "duplicates": [
+    "duplicates"
+  ],
+  "dwolla": [
+    "dwolla api"
+  ],
+  "dynamic": [
+    "dynamic"
+  ],
+  "dynamodb": [
+    "dynamo",
+    "dynamo db"
+  ],
+  "e-discovery": [
+    "ediscovery",
+    "electronic discovery"
+  ],
+  "e-learning": [],
+  "e-learning software infrastructure": [],
+  "echidna": [
+    "echidna fuzzing"
+  ],
+  "eclipse": [
+    "eclipse"
+  ],
+  "ecmascript 6": [
+    "ecmascript-6"
+  ],
+  "economics": [],
+  "edit photographs": [],
+  "edmodo": [],
+  "edr": [
+    "endpoint detection and response",
+    "endpoint security"
+  ],
+  "educate on data confidentiality": [],
+  "ehr": [
+    "electronic health records",
+    "electronic medical records",
+    "emr"
+  ],
+  "eks": [
+    "amazon eks",
+    "elastic kubernetes service"
+  ],
+  "elastic security": [
+    "elastic siem"
+  ],
+  "elastic stack": [],
+  "elasticpath": [
+    "elastic path"
+  ],
+  "elasticsearch": [
+    "elastic",
+    "elastic search",
+    "es"
+  ],
+  "electron": [
+    "electron"
+  ],
+  "electronic data capture": [
+    "edc",
+    "medidata",
+    "veeva vault"
+  ],
+  "electronic signals intelligence": [],
+  "electronics": [],
+  "elixir": [],
+  "elk stack": [
+    "elasticsearch logstash kibana"
+  ],
+  "eloquent": [
+    "eloquent"
+  ],
+  "emacs": [
+    "emacs"
+  ],
+  "email": [
+    "email"
+  ],
+  "embedded c": [
+    "embedded c++"
+  ],
+  "embedded linux": [
+    "buildroot",
+    "yocto"
+  ],
+  "embeddings": [
+    "text embeddings",
+    "vector embeddings"
+  ],
+  "ember.js": [
+    "ember.js"
+  ],
+  "embryology": [],
+  "emergent technologies": [],
+  "encoding": [
+    "encoding"
+  ],
+  "encryption": [
+    "encryption"
+  ],
+  "end-to-end testing": [
+    "e2e",
+    "e2e testing",
+    "e2e tests"
+  ],
+  "engineering processes": [],
+  "engrade": [],
+  "ensure accurate screening of luggage in aerodromes": [],
+  "ensure compliance with airport security measures": [],
+  "ensure hotel security": [],
+  "ensure information security": [],
+  "ensure private property security": [],
+  "ensure protection of car parking": [],
+  "ensure public safety and security": [],
+  "ensure quality of aeronautical information management services": [],
+  "ensure safety of mobile electrical systems": [],
+  "ensure security on ships": [],
+  "ensure special requirements for goods in storage": [],
+  "ensure store security": [],
+  "ensure tram system power supply": [],
+  "ensure vessel security": [],
+  "entity framework": [
+    "entity-framework"
+  ],
+  "entity framework core": [
+    "entity-framework-core"
+  ],
+  "enums": [
+    "enums"
+  ],
+  "envoy proxy": [
+    "envoy"
+  ],
+  "epic systems": [
+    "epic",
+    "epic ehr",
+    "epic mychart"
+  ],
+  "erc-1155": [
+    "erc1155",
+    "multi-token"
+  ],
+  "erc-20": [
+    "erc20",
+    "token standard"
+  ],
+  "erc-721": [
+    "erc721",
+    "nft standard"
+  ],
+  "erlang": [],
+  "error budget": [
+    "error budgets",
+    "slo"
+  ],
+  "esbuild": [],
+  "esp32": [
+    "esp-idf",
+    "esp8266",
+    "espressif"
+  ],
+  "establish an ict security prevention plan": [],
+  "establish data processes": [],
+  "establish educational network": [],
+  "establish site security routines": [],
+  "ethereum": [
+    "eth",
+    "ethereum network"
+  ],
+  "ethernet": [
+    "embedded ethernet"
+  ],
+  "ethers.js": [
+    "ethersjs"
+  ],
+  "etl": [
+    "elt",
+    "extract transform load"
+  ],
+  "evaluate broadcast programs": [],
+  "evaluate forensic data": [],
+  "evaluate genetic data": [],
+  "evaluate mine development projects": [],
+  "evaluate social work program's impact": [],
+  "evaluate supporting team in community arts program": [],
+  "evaluate the impact of your professional development": [],
+  "event sourcing": [],
+  "event-driven architecture": [
+    "eda",
+    "event driven"
+  ],
+  "events": [
+    "events"
+  ],
+  "excel": [
+    "excel"
+  ],
+  "excel formula": [
+    "excel-formula"
+  ],
+  "execute ict user research activities": [],
+  "execute integration testing": [],
+  "execute software tests": [],
+  "execution management system": [
+    "ems"
+  ],
+  "exercise security in hospitals": [],
+  "expand the network of providers": [],
+  "experiment tracking": [
+    "ml experiments"
+  ],
+  "expo": [],
+  "express": [
+    "express.js",
+    "expressjs"
+  ],
+  "external secrets": [
+    "external secrets operator"
+  ],
+  "extjs": [
+    "extjs"
+  ],
+  "f#": [
+    "f#"
+  ],
+  "fabric": [
+    "fabric commerce"
+  ],
+  "face recognition": [
+    "face detection",
+    "facial recognition"
+  ],
+  "facebook": [
+    "facebook"
+  ],
+  "facebook graph api": [
+    "facebook-graph-api"
+  ],
+  "fact table": [
+    "fact tables",
+    "factless fact"
+  ],
+  "fastapi": [
+    "fast api"
+  ],
+  "fastify": [],
+  "fda 510k": [
+    "510k clearance",
+    "premarket notification"
+  ],
+  "feature flags": [
+    "feature toggles",
+    "launchdarkly",
+    "split.io"
+  ],
+  "feature store": [
+    "feature engineering"
+  ],
+  "fedramp": [
+    "fed ramp"
+  ],
+  "ffmpeg": [
+    "ffmpeg"
+  ],
+  "fhir": [
+    "fast healthcare interoperability resources",
+    "fhir api",
+    "hl7 fhir"
+  ],
+  "figma": [
+    "figjam",
+    "figma design",
+    "figma prototype"
+  ],
+  "file io": [
+    "file-io"
+  ],
+  "file upload": [
+    "file-upload"
+  ],
+  "filemaker (database management systems)": [],
+  "filter": [
+    "filter"
+  ],
+  "financial modeling": [
+    "financial models"
+  ],
+  "find trends in geographic data": [],
+  "fine-tuning": [
+    "instruction tuning",
+    "model fine-tuning"
+  ],
+  "finicity": [
+    "finicity api"
+  ],
+  "firebase": [
+    "firestore"
+  ],
+  "firebase authentication": [
+    "firebase-authentication"
+  ],
+  "firebase realtime database": [
+    "firebase-realtime-database"
+  ],
+  "firebolt": [
+    "firebolt db"
+  ],
+  "firefox": [
+    "firefox"
+  ],
+  "firmware": [],
+  "firmware development": [
+    "fw development"
+  ],
+  "fishnet": [
+    "fish-networking"
+  ],
+  "fivetran": [
+    "fivetran connector"
+  ],
+  "fix protocol": [
+    "financial information exchange",
+    "fix",
+    "fix api",
+    "quickfix"
+  ],
+  "fixed income": [
+    "bonds",
+    "fixed income trading"
+  ],
+  "flash": [
+    "flash"
+  ],
+  "flash loans": [
+    "flash loan"
+  ],
+  "flask": [],
+  "flexbox": [
+    "flexbox"
+  ],
+  "floating point": [
+    "floating-point"
+  ],
+  "flutter": [],
+  "flux": [
+    "flux cd",
+    "fluxcd"
+  ],
+  "fmod": [
+    "fmod studio"
+  ],
+  "fonts": [
+    "fonts"
+  ],
+  "footwear machinery": [],
+  "footwear materials": [],
+  "for loop": [
+    "for-loop"
+  ],
+  "foreach": [
+    "foreach"
+  ],
+  "forecast future ict network needs": [],
+  "forensic intelligence": [],
+  "formulate a treatment plan": [],
+  "foundry": [
+    "forge",
+    "foundry toolkit"
+  ],
+  "framer": [
+    "framer motion",
+    "framer web"
+  ],
+  "freinet teaching principles": [],
+  "functional programming": [
+    "functional-programming"
+  ],
+  "game audio": [
+    "audio programming"
+  ],
+  "game design": [
+    "game mechanics",
+    "gameplay design"
+  ],
+  "gamemaker": [
+    "game maker",
+    "gms2"
+  ],
+  "gamemaker studio": [],
+  "gamesalad": [],
+  "gamesparks": [
+    "game sparks"
+  ],
+  "gather data": [],
+  "gather experimental data": [],
+  "gatsby": [
+    "gatsbyjs"
+  ],
+  "gcc": [
+    "gcc"
+  ],
+  "gcp kms": [
+    "cloud key management",
+    "google cloud kms",
+    "google tink",
+    "key management service"
+  ],
+  "gdpr": [
+    "privacy compliance"
+  ],
+  "gdpr compliance": [],
+  "gel permeation chromatography": [],
+  "gemini api": [
+    "gemini ai",
+    "google gemini",
+    "vertex ai gemini"
+  ],
+  "gemology": [],
+  "generative adversarial network": [
+    "gan",
+    "gans"
+  ],
+  "generative ai": [
+    "gen ai",
+    "genai"
+  ],
+  "generics": [
+    "generics"
+  ],
+  "genomics": [
+    "bioinformatics",
+    "genomic analysis"
+  ],
+  "ggplot2": [
+    "ggplot2"
+  ],
   "git": [],
   "github": [],
+  "github actions": [
+    "gh actions",
+    "github workflows"
+  ],
   "gitlab": [],
-  "bitbucket": [],
-  "subversion": ["svn"],
-
-  "rest": ["rest api", "restful", "rest apis"],
-  "graphql": ["gql", "graph query language"],
+  "gitlab ci": [
+    "gitlab ci/cd",
+    "gitlab pipelines"
+  ],
+  "gitops": [
+    "git ops"
+  ],
+  "gke": [
+    "google kubernetes engine"
+  ],
+  "glsl": [
+    "opengl shading language"
+  ],
+  "go": [
+    "golang"
+  ],
+  "godot": [
+    "gdscript",
+    "godot engine"
+  ],
+  "good clinical practice": [
+    "ich gcp"
+  ],
+  "goods transported from warehouse facilities": [],
+  "google analytics": [
+    "google-analytics"
+  ],
+  "google api": [
+    "google-api"
+  ],
+  "google app engine": [
+    "google-app-engine"
+  ],
+  "google apps script": [
+    "google-apps-script"
+  ],
+  "google bigquery": [
+    "google-bigquery"
+  ],
+  "google chrome": [
+    "google-chrome"
+  ],
+  "google chrome extension": [
+    "google-chrome-extension"
+  ],
+  "google cloud firestore": [
+    "google-cloud-firestore"
+  ],
+  "google cloud functions": [
+    "google-cloud-functions"
+  ],
+  "google cloud iot": [
+    "cloud iot core"
+  ],
+  "google cloud platform": [
+    "gcp",
+    "google cloud",
+    "google-cloud-platform"
+  ],
+  "google drive api": [
+    "google-drive-api"
+  ],
+  "google maps": [
+    "google-maps"
+  ],
+  "google maps api 3": [
+    "google-maps-api-3"
+  ],
+  "google sheets": [
+    "google-sheets"
+  ],
+  "government social security programmes": [],
+  "gpt": [
+    "generative pre-trained transformer"
+  ],
+  "gradle": [
+    "gradle"
+  ],
+  "grafana": [
+    "grafana dashboards",
+    "grafana loki"
+  ],
+  "grails": [
+    "grails"
+  ],
+  "graph": [
+    "graph"
+  ],
+  "graphics": [
+    "graphics"
+  ],
+  "graphql": [
+    "gql",
+    "graph query language"
+  ],
+  "grc": [
+    "governance risk compliance"
+  ],
+  "great expectations": [
+    "data validation",
+    "ge"
+  ],
+  "gridview": [
+    "gridview"
+  ],
+  "groovy": [],
+  "group by": [
+    "group-by"
+  ],
+  "grovo": [],
   "grpc": [],
-  "websocket": ["websockets", "ws"],
-  "openapi": ["swagger"],
-  "soap": [],
-  "rtsp": ["real time streaming protocol", "rtsp stream"],
-  "onvif": ["open network video interface"],
-
-  "machine learning": ["ml", "machine-learning"],
-  "deep learning": ["dl", "deep-learning"],
-  "natural language processing": ["nlp"],
-  "computer vision": ["cv"],
-  "artificial intelligence": ["ai"],
-  "tensorflow": ["tf"],
-  "pytorch": ["torch"],
-  "scikit-learn": ["sklearn"],
-  "pandas": [],
-  "numpy": [],
-  "keras": [],
-  "hugging face": ["huggingface", "hf"],
-  "large language models": ["llm", "llms"],
-  "generative ai": ["genai", "gen ai"],
-  "prompt engineering": [],
-  "agentic ai": ["agent orchestration", "ai agents", "autonomous agents", "agent frameworks"],
-  "mlops": ["machine learning operations", "llmops", "ml operations"],
-  "opencv": ["open cv", "cv2"],
-  "mtcnn": ["multi-task cascaded convolutional network"],
-  "3d-cnn": ["3d convolutional neural network", "three-dimensional cnn"],
-  "gemini api": ["google gemini", "gemini ai", "vertex ai gemini"],
-
-  "data engineering": ["data pipeline", "data pipelines"],
-  "apache spark": ["spark", "pyspark"],
-  "apache kafka": ["kafka"],
-  "apache airflow": ["airflow"],
-  "apache hadoop": ["hadoop"],
-  "apache flink": ["flink"],
-  "snowflake": [],
-  "databricks": [],
-  "bigquery": ["big query"],
-  "redshift": [],
-  "etl": ["extract transform load"],
-
-  "unit testing": ["unit tests"],
-  "integration testing": ["integration tests"],
-  "end-to-end testing": ["e2e testing", "e2e tests", "e2e"],
-  "test-driven development": ["tdd"],
-  "jest": [],
-  "mocha": [],
-  "cypress": [],
-  "playwright": [],
-  "selenium": [],
-  "pytest": [],
-  "junit": [],
-  "vitest": [],
-  "testing library": ["react testing library", "rtl"],
-  "storybook": [],
-
-  "agile": ["agile methodology"],
-  "scrum": [],
-  "kanban": [],
-  "jira": [],
-  "confluence": [],
-  "trello": [],
-  "asana": [],
-  "linear": [],
-  "notion": [],
-
-  "linux": ["unix", "ubuntu", "centos", "debian", "rhel"],
-  "windows": ["windows server"],
-  "macos": ["mac os", "osx"],
-  "bash": ["shell scripting", "shell script", "sh"],
-  "powershell": ["ps"],
-
-  "internet of things": ["iot", "connected devices", "smart devices"],
-  "arduino": ["arduino uno", "arduino mega", "arduino nano", "arduino ide"],
-  "raspberry pi": ["rpi", "raspi", "raspberry pi os"],
-  "esp32": ["esp8266", "espressif", "esp-idf"],
-  "rtos": ["real-time operating system", "freertos", "real time os"],
-  "uart": ["universal asynchronous receiver-transmitter", "serial communication"],
-  "spi": ["serial peripheral interface"],
-  "i2c": ["inter-integrated circuit", "iic", "twi"],
-
-  "microservices": ["micro services", "micro-services"],
-  "monolith": ["monolithic"],
-  "serverless": ["lambda", "cloud functions"],
-  "event-driven architecture": ["event driven", "eda"],
-  "domain-driven design": ["ddd"],
-  "clean architecture": [],
-  "hexagonal architecture": ["ports and adapters"],
-  "cqrs": ["command query responsibility segregation"],
-  "event sourcing": [],
-
-  "oauth": ["oauth2", "oauth 2.0"],
-  "jwt": ["json web token", "json web tokens"],
-  "saml": [],
-  "openid connect": ["oidc"],
-  "single sign-on": ["sso"],
-  "ldap": [],
-  "active directory": ["ad"],
-  "identity access management": ["iam", "identity management", "access control"],
-
-  "webpack": [],
-  "vite": [],
-  "rollup": [],
-  "esbuild": [],
-  "babel": [],
-  "turbopack": [],
-  "parcel": [],
-  "swc": [],
-  "pnpm": [],
-  "npm": [],
-  "yarn": [],
-  "bun": [],
-
-  "figma": [],
-  "sketch": [],
-  "adobe xd": ["xd"],
-  "adobe experience manager": ["aem", "aem sites", "aem cloud", "aem forms", "aem assets", "cq5", "adobe cq"],
-  "chrome extension": ["browser extension", "chrome plugin", "manifest v3", "web extension"],
-  "responsive design": ["responsive web design", "rwd"],
-  "accessibility": ["a11y", "wcag"],
-  "user experience": ["ux"],
-  "user interface": ["ui"],
-
-  "monitoring": ["observability"],
-  "datadog": [],
-  "new relic": ["newrelic"],
-  "grafana": [],
-  "prometheus": [],
-  "sentry": [],
-  "elk stack": ["elasticsearch logstash kibana"],
-  "splunk": [],
-  "pagerduty": [],
-  "opentelemetry": ["otel"],
-
-  "rabbitmq": ["rabbit mq"],
-  "amazon sqs": ["sqs"],
-  "amazon sns": ["sns"],
-  "pub/sub": ["pubsub", "google pub/sub"],
-  "nats": [],
-  "zeromq": ["zmq"],
-  "message queue": ["message queues", "mq"],
-
-  "blockchain": [],
-  "web3": [],
-  "solidity": [],
-  "smart contracts": [],
-  "ethereum": ["eth"],
-
-  "ios": [],
-  "android": [],
-  "react native": [],
-  "flutter": [],
-  "xamarin": [],
+  "guidance, navigation and control": [],
+  "gwt": [
+    "gwt"
+  ],
+  "gxp": [
+    "glp",
+    "gmp",
+    "good manufacturing practice"
+  ],
+  "handle animals for semen collection": [],
+  "handle fragile items": [],
+  "handle humanitarian response programs": [],
+  "haproxy": [
+    "ha proxy",
+    "load balancer"
+  ],
+  "hardhat": [
+    "hardhat ethereum"
+  ],
+  "hardware platforms": [],
+  "hash": [
+    "hash"
+  ],
+  "haskell": [],
+  "have emotional intelligence": [],
+  "headless commerce": [
+    "composable commerce"
+  ],
+  "healthcare data systems": [],
+  "hearing aids": [],
+  "helm": [
+    "helm charts",
+    "helm package"
+  ],
+  "help the programmer define an artistic vision": [],
+  "heroengine": [],
+  "heroku": [],
+  "heuristic evaluation": [
+    "heuristic analysis"
+  ],
+  "hexagonal architecture": [
+    "ports and adapters"
+  ],
+  "hibernate": [
+    "hibernate"
+  ],
+  "high-fidelity prototype": [
+    "hi-fi",
+    "high fidelity"
+  ],
+  "high-frequency trading": [
+    "hft",
+    "low-latency trading"
+  ],
+  "highcharts": [
+    "highcharts"
+  ],
+  "hipaa": [
+    "health insurance portability",
+    "hipaa compliance"
+  ],
+  "history of dance style": [],
+  "hitech": [
+    "hitech act"
+  ],
+  "hive": [
+    "hive"
+  ],
+  "hl7": [
+    "health level 7",
+    "hl7 v2",
+    "hl7 v3"
+  ],
+  "hlsl": [
+    "high-level shading language"
+  ],
+  "home assistant": [
+    "hass"
+  ],
+  "host wine-tasting events": [],
+  "html": [
+    "html5"
+  ],
+  "html table": [
+    "html-table"
+  ],
+  "http redirect": [
+    "http-redirect"
+  ],
+  "https": [
+    "https"
+  ],
+  "hugging face": [
+    "hf",
+    "huggingface",
+    "transformers library"
+  ],
+  "human dynamics as part of hospitality security": [],
+  "human psychological development": [],
+  "humanitec": [
+    "humanitec platform"
+  ],
+  "hyperledger fabric": [
+    "hlf",
+    "hyperledger"
+  ],
+  "hyperlink": [
+    "hyperlink"
+  ],
+  "hyperparameter tuning": [
+    "hyperopt",
+    "optuna"
+  ],
+  "i2c": [
+    "iic",
+    "inter-integrated circuit",
+    "twi"
+  ],
+  "ibm informix": [],
+  "ibm websphere": [],
+  "icd-10": [
+    "icd coding",
+    "icd-10-cm",
+    "icd-11"
+  ],
+  "ict infrastructure": [],
+  "ict network cable limitations": [],
+  "ict network routing": [],
+  "ict network security risks": [],
+  "ict network simulation": [],
+  "ict networking hardware": [],
+  "ict performance analysis methods": [],
+  "ict project management methodologies": [],
+  "ict security legislation": [],
+  "ict security standards": [],
+  "ict software specifications": [],
+  "ict system programming": [],
+  "identify ict security risks": [],
+  "identify ict system weaknesses": [],
+  "identify learning disorders": [],
+  "identify security threats": [],
+  "identify terrorism threats": [],
+  "identity access management": [
+    "access control",
+    "iam",
+    "identity management"
+  ],
+  "identity and access management": [],
+  "iec 62304": [
+    "medical device software lifecycle"
+  ],
+  "iframe": [
+    "iframe"
+  ],
+  "iis": [
+    "iis"
+  ],
+  "image classification": [
+    "image recognition"
+  ],
+  "image processing": [
+    "image-processing"
+  ],
+  "image segmentation": [
+    "instance segmentation",
+    "semantic segmentation"
+  ],
+  "implement a firewall": [],
+  "implement a virtual private network": [],
+  "implement anti-virus software": [],
+  "implement data quality processes": [],
+  "implement ict coding conventions": [],
+  "implement ict network diagnostic tools": [],
+  "implement ict risk management": [],
+  "implement ict safety policies": [],
+  "import": [
+    "import"
+  ],
+  "incident management": [
+    "incident response",
+    "on-call"
+  ],
+  "inclusive design": [
+    "universal design"
+  ],
+  "incremental development": [],
+  "indexing": [
+    "indexing"
+  ],
+  "industrial software": [],
+  "informatica": [
+    "informatica powercenter"
+  ],
+  "information architecture": [
+    "content strategy",
+    "ia"
+  ],
+  "information security strategy": [],
+  "infrastructure as code": [
+    "iac",
+    "infrastructure automation"
+  ],
+  "infrastructure security": [],
+  "infura": [
+    "infura api"
+  ],
+  "inheritance": [
+    "inheritance"
+  ],
+  "input": [
+    "input"
+  ],
+  "insert semen": [],
+  "inspect data": [],
+  "inspect machinery": [],
+  "install concrete pumps": [],
+  "install electrical household appliances": [],
+  "install software": [],
+  "installation": [
+    "installation"
+  ],
+  "instruct library users": [],
+  "instructional design models": [],
+  "integrate ict data": [],
+  "integration testing": [
+    "integration tests"
+  ],
+  "intellij idea": [
+    "intellij-idea"
+  ],
+  "interact verbally in javanese": [],
+  "interact with programmer on intention of consultancy work": [],
+  "interaction design": [
+    "interaction designer",
+    "ixd"
+  ],
+  "interactive prototype": [
+    "clickable prototype"
+  ],
+  "interface": [
+    "interface"
+  ],
+  "interfere with enemy communications": [],
+  "internet explorer": [
+    "internet-explorer"
+  ],
+  "internet of things": [
+    "connected devices",
+    "iot",
+    "smart devices"
+  ],
+  "interpret extraction data": [],
+  "interpret geophysical data": [],
+  "interpret psychological tests": [],
+  "interpret seismic data": [],
+  "interrupt handling": [
+    "interrupt service routine",
+    "isr"
+  ],
+  "intubation": [],
+  "inventory management": [
+    "stock management"
+  ],
+  "investigate security issues": [],
+  "investigate social security applications": [],
+  "investigation research methods": [],
+  "invision": [
+    "invision app",
+    "invision studio"
+  ],
   "ionic": [],
-  "capacitor": [],
-  "expo": [],
-  "discord.js": ["discord bot", "discord api"],
-
-  "leadership": ["team lead", "tech lead", "team leadership"],
-  "mentoring": ["mentorship", "coaching"],
-  "communication": ["written communication", "verbal communication"],
-  "problem solving": ["problem-solving", "analytical thinking"],
-  "project management": ["project manager", "pm"],
-  "cross-functional": ["cross functional", "cross-functional collaboration"],
-  "stakeholder management": ["stakeholder engagement"],
-  "design thinking": ["design sprint", "human-centered design", "hcd", "ibm design thinking"],
-
-  "sap": ["sap erp", "sap s/4hana", "sap hana", "sap bw", "sap bi", "sap fiori", "abap", "sap abap"],
-  "cyber security": ["cybersecurity", "information security", "infosec", "it security", "network security"],
-  "gcp kms": ["google cloud kms", "cloud key management", "google tink", "key management service"]
+  "ionic framework": [
+    "ionic-framework"
+  ],
+  "ios": [],
+  "ios development": [],
+  "ipad": [
+    "ipad"
+  ],
+  "iphone": [
+    "iphone"
+  ],
+  "ironclad": [
+    "ironclad contracts"
+  ],
+  "iso 13485": [
+    "medical device quality"
+  ],
+  "iso 27001": [
+    "isms",
+    "iso27001"
+  ],
+  "istio": [
+    "istio service mesh"
+  ],
+  "iterative development": [],
+  "jaeger": [
+    "jaeger tracing"
+  ],
+  "jakarta ee": [
+    "jakarta-ee"
+  ],
+  "jar": [
+    "jar"
+  ],
+  "java": [
+    "j2ee",
+    "jdk",
+    "jee",
+    "jre"
+  ],
+  "java (computer programming)": [],
+  "java 8": [
+    "java-8"
+  ],
+  "javafx": [
+    "javafx"
+  ],
+  "javanese": [],
+  "javascript": [
+    "ecmascript",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es2020",
+    "es2021",
+    "es2022",
+    "es6",
+    "js",
+    "vanilla js"
+  ],
+  "javascript framework": [],
+  "jax": [
+    "google jax"
+  ],
+  "jboss": [],
+  "jdbc": [
+    "jdbc"
+  ],
+  "jenkins": [
+    "jenkins pipeline",
+    "jenkinsfile"
+  ],
+  "jenkins (tools for software configuration management)": [],
+  "jest": [],
+  "jestjs": [
+    "jestjs"
+  ],
+  "jira": [],
+  "jmeter": [
+    "jmeter"
+  ],
+  "jobs to be done": [
+    "jtbd",
+    "outcome-driven innovation"
+  ],
+  "join": [
+    "join"
+  ],
+  "jpa": [
+    "jpa"
+  ],
+  "jquery": [
+    "jquery"
+  ],
+  "jquery mobile": [
+    "jquery-mobile"
+  ],
+  "jquery ui": [
+    "jquery-ui"
+  ],
+  "jsf": [
+    "jsf"
+  ],
+  "jsp": [
+    "jsp"
+  ],
+  "jsss": [],
+  "junit": [],
+  "jupyter notebook": [
+    "jupyter-notebook"
+  ],
+  "jwt": [
+    "json web token",
+    "json web tokens"
+  ],
+  "k3s": [
+    "lightweight kubernetes"
+  ],
+  "kanban": [],
+  "kdb+": [
+    "kdb",
+    "kdb/q",
+    "kx",
+    "q language"
+  ],
+  "keep up with the latest information systems solutions": [],
+  "keras": [
+    "keras api"
+  ],
+  "kind": [
+    "kubernetes in docker"
+  ],
+  "knex": [
+    "knex.js"
+  ],
+  "knockout.js": [
+    "knockout.js"
+  ],
+  "koa": [
+    "koajs"
+  ],
+  "kong": [
+    "kong api gateway",
+    "kong gateway"
+  ],
+  "kotlin": [
+    "kt"
+  ],
+  "kratix": [
+    "kratix platform"
+  ],
+  "kubeflow": [
+    "kube flow"
+  ],
+  "kubernetes": [
+    "container orchestration",
+    "k8s",
+    "kube"
+  ],
+  "kustomize": [
+    "kustomization"
+  ],
+  "kyc": [
+    "know your customer",
+    "kyc/aml"
+  ],
+  "laboratory information system": [
+    "lab information system",
+    "lis"
+  ],
+  "laboratory techniques": [],
+  "lams": [],
+  "landscape analysis": [],
+  "langchain": [
+    "lang chain"
+  ],
+  "laravel": [],
+  "laravel 5": [
+    "laravel-5"
+  ],
+  "large language models": [
+    "llm",
+    "llms"
+  ],
+  "layout": [
+    "layout"
+  ],
+  "ldap": [],
+  "leadership": [
+    "team lead",
+    "team leadership",
+    "tech lead"
+  ],
+  "learning difficulties": [],
+  "learning management systems": [],
+  "learning needs analysis": [],
+  "learning technologies": [],
+  "leather goods materials": [],
+  "legal ai": [
+    "legal analytics"
+  ],
+  "legal research": [
+    "case research"
+  ],
+  "legal tech": [
+    "legal technology",
+    "legaltech"
+  ],
+  "lending protocol": [
+    "defi lending"
+  ],
+  "less": [],
+  "level design": [
+    "level designer",
+    "world building"
+  ],
+  "levels of software testing": [],
+  "lexisnexis": [
+    "lexis nexis"
+  ],
+  "liaise with celebrities": [],
+  "liaise with film exhibitors": [],
+  "liaise with financiers": [],
+  "liaise with politicians": [],
+  "liaise with security authorities": [],
+  "linear": [],
+  "linked list": [
+    "linked-list"
+  ],
+  "linkerd": [
+    "linkerd service mesh"
+  ],
+  "linq": [],
+  "linux": [
+    "centos",
+    "debian",
+    "rhel",
+    "ubuntu",
+    "unix"
+  ],
+  "liquidity pool": [
+    "liquidity mining"
+  ],
+  "lisp": [],
+  "listview": [
+    "listview"
+  ],
+  "litmos": [],
+  "livestock reproduction": [],
+  "llamaindex": [
+    "llama index"
+  ],
+  "logikcull": [
+    "logikcull ediscovery"
+  ],
+  "loinc": [
+    "logical observation identifiers names and codes"
+  ],
+  "loki": [],
+  "looker": [
+    "google looker",
+    "looker studio",
+    "lookml"
+  ],
+  "lora": [
+    "long range",
+    "lorawan"
+  ],
+  "low-fidelity prototype": [
+    "lo-fi",
+    "low fidelity"
+  ],
+  "low-power design": [
+    "power optimization",
+    "sleep modes"
+  ],
+  "lte-m": [
+    "lte cat-m1"
+  ],
+  "lua": [],
+  "machine learning": [
+    "machine-learning",
+    "ml"
+  ],
+  "machine tools": [],
+  "machine translation": [
+    "neural machine translation",
+    "nmt"
+  ],
+  "machinery products": [],
+  "macos": [
+    "mac os",
+    "osx"
+  ],
+  "mage": [
+    "mage ai"
+  ],
+  "magento": [
+    "adobe commerce",
+    "magento",
+    "magento 2"
+  ],
+  "maintain adequate medication storage conditions": [],
+  "maintain data entry requirements": [],
+  "maintain database": [],
+  "maintain database performance": [],
+  "maintain database security": [],
+  "maintain facility security systems": [],
+  "maintain freight rate databases": [],
+  "maintain ict system": [],
+  "maintain information network hardware": [],
+  "maintain logistics databases": [],
+  "maintain personal development in psychotherapy": [],
+  "maintain pricing database": [],
+  "maintain responsive design": [],
+  "maintain the security of machinery": [],
+  "maintain warehouse database": [],
+  "maintenance of footwear manufacturing machines": [],
+  "makefile": [
+    "makefile"
+  ],
+  "malware analysis": [
+    "malware reverse",
+    "reverse engineering"
+  ],
+  "manage administrative systems": [],
+  "manage airport development resources": [],
+  "manage artificial plant displays": [],
+  "manage data": [],
+  "manage data for legal matters": [],
+  "manage database": [],
+  "manage development of promotional material": [],
+  "manage digital archives": [],
+  "manage digital documents": [],
+  "manage dispatch software systems": [],
+  "manage donor database": [],
+  "manage electricity transmission system": [],
+  "manage event structure installation": [],
+  "manage gas transmission system": [],
+  "manage ict semantic integration": [],
+  "manage information access aids": [],
+  "manage it security compliances": [],
+  "manage library users queries": [],
+  "manage membership database": [],
+  "manage meteorological database": [],
+  "manage mine site data": [],
+  "manage outsourced security": [],
+  "manage packaging development cycle from concept to launch": [],
+  "manage personal professional development": [],
+  "manage personal professional development in sport": [],
+  "manage quantitative data": [],
+  "manage radiology information system": [],
+  "manage recycling program budget": [],
+  "manage research and development projects": [],
+  "manage securities": [],
+  "manage security clearance": [],
+  "manage security equipment": [],
+  "manage software localisation": [],
+  "manage software releases": [],
+  "manage system security": [],
+  "manage technical security systems": [],
+  "manage the security team": [],
+  "manage waste rock": [],
+  "market making": [
+    "market maker"
+  ],
+  "marklogic": [],
+  "master data management": [
+    "master data",
+    "mdm"
+  ],
+  "match goods with appropriate packaging according to security procedures": [],
+  "material ui": [
+    "material-ui",
+    "mui"
+  ],
+  "math": [
+    "math"
+  ],
+  "matillion": [
+    "matillion etl"
+  ],
+  "matlab": [],
+  "matplotlib": [
+    "matplotlib"
+  ],
+  "matrix": [
+    "matrix"
+  ],
+  "matter": [
+    "matter protocol"
+  ],
+  "matter management": [
+    "case management"
+  ],
+  "maven": [
+    "maven"
+  ],
+  "mbed os": [
+    "arm mbed"
+  ],
+  "mdr": [
+    "managed detection and response"
+  ],
+  "mdx": [],
+  "meaningful use": [
+    "promoting interoperability"
+  ],
+  "measure software usability": [],
+  "medical devices": [
+    "medical device software",
+    "medtech"
+  ],
+  "medical imaging": [
+    "imaging analysis",
+    "radiology"
+  ],
+  "medical informatics": [],
+  "medical statistics": [],
+  "meditech": [
+    "meditech expanse"
+  ],
+  "medusa": [
+    "medusajs"
+  ],
+  "meet the requirements of social security reimbursement bodies": [],
+  "memory": [
+    "memory"
+  ],
+  "memory leaks": [
+    "memory-leaks"
+  ],
+  "memory management": [
+    "heap management",
+    "memory-management",
+    "stack management"
+  ],
+  "mentoring": [
+    "coaching",
+    "mentorship"
+  ],
+  "merge": [
+    "merge"
+  ],
+  "message queue": [
+    "message queues",
+    "mq"
+  ],
+  "metabase": [
+    "metabase bi"
+  ],
+  "metadata management": [
+    "metadata",
+    "technical metadata"
+  ],
+  "metal": [
+    "apple metal"
+  ],
+  "metasploit": [
+    "metasploit framework",
+    "msf"
+  ],
+  "meteor": [
+    "meteor"
+  ],
+  "methods": [
+    "methods"
+  ],
+  "methods of drying timber": [],
+  "mev": [
+    "maximal extractable value"
+  ],
+  "microservices": [
+    "micro services",
+    "micro-services"
+  ],
+  "microsoft access": [],
+  "microsoft azure": [
+    "azure"
+  ],
+  "microsoft sql server": [
+    "ms sql",
+    "mssql",
+    "sql server"
+  ],
+  "mifid ii": [
+    "markets in financial instruments directive",
+    "mifid"
+  ],
+  "military code": [],
+  "milling machines": [],
+  "mimir": [
+    "grafana mimir"
+  ],
+  "minikube": [
+    "mini kube"
+  ],
+  "miro": [
+    "miro board",
+    "miro whiteboard"
+  ],
+  "mirror networking": [
+    "mirror"
+  ],
+  "mitre att&ck": [
+    "attack framework",
+    "mitre attack"
+  ],
+  "ml (computer programming)": [],
+  "mlflow": [
+    "ml flow"
+  ],
+  "mlops": [
+    "llmops",
+    "machine learning operations",
+    "ml operations"
+  ],
+  "mobile": [
+    "mobile"
+  ],
+  "mobile device management": [],
+  "mobile device software frameworks": [],
+  "mobile marketing": [],
+  "mobile operating systems": [],
+  "mobile-first design": [
+    "mobile first"
+  ],
+  "mocha": [],
+  "mod rewrite": [
+    "mod-rewrite"
+  ],
+  "modbus": [
+    "modbus rtu",
+    "modbus tcp"
+  ],
+  "mode analytics": [
+    "mode"
+  ],
+  "model": [
+    "model"
+  ],
+  "model deployment": [
+    "model serving"
+  ],
+  "model monitoring": [
+    "ml monitoring"
+  ],
+  "model registry": [
+    "model versioning"
+  ],
+  "model view controller": [
+    "model-view-controller"
+  ],
+  "module": [
+    "module"
+  ],
+  "mongodb": [
+    "mongo"
+  ],
+  "mongoose": [],
+  "monitor after sales records": [],
+  "monitor art scene developments": [],
+  "monitor automated machines": [],
+  "monitor banking sector development": [],
+  "monitor building security": [],
+  "monitor developments in field of expertise": [],
+  "monitor developments in technology used for design": [],
+  "monitor developments used for food industry": [],
+  "monitor educational developments": [],
+  "monitor film development baths": [],
+  "monitor larval development": [],
+  "monitor legislation developments": [],
+  "monitor machine operations": [],
+  "monitor parking areas to maintain security": [],
+  "monitor production developments": [],
+  "monitor programming": [],
+  "monitor programming finances": [],
+  "monitor sales area for security reasons": [],
+  "monitor security measures": [],
+  "monitor security procedures in warehouse operations": [],
+  "monitor surveillance equipment": [],
+  "monitor textile manufacturing developments": [],
+  "monitoring": [
+    "observability"
+  ],
+  "monolith": [
+    "monolithic"
+  ],
+  "monte carlo": [
+    "data observability",
+    "monte carlo data"
+  ],
+  "monte carlo simulation": [
+    "monte carlo methods"
+  ],
+  "montessori learning equipment": [],
+  "moodle": [],
+  "moralis": [
+    "moralis api"
+  ],
+  "motion design": [
+    "animation design",
+    "micro-interactions"
+  ],
+  "move": [
+    "move language"
+  ],
+  "ms access": [
+    "ms-access"
+  ],
+  "ms word": [
+    "ms-word"
+  ],
+  "mtcnn": [
+    "multi-task cascaded convolutional network"
+  ],
+  "multi-factor authentication": [
+    "2fa",
+    "mfa",
+    "two-factor"
+  ],
+  "multidimensional array": [
+    "multidimensional-array"
+  ],
+  "multiplayer networking": [
+    "game networking",
+    "netcode"
+  ],
+  "museum databases": [],
+  "mvvm": [
+    "mvvm"
+  ],
+  "mxnet": [
+    "apache mxnet"
+  ],
+  "mysql": [
+    "mariadb"
+  ],
+  "mysqli": [
+    "mysqli"
+  ],
+  "mythril": [
+    "mythril security"
+  ],
+  "n1ql": [],
+  "nacelle": [
+    "nacelle commerce"
+  ],
+  "nakama": [
+    "heroic labs nakama"
+  ],
+  "named entity recognition": [
+    "ner"
+  ],
+  "national road network": [],
+  "nats": [],
+  "natural language processing": [
+    "nlp"
+  ],
+  "nb-iot": [
+    "narrowband iot"
+  ],
+  "ndc": [
+    "national drug code"
+  ],
+  "near protocol": [
+    "near"
+  ],
+  "neo4j": [],
+  "neptune": [
+    "neptune.ai"
+  ],
+  "nessus": [
+    "tenable nessus"
+  ],
+  "nestjs": [
+    "nest",
+    "nest.js"
+  ],
+  "netbeans": [
+    "netbeans"
+  ],
+  "netlify": [],
+  "network management system tools": [],
+  "network marketing": [],
+  "network programming": [
+    "network-programming"
+  ],
+  "network with store owners": [],
+  "network within the writing industry": [],
+  "neural network": [
+    "neural-network"
+  ],
+  "new relic": [
+    "new relic apm",
+    "newrelic"
+  ],
+  "news analytics": [],
+  "next.js": [
+    "next",
+    "next js",
+    "nextjs"
+  ],
+  "nextgen": [
+    "nextgen healthcare"
+  ],
+  "nfc": [
+    "near field communication"
+  ],
+  "nginx": [
+    "nginx",
+    "nginx ingress",
+    "nginx proxy"
+  ],
+  "nibbling machine parts": [],
+  "nist": [
+    "nist csf",
+    "nist cybersecurity framework"
+  ],
+  "nltk": [
+    "natural language toolkit"
+  ],
+  "nmap": [
+    "network mapper"
+  ],
+  "node-red": [
+    "node red",
+    "nodered"
+  ],
+  "node.js": [
+    "node",
+    "node js",
+    "nodejs"
+  ],
+  "nordic nrf": [
+    "nordic semiconductor",
+    "nrf52"
+  ],
+  "nosql": [],
+  "notion": [],
+  "npm": [],
+  "numpy": [],
+  "nuttx": [
+    "apache nuttx"
+  ],
+  "nuxt.js": [
+    "nuxt",
+    "nuxtjs"
+  ],
+  "oauth": [
+    "oauth 2.0",
+    "oauth2"
+  ],
+  "object detection": [
+    "faster rcnn",
+    "yolo"
+  ],
+  "object-oriented modelling": [],
+  "objective c": [],
+  "objective-c": [],
+  "objectstore": [],
+  "observe new developments in foreign countries": [],
+  "ocr": [
+    "optical character recognition",
+    "text detection"
+  ],
+  "octopus deploy": [],
+  "office software": [],
+  "okta": [
+    "okta identity"
+  ],
+  "olap": [
+    "olap cube"
+  ],
+  "oltp": [
+    "online transaction processing"
+  ],
+  "online analytical processing": [],
+  "onnx": [
+    "open neural network exchange"
+  ],
+  "onvif": [
+    "open network video interface"
+  ],
+  "oop": [
+    "oop"
+  ],
+  "open banking": [
+    "open banking api",
+    "psd2"
+  ],
+  "openapi": [
+    "swagger"
+  ],
+  "opencart": [
+    "open cart"
+  ],
+  "opencv": [
+    "cv2",
+    "open cv"
+  ],
+  "openedge advanced business language": [],
+  "openedge database": [],
+  "opengl": [
+    "open gl",
+    "opengl",
+    "opengl es"
+  ],
+  "openid connect": [
+    "oidc"
+  ],
+  "openshift": [
+    "ocp",
+    "red hat openshift"
+  ],
+  "opentelemetry": [
+    "opentelemetry collector",
+    "otel"
+  ],
+  "operate aerial work platforms": [],
+  "operate die-cut machines": [],
+  "operate drilling jumbo": [],
+  "operate flexographic printing machine": [],
+  "operate grinding machine": [],
+  "operate mobile crane": [],
+  "operate paper winding machine": [],
+  "operate patternmaking machinery": [],
+  "operate plastic machinery": [],
+  "operate pulp control machine": [],
+  "operate relational database management system": [],
+  "operate tram system monitoring equipment": [],
+  "operate two-way radio systems": [],
+  "opsgenie": [
+    "ops genie"
+  ],
+  "optimism": [
+    "op mainnet"
+  ],
+  "oracle application development framework": [],
+  "oracle commerce": [
+    "atg"
+  ],
+  "oracle database": [
+    "oracle",
+    "oracle db",
+    "oracle-database"
+  ],
+  "oracle relational database": [],
+  "oracle weblogic": [],
+  "oracle11g": [
+    "oracle11g"
+  ],
+  "order management": [],
+  "order management system": [
+    "oms",
+    "trading oms"
+  ],
+  "orm": [
+    "orm"
+  ],
+  "ossec": [
+    "ossec hids"
+  ],
+  "ota update": [
+    "firmware update",
+    "over-the-air update"
+  ],
+  "outlook": [
+    "outlook"
+  ],
+  "oversee development of software": [],
+  "oversee planning of security systems": [],
+  "oversee wetlands in project development": [],
+  "owasp": [
+    "owasp top 10"
+  ],
+  "pack fragile items for transportation": [],
+  "pacs": [
+    "picture archiving and communication system"
+  ],
+  "pagerduty": [
+    "pager duty"
+  ],
+  "pagination": [
+    "pagination"
+  ],
+  "pandas": [],
+  "parallel processing": [
+    "parallel-processing"
+  ],
+  "parameters": [
+    "parameters"
+  ],
+  "parcel": [],
+  "parrot security os": [],
+  "parse platform": [
+    "parse-platform"
+  ],
+  "parsing": [
+    "parsing"
+  ],
+  "participate in school programs on libraries": [],
+  "participate in the development of new food products": [],
+  "particle": [
+    "particle argon",
+    "particle photon"
+  ],
+  "particle system": [
+    "particle effects",
+    "vfx"
+  ],
+  "parts of a surface grinding machine": [],
+  "pascal (computer programming)": [],
+  "path": [
+    "path"
+  ],
+  "pathfinding": [
+    "a* algorithm",
+    "navigation mesh",
+    "navmesh"
+  ],
+  "payment processing": [
+    "payment gateway",
+    "payment systems",
+    "payments"
+  ],
+  "paypal": [
+    "paypal"
+  ],
+  "pci dss": [
+    "payment card industry",
+    "pci compliance"
+  ],
+  "pdf": [
+    "pdf"
+  ],
+  "pdo": [
+    "pdo"
+  ],
+  "penetration testing": [
+    "ethical hacking",
+    "pentest",
+    "pentesting"
+  ],
+  "perform business analysis": [],
+  "perform computer analyses of geotechnical structures": [],
+  "perform data analysis": [],
+  "perform data cleansing": [],
+  "perform data mining": [],
+  "perform food risk analysis": [],
+  "perform forest analysis": [],
+  "perform military operations": [],
+  "perform online data analysis": [],
+  "perform rail track inspections": [],
+  "perform risk analysis": [],
+  "perform safety data analysis": [],
+  "perform scrambling operations": [],
+  "perform security checks": [],
+  "perform security vulnerability assessments": [],
+  "perform software recovery testing": [],
+  "perl": [],
+  "persona development": [
+    "personas",
+    "user personas"
+  ],
+  "personalise sports programme": [],
+  "personality development theories": [],
+  "personalization": [
+    "customer personalization",
+    "dynamic content"
+  ],
+  "pharmaceutical drug development": [],
+  "phaser": [
+    "phaser 3",
+    "phaser.js"
+  ],
+  "phi": [
+    "pii/phi",
+    "protected health information"
+  ],
+  "photon": [
+    "photon fusion",
+    "photon pun"
+  ],
+  "php": [],
+  "physics engine": [
+    "game physics",
+    "rigidbody"
+  ],
+  "pic": [
+    "microchip",
+    "pic microcontroller"
+  ],
+  "ping identity": [
+    "pingfederate"
+  ],
+  "pip": [
+    "pip"
+  ],
+  "plaid": [
+    "plaid api",
+    "plaid link"
+  ],
+  "plan digital marketing": [],
+  "plan learning curriculum": [],
+  "plan presence at professional events": [],
+  "plan rig work schedules": [],
+  "plan water resource development": [],
+  "platform engineering": [
+    "idp",
+    "internal developer platform"
+  ],
+  "playfab": [
+    "azure playfab"
+  ],
+  "playwright": [],
+  "plot": [
+    "plot"
+  ],
+  "plsql": [
+    "plsql"
+  ],
+  "plugins": [
+    "plugins"
+  ],
+  "pma": [
+    "premarket approval"
+  ],
+  "pnpm": [],
+  "pointers": [
+    "pointers"
+  ],
+  "policy management": [
+    "policy lifecycle"
+  ],
+  "polkadot": [
+    "dot"
+  ],
+  "polygon": [
+    "matic",
+    "polygon network"
+  ],
+  "polymer chemistry": [],
+  "port": [
+    "port internal developer portal",
+    "port.io"
+  ],
+  "portfolio management in textile manufacturing": [],
+  "portfolio optimization": [
+    "asset allocation",
+    "portfolio management"
+  ],
+  "pose estimation": [
+    "keypoint detection"
+  ],
+  "position tobacco products in machines": [],
+  "postgresql": [
+    "pg",
+    "postgres",
+    "psql"
+  ],
+  "postmortem": [
+    "blameless postmortem",
+    "incident review"
+  ],
+  "power bi": [
+    "microsoft power bi",
+    "power bi desktop"
+  ],
+  "powerbi": [
+    "powerbi"
+  ],
+  "powershell": [
+    "ps"
+  ],
+  "practice management": [
+    "pm system"
+  ],
+  "prefect": [
+    "prefect orchestration"
+  ],
+  "pregnancy": [],
+  "prepare exhibition programs": [],
+  "prepare livestock for artificial insemination": [],
+  "prepare timelines for pipeline development projects": [],
+  "prepare visual data": [],
+  "prescribe exercises": [],
+  "prescribe exercises for controlled health conditions": [],
+  "prestashop": [
+    "presta shop"
+  ],
+  "pricing engine": [
+    "dynamic pricing"
+  ],
+  "primefaces": [
+    "primefaces"
+  ],
+  "principle": [
+    "principle animation",
+    "principle app"
+  ],
+  "principles of artificial intelligence": [],
+  "printing": [
+    "printing"
+  ],
+  "prisma": [],
+  "privileged access management": [
+    "pam"
+  ],
+  "problem solving": [
+    "analytical thinking",
+    "problem-solving"
+  ],
+  "procedural generation": [
+    "pcg",
+    "procedural content"
+  ],
+  "process": [
+    "process"
+  ],
+  "process collected survey data": [],
+  "process data": [],
+  "procurement of ict network equipment": [],
+  "product catalog": [
+    "catalog management",
+    "pim"
+  ],
+  "product data management": [],
+  "product design": [
+    "product designer"
+  ],
+  "product recommendation": [
+    "recommendation engine"
+  ],
+  "program firmware": [],
+  "program home alarm systems": [],
+  "program lift controller": [],
+  "program sound cues": [],
+  "project anarchy": [],
+  "project management": [
+    "pm",
+    "project manager"
+  ],
+  "prolog (computer programming)": [],
+  "prometheus": [
+    "prometheus monitoring"
+  ],
+  "promote education programmes": [],
+  "promote social security programmes": [],
+  "promote the conservatory": [],
+  "promote your writings": [],
+  "promotion engine": [
+    "discount management"
+  ],
+  "prompt engineering": [
+    "prompt design"
+  ],
+  "properties": [
+    "properties"
+  ],
+  "prosthetic devices": [],
+  "protect ict devices": [],
+  "protect important clients": [],
+  "proteomics": [
+    "protein analysis"
+  ],
+  "prototyping": [
+    "rapid prototyping",
+    "wireframing"
+  ],
+  "prototyping development": [],
+  "provide an enriching environment for animals": [],
+  "provide door security": [],
+  "provide ict support": [],
+  "provide ict system training": [],
+  "provide individual exercise programmes": [],
+  "provide learning support": [],
+  "provide learning support in healthcare": [],
+  "provide reports on routine meteorological observations": [],
+  "provide security in detention centres": [],
+  "provide software testing documentation": [],
+  "provide training on e-learning": [],
+  "proxy": [
+    "proxy"
+  ],
+  "psychological theories": [],
+  "pub/sub": [
+    "google pub/sub",
+    "pubsub"
+  ],
+  "pulumi": [
+    "pulumi iac"
+  ],
+  "puppet": [
+    "puppet enterprise"
+  ],
+  "puppet (tools for software configuration management)": [],
+  "purple team": [
+    "purple teaming"
+  ],
+  "push notification": [
+    "push-notification"
+  ],
+  "pygame": [
+    "pygame"
+  ],
+  "pytest": [],
+  "python": [
+    "py",
+    "python2",
+    "python3"
+  ],
+  "python (computer programming)": [],
+  "python 2.7": [
+    "python-2.7"
+  ],
+  "python 3.x": [
+    "python-3.x"
+  ],
+  "python requests": [
+    "python-requests"
+  ],
+  "pytorch": [
+    "pytorch lightning",
+    "torch"
+  ],
+  "qlik": [
+    "qlik sense",
+    "qlikview"
+  ],
+  "qnx": [
+    "blackberry qnx"
+  ],
+  "qradar": [
+    "ibm qradar"
+  ],
+  "qt": [
+    "qt"
+  ],
+  "quality control systems": [],
+  "qualys": [
+    "qualys guard"
+  ],
+  "quantitative analysis": [
+    "quant",
+    "quant finance",
+    "quantitative finance"
+  ],
+  "query languages": [],
+  "question answering": [
+    "qa system"
+  ],
+  "r": [
+    "rlang"
+  ],
+  "rabbitmq": [
+    "rabbit mq"
+  ],
+  "radiology information system": [
+    "ris"
+  ],
+  "railway framework legislation": [],
+  "rancher": [
+    "rancher kubernetes"
+  ],
+  "random": [
+    "random"
+  ],
+  "rapid application development": [],
+  "raspberry pi": [
+    "raspberry pi os",
+    "raspi",
+    "rpi"
+  ],
+  "ray": [
+    "ray serve",
+    "ray tune"
+  ],
+  "ray tracing": [
+    "dxr",
+    "rtx"
+  ],
+  "razor": [
+    "razor"
+  ],
+  "react": [
+    "react js",
+    "react.js",
+    "reactjs"
+  ],
+  "react hooks": [
+    "react-hooks"
+  ],
+  "react native": [
+    "react-native"
+  ],
+  "react redux": [
+    "react-redux"
+  ],
+  "react router": [
+    "react-router"
+  ],
+  "read broadcast programming": [],
+  "read ship operational data": [],
+  "real-time analytics": [
+    "streaming analytics"
+  ],
+  "real-time payments": [
+    "faster payments",
+    "instant payments"
+  ],
+  "recognise indicators of gifted student": [],
+  "record malting cycle data": [],
+  "record production data": [],
+  "recurrent neural network": [
+    "gru",
+    "lstm",
+    "rnn"
+  ],
+  "recursion": [
+    "recursion"
+  ],
+  "red team": [
+    "red teaming"
+  ],
+  "redis": [],
+  "redshift": [
+    "amazon redshift",
+    "redshift spectrum"
+  ],
+  "redux": [
+    "redux"
+  ],
+  "reflection": [
+    "reflection"
+  ],
+  "regulatory compliance": [
+    "compliance",
+    "compliance management",
+    "financial regulations",
+    "finreg"
+  ],
+  "regulatory submissions": [
+    "ectd",
+    "fda submissions"
+  ],
+  "relativity": [
+    "relativity ediscovery"
+  ],
+  "remix": [
+    "remix ide"
+  ],
+  "repair alarm system": [],
+  "repair ict devices": [],
+  "repair mobile devices": [],
+  "replace": [
+    "replace"
+  ],
+  "replace machines": [],
+  "report airport security incidents": [],
+  "report analysis results": [],
+  "report on social development": [],
+  "reporting services": [
+    "reporting-services"
+  ],
+  "research and development in textiles": [],
+  "research family histories": [],
+  "research welding techniques": [],
+  "respond to burglar alarm systems": [],
+  "responsive design": [
+    "responsive web design",
+    "rwd"
+  ],
+  "rest": [
+    "rest api",
+    "rest apis",
+    "restful"
+  ],
+  "retrieval augmented generation": [
+    "rag"
+  ],
+  "reuters eikon": [
+    "eikon",
+    "refinitiv eikon"
+  ],
+  "review development process of an organisation": [],
+  "review meteorological forecast data": [],
+  "riot os": [
+    "riot"
+  ],
+  "risk management": [
+    "enterprise risk",
+    "risk analysis",
+    "risk assessment"
+  ],
+  "rlhf": [
+    "reinforcement learning human feedback"
+  ],
+  "rolling deployment": [
+    "rolling update"
+  ],
+  "rollup": [],
+  "routes": [
+    "routes"
+  ],
+  "rpg maker": [
+    "rpgmaker"
+  ],
+  "rs-232": [
+    "rs232",
+    "serial port"
+  ],
+  "rs-485": [
+    "rs485",
+    "serial bus"
+  ],
+  "rspec": [
+    "rspec"
+  ],
+  "rtos": [
+    "freertos",
+    "real time os",
+    "real-time operating system"
+  ],
+  "rtsp": [
+    "real time streaming protocol",
+    "rtsp stream"
+  ],
+  "ruby": [
+    "rb"
+  ],
+  "ruby (computer programming)": [],
+  "ruby on rails": [
+    "rails",
+    "ror",
+    "ruby-on-rails"
+  ],
+  "ruby on rails 3": [
+    "ruby-on-rails-3"
+  ],
+  "ruby on rails 4": [
+    "ruby-on-rails-4"
+  ],
+  "runbook": [
+    "runbook automation",
+    "runbooks"
+  ],
+  "rust": [
+    "rustlang"
+  ],
+  "rust smart contracts": [
+    "anchor",
+    "solana rust"
+  ],
+  "rxjs": [
+    "rxjs"
+  ],
+  "rxnorm": [
+    "rx norm"
+  ],
+  "safeguard online privacy and identity": [],
+  "sagemaker": [
+    "aws sagemaker"
+  ],
+  "sakai": [],
+  "saleor": [
+    "saleor commerce"
+  ],
+  "salesforce": [],
+  "salesforce commerce cloud": [
+    "demandware",
+    "sfcc"
+  ],
+  "salt (tools for software configuration management)": [],
+  "saltstack": [
+    "salt",
+    "salt master"
+  ],
+  "saml": [
+    "saml 2.0"
+  ],
+  "sanctions screening": [
+    "ofac",
+    "sanctions compliance"
+  ],
+  "sand blasting machine parts": [],
+  "sap": [
+    "abap",
+    "sap abap",
+    "sap bi",
+    "sap bw",
+    "sap erp",
+    "sap fiori",
+    "sap hana",
+    "sap s/4hana"
+  ],
+  "sap commerce": [
+    "hybris",
+    "sap commerce cloud"
+  ],
+  "sap r3": [],
+  "sas language": [],
+  "sass": [
+    "scss"
+  ],
+  "scala": [],
+  "scan an animal to locate a microchip": [],
+  "schoology": [],
+  "scikit learn": [],
+  "scikit-learn": [
+    "scikit",
+    "sklearn"
+  ],
+  "scipy": [
+    "scipy"
+  ],
+  "scratch (computer programming)": [],
+  "screen reader": [
+    "nvda",
+    "screen reader testing",
+    "voiceover"
+  ],
+  "screw machine parts": [],
+  "scroll": [
+    "scroll"
+  ],
+  "scrum": [],
+  "sealed secrets": [
+    "bitnami sealed secrets"
+  ],
+  "search": [
+    "search"
+  ],
+  "search and discovery": [
+    "algolia",
+    "product search"
+  ],
+  "search databases": [],
+  "search for information online": [],
+  "secure premises": [],
+  "securities": [],
+  "security": [
+    "security"
+  ],
+  "security in commercial buildings": [],
+  "security in industrial buildings": [],
+  "security of assets legislation": [],
+  "security panels": [],
+  "security regulations": [],
+  "security requirements of goods transported via pipelines": [],
+  "security threats": [],
+  "sed": [
+    "sed"
+  ],
+  "select": [
+    "select"
+  ],
+  "select semen for artificial insemination of animals": [],
+  "selenium": [],
+  "selenium webdriver": [
+    "selenium-webdriver"
+  ],
+  "self-service analytics": [
+    "self-service bi"
+  ],
+  "sell flowers": [],
+  "sell gaming software": [],
+  "sell software maintenance contracts": [],
+  "sell software personal training": [],
+  "sell software products": [],
+  "semantic search": [
+    "vector search"
+  ],
+  "sentiment analysis": [
+    "sentiment classification"
+  ],
+  "sentinel": [
+    "azure sentinel",
+    "microsoft sentinel"
+  ],
+  "sentry": [],
+  "sequelize": [],
+  "serialization": [
+    "serialization"
+  ],
+  "server": [
+    "server"
+  ],
+  "serverless": [
+    "cloud functions",
+    "lambda"
+  ],
+  "service": [
+    "service"
+  ],
+  "service design": [
+    "service designer"
+  ],
+  "service level objective": [
+    "sla",
+    "sli"
+  ],
+  "servicenow": [],
+  "servlets": [
+    "servlets"
+  ],
+  "session": [
+    "session"
+  ],
+  "set health, hygiene, safety and security standards": [],
+  "set safety and security standards": [],
+  "set up consumer electronics": [],
+  "set up office equipment": [],
+  "shader graph": [
+    "visual shaders"
+  ],
+  "shader programming": [
+    "shader development",
+    "shaders"
+  ],
+  "sharepoint": [
+    "sharepoint"
+  ],
+  "shell": [
+    "shell"
+  ],
+  "shiny": [
+    "shiny"
+  ],
+  "shopify": [
+    "liquid",
+    "shopify api",
+    "shopify plus"
+  ],
+  "shopping cart": [
+    "cart management"
+  ],
+  "siem": [
+    "security information and event management"
+  ],
+  "silverlight": [
+    "silverlight"
+  ],
+  "single sign-on": [
+    "sso"
+  ],
+  "sisense": [
+    "sisense bi"
+  ],
+  "site reliability engineering": [
+    "site reliability",
+    "sre"
+  ],
+  "sketch": [
+    "sketch app",
+    "sketch design"
+  ],
+  "slither": [
+    "slither analyzer"
+  ],
+  "slowly changing dimensions": [
+    "scd",
+    "scd type 2"
+  ],
+  "smalltalk (computer programming)": [],
+  "smart contract audit": [
+    "code audit",
+    "security audit"
+  ],
+  "smart contracts": [
+    "smart contract development"
+  ],
+  "smart order routing": [
+    "sor"
+  ],
+  "snomed ct": [
+    "snomed",
+    "systematized nomenclature of medicine"
+  ],
+  "snort": [
+    "snort ids"
+  ],
+  "snowflake": [
+    "snowflake data cloud",
+    "snowpark"
+  ],
+  "snowflake schema": [
+    "normalized schema"
+  ],
+  "soap": [],
+  "soar": [
+    "security orchestration automation response"
+  ],
+  "soc": [
+    "security operations center"
+  ],
+  "soc 2": [
+    "soc 2 type 2",
+    "soc2"
+  ],
+  "social justice": [],
+  "social security law": [],
+  "socket.io": [
+    "socket.io"
+  ],
+  "sockets": [
+    "sockets"
+  ],
+  "software anomalies": [],
+  "software architecture models": [],
+  "software components libraries": [],
+  "software components suppliers": [],
+  "software design methodologies": [],
+  "software frameworks": [],
+  "software metrics": [],
+  "software ui design patterns": [],
+  "solana": [
+    "sol",
+    "solana blockchain"
+  ],
+  "solid.js": [
+    "solidjs"
+  ],
+  "solidity": [
+    "solidity programming"
+  ],
+  "solr": [
+    "solr"
+  ],
+  "sops": [
+    "mozilla sops"
+  ],
+  "source engine": [
+    "source 2"
+  ],
+  "sox compliance": [
+    "sarbanes oxley",
+    "sarbanes-oxley",
+    "sox"
+  ],
+  "spacy": [
+    "spacy nlp"
+  ],
+  "sparql": [],
+  "spatial audio": [
+    "3d audio",
+    "binaural audio"
+  ],
+  "special needs learning equipment": [],
+  "specialised astrology software": [],
+  "spi": [
+    "serial peripheral interface"
+  ],
+  "spinnaker": [
+    "spinnaker cd"
+  ],
+  "spiral development": [],
+  "spirits development": [],
+  "split": [
+    "split"
+  ],
+  "splunk": [
+    "splunk cloud",
+    "splunk enterprise",
+    "splunk siem"
+  ],
+  "spring": [
+    "spring boot",
+    "spring framework",
+    "springboot"
+  ],
+  "spring data jpa": [
+    "spring-data-jpa"
+  ],
+  "spring mvc": [
+    "spring-mvc"
+  ],
+  "spring security": [
+    "spring-security"
+  ],
+  "sql": [
+    "structured query language"
+  ],
+  "sql server 2005": [
+    "sql-server-2005"
+  ],
+  "sql server 2008": [
+    "sql-server-2008"
+  ],
+  "sql server integration services": [],
+  "sqlalchemy": [
+    "sqlalchemy"
+  ],
+  "sqlite": [],
+  "square": [
+    "square api",
+    "square payments"
+  ],
+  "ssh": [
+    "ssh"
+  ],
+  "ssis": [
+    "ssis"
+  ],
+  "ssl": [
+    "ssl"
+  ],
+  "ssl/tls": [],
+  "stages of normal development": [],
+  "stakeholder management": [
+    "stakeholder engagement"
+  ],
+  "standards for web-based e-learning": [],
+  "statistical analysis system software": [],
+  "statistics": [],
+  "statuspage": [
+    "status page"
+  ],
+  "steamworks": [
+    "steam api",
+    "steam sdk"
+  ],
+  "stitch": [
+    "stitch data"
+  ],
+  "stm32": [
+    "stm32cube",
+    "stmicroelectronics"
+  ],
+  "store digital data and systems": [],
+  "stored procedures": [
+    "stored-procedures"
+  ],
+  "storybook": [],
+  "stripe": [
+    "stripe api",
+    "stripe connect",
+    "stripe payments"
+  ],
+  "struct": [
+    "struct"
+  ],
+  "study traffic flow": [],
+  "style guide": [
+    "brand guidelines",
+    "design guidelines"
+  ],
+  "styled components": [
+    "styled-components"
+  ],
+  "subversion": [
+    "svn"
+  ],
+  "supabase": [],
+  "supervise data entry": [],
+  "supervise property development projects": [],
+  "supervise security at manned access gates": [],
+  "supervise spoken language learning": [],
+  "supply machine": [],
+  "support the development of other coaches": [],
+  "support the development of sport activities in education": [],
+  "suricata": [
+    "suricata ids"
+  ],
+  "surveillance methods": [],
+  "svelte": [
+    "sveltekit"
+  ],
+  "svg": [
+    "svg"
+  ],
+  "swc": [],
+  "swift": [],
+  "swift (computer programming)": [],
+  "swift messaging": [
+    "iso 20022",
+    "swift mt",
+    "swift mx",
+    "swift network"
+  ],
+  "swift3": [
+    "swift3"
+  ],
+  "swiftui": [
+    "swiftui"
+  ],
+  "swing": [
+    "swing"
+  ],
+  "symfony": [
+    "symfony"
+  ],
+  "synapse analytics": [
+    "azure synapse",
+    "synapse"
+  ],
+  "syntax": [
+    "syntax"
+  ],
+  "systemd": [
+    "init system",
+    "system daemon",
+    "systemctl"
+  ],
+  "systems development life-cycle": [],
+  "t sql": [
+    "t-sql"
+  ],
+  "t5": [
+    "text-to-text transfer transformer"
+  ],
+  "tableau": [
+    "tableau desktop",
+    "tableau online",
+    "tableau server"
+  ],
+  "tailwind css": [
+    "tailwind",
+    "tailwindcss"
+  ],
+  "take advantage of learning opportunities in veterinary science": [],
+  "talend": [
+    "talend etl"
+  ],
+  "taleo": [],
+  "tcp": [
+    "tcp"
+  ],
+  "teach computer science": [],
+  "teensy": [
+    "pjrc teensy"
+  ],
+  "tekton": [
+    "tekton pipelines"
+  ],
+  "telecommunication industry": [],
+  "telecommunication trunking": [],
+  "templates": [
+    "templates"
+  ],
+  "tempo": [
+    "grafana tempo"
+  ],
+  "tend boring machine": [],
+  "tend bottle-washing machine": [],
+  "tend chain making machine": [],
+  "tend cigar stamp machine": [],
+  "tend cigarette making machine": [],
+  "tend cocoa cleaning machines": [],
+  "tend dairy processing machines": [],
+  "tend deburring machine": [],
+  "tend honey extraction machine": [],
+  "tend knitting machine": [],
+  "tend meat packaging machine": [],
+  "tend meat processing production machines": [],
+  "tend milk filling machines": [],
+  "tend mixing oil machine": [],
+  "tend packaging machines": [],
+  "tend spice mixing machine": [],
+  "tend spinning machines": [],
+  "tend sweet making machines": [],
+  "tend textile dyeing machines": [],
+  "tend textile finishing machines": [],
+  "tend tumbling machine": [],
+  "tend twisting machines": [],
+  "tend upsetting machine": [],
+  "tend weaving machines": [],
+  "tensorflow": [
+    "tensorflow 2",
+    "tf"
+  ],
+  "teradata": [
+    "teradata vantage"
+  ],
+  "teradata database": [],
+  "terminal": [
+    "terminal"
+  ],
+  "terraform": [
+    "hashicorp terraform"
+  ],
+  "test chemicals in development baths": [],
+  "test-driven development": [
+    "tdd"
+  ],
+  "testing library": [
+    "react testing library",
+    "rtl"
+  ],
+  "text": [
+    "text"
+  ],
+  "text classification": [
+    "document classification"
+  ],
+  "tfs": [
+    "tfs"
+  ],
+  "thc hydra": [],
+  "thegraph": [
+    "subgraph",
+    "the graph"
+  ],
+  "thingsboard": [
+    "things board"
+  ],
+  "third-party risk": [
+    "vendor risk management"
+  ],
+  "thoughtspot": [
+    "thoughtspot bi"
+  ],
+  "thread": [
+    "thread protocol"
+  ],
+  "threat detection": [
+    "threat hunting",
+    "threat intelligence"
+  ],
+  "three.js": [
+    "three.js"
+  ],
+  "time": [
+    "time"
+  ],
+  "timer": [
+    "timer"
+  ],
+  "tkinter": [
+    "tkinter"
+  ],
+  "tomcat": [
+    "tomcat"
+  ],
+  "tourist resources of a destination for further development": [],
+  "traefik": [
+    "traefik proxy"
+  ],
+  "train routes": [],
+  "train security officers": [],
+  "train staff on recycling programs": [],
+  "tram network": [],
+  "tramway regulations": [],
+  "transformer": [
+    "attention mechanism",
+    "transformer architecture"
+  ],
+  "transportation software related to an erp system": [],
+  "travis ci": [
+    "travisci"
+  ],
+  "tree testing": [
+    "tree test"
+  ],
+  "trello": [],
+  "triggers": [
+    "triggers"
+  ],
+  "triplestore": [],
+  "truffle": [
+    "truffle suite"
+  ],
+  "tumbling machine parts": [],
+  "turbopack": [],
+  "twitter": [
+    "twitter"
+  ],
+  "twitter bootstrap": [
+    "twitter-bootstrap"
+  ],
+  "twitter bootstrap 3": [
+    "twitter-bootstrap-3"
+  ],
+  "typeorm": [],
+  "types": [
+    "types"
+  ],
+  "types of straightening machine": [],
+  "types of upsetting machines": [],
+  "typescript": [
+    "ts"
+  ],
+  "uart": [
+    "serial communication",
+    "universal asynchronous receiver-transmitter"
+  ],
+  "udi": [
+    "unique device identification"
+  ],
+  "uitableview": [
+    "uitableview"
+  ],
+  "uiview": [
+    "uiview"
+  ],
+  "understand spoken javanese": [],
+  "understand written javanese": [],
+  "undertake continuous professional development in fishery operations": [],
+  "unicode": [
+    "unicode"
+  ],
+  "uniswap": [
+    "uniswap v3"
+  ],
+  "unit testing": [
+    "unit tests"
+  ],
+  "unity": [
+    "unity engine",
+    "unity3d"
+  ],
+  "unity game engine": [
+    "unity-game-engine"
+  ],
+  "unreal engine": [
+    "blueprints",
+    "ue4",
+    "ue5",
+    "unreal"
+  ],
+  "upgrade firmware": [],
+  "url": [
+    "url"
+  ],
+  "url rewriting": [
+    "url-rewriting"
+  ],
+  "usb": [
+    "usb device",
+    "usb protocol"
+  ],
+  "use access control software": [],
+  "use aeronautical mobile service communications": [],
+  "use agricultural information systems and databases": [],
+  "use audio reproduction software": [],
+  "use automatic programming": [],
+  "use back-up and recovery tools": [],
+  "use cad software": [],
+  "use cadd software": [],
+  "use cae software": [],
+  "use cam software": [],
+  "use chromatography software": [],
+  "use colour printing programs": [],
+  "use communication equipment": [],
+  "use concurrent programming": [],
+  "use content management system software": [],
+  "use creative suite software": [],
+  "use customer relationship management software": [],
+  "use data processing techniques": [],
+  "use databases": [],
+  "use e-health and mobile health technologies": [],
+  "use functional programming": [],
+  "use interface description language": [],
+  "use learning strategies": [],
+  "use logic programming": [],
+  "use methods of logistical data analysis": [],
+  "use microsoft office": [],
+  "use milk control software": [],
+  "use mine planning software": [],
+  "use object-oriented programming": [],
+  "use pattern-cutting softwares": [],
+  "use presentation software": [],
+  "use production planning software": [],
+  "use query languages": [],
+  "use rental management software": [],
+  "use scripting programming": [],
+  "use shorthand computer program": [],
+  "use software design patterns": [],
+  "use software for data preservation": [],
+  "use software libraries": [],
+  "use software tools for site modelling": [],
+  "use specialised design software": [],
+  "use specific data analysis software": [],
+  "use spreadsheets": [],
+  "use technical drawing software": [],
+  "use thermal analysis": [],
+  "use translation memory software": [],
+  "use typesetting software": [],
+  "use wire processing machinery": [],
+  "use x-ray machines": [],
+  "user experience": [
+    "ux",
+    "ux design"
+  ],
+  "user interface": [
+    "ui",
+    "ui design",
+    "user-interface"
+  ],
+  "user research": [
+    "usability testing",
+    "ux research"
+  ],
+  "utf 8": [
+    "utf-8"
+  ],
+  "utilise computer-aided software engineering tools": [],
+  "utilise machine learning": [],
+  "uwp": [
+    "uwp"
+  ],
+  "vagrant": [],
+  "value at risk": [
+    "market risk",
+    "var"
+  ],
+  "variables": [
+    "variables"
+  ],
+  "variational autoencoder": [
+    "vae"
+  ],
+  "vault": [
+    "hashicorp vault",
+    "secrets management"
+  ],
+  "vb.net": [
+    "vb.net"
+  ],
+  "vba": [
+    "vba"
+  ],
+  "vbscript": [],
+  "vector": [
+    "vector"
+  ],
+  "vector database": [
+    "milvus",
+    "pinecone",
+    "qdrant",
+    "vector db",
+    "weaviate"
+  ],
+  "vendure": [
+    "vendure commerce"
+  ],
+  "vercel": [],
+  "vertex ai": [
+    "google vertex ai"
+  ],
+  "vertica": [
+    "micro focus vertica"
+  ],
+  "victorops": [
+    "victor ops"
+  ],
+  "video": [
+    "video"
+  ],
+  "viem": [
+    "viem typescript"
+  ],
+  "view": [
+    "view"
+  ],
+  "vim": [
+    "vim"
+  ],
+  "visual c++": [
+    "visual-c++"
+  ],
+  "visual design": [
+    "visual designer"
+  ],
+  "visual studio": [
+    "visual-studio"
+  ],
+  "visual studio .net": [],
+  "visual studio 2010": [
+    "visual-studio-2010"
+  ],
+  "visual studio 2012": [
+    "visual-studio-2012"
+  ],
+  "visual studio 2013": [
+    "visual-studio-2013"
+  ],
+  "visual studio 2015": [
+    "visual-studio-2015"
+  ],
+  "visual studio code": [
+    "visual-studio-code"
+  ],
+  "vite": [],
+  "vitest": [],
+  "vue": [
+    "vue 3",
+    "vue js",
+    "vue.js",
+    "vuejs"
+  ],
+  "vuejs2": [
+    "vuejs2"
+  ],
+  "vulkan": [
+    "vulkan api"
+  ],
+  "vulnerability assessment": [
+    "vuln assessment",
+    "vulnerability scan"
+  ],
+  "vxworks": [
+    "wind river vxworks"
+  ],
+  "vyper": [
+    "vyper lang"
+  ],
+  "wagmi": [
+    "wagmi hooks"
+  ],
+  "waterfall development": [],
+  "watershed development": [],
+  "wcf": [
+    "wcf"
+  ],
+  "web": [
+    "web"
+  ],
+  "web analytics": [],
+  "web application security threats": [],
+  "web applications": [
+    "web-applications"
+  ],
+  "web programming": [],
+  "web scraping": [
+    "web-scraping"
+  ],
+  "web services": [
+    "web-services"
+  ],
+  "web3": [],
+  "web3.js": [
+    "web3js"
+  ],
+  "webcms": [],
+  "webflow": [
+    "webflow design"
+  ],
+  "webgl": [
+    "web gl",
+    "webgl2"
+  ],
+  "webgpu": [
+    "web gpu"
+  ],
+  "webpack": [],
+  "websocket": [
+    "websockets",
+    "ws"
+  ],
+  "webview": [
+    "webview"
+  ],
+  "weights and biases": [
+    "w&b",
+    "wandb"
+  ],
+  "westlaw": [
+    "west law"
+  ],
+  "wifi": [
+    "wi-fi",
+    "wireless lan"
+  ],
+  "winapi": [
+    "winapi"
+  ],
+  "windows": [
+    "windows server"
+  ],
+  "windows phone": [],
+  "windows phone 7": [
+    "windows-phone-7"
+  ],
+  "winforms": [
+    "winforms"
+  ],
+  "wire security sensors": [],
+  "wire transfer": [
+    "fedwire",
+    "wire transfers"
+  ],
+  "wireshark": [
+    "packet analysis"
+  ],
+  "wiziq": [],
+  "woocommerce": [
+    "woo",
+    "woo commerce",
+    "woocommerce"
+  ],
+  "word embeddings": [
+    "glove",
+    "word2vec"
+  ],
+  "wordpress": [],
+  "work in crises areas": [],
+  "work safely with mobile electrical systems under supervision": [],
+  "work with advertising professionals": [],
+  "work with healthcare users' social network": [],
+  "work with playwrights": [],
+  "work with virtual learning environments": [],
+  "world wide web consortium standards": [],
+  "wpf": [
+    "wpf"
+  ],
+  "write database documentation": [],
+  "write inspection reports": [],
+  "write javanese": [],
+  "write security reports": [],
+  "write situation reports": [],
+  "write work-related reports": [],
+  "wwise": [
+    "audiokinetic wwise"
+  ],
+  "xamarin": [],
+  "xamarin.android": [
+    "xamarin.android"
+  ],
+  "xamarin.forms": [
+    "xamarin.forms"
+  ],
+  "xcode": [
+    "xcode"
+  ],
+  "xdr": [
+    "extended detection and response"
+  ],
+  "xpath": [
+    "xpath"
+  ],
+  "xquery": [],
+  "yarn": [],
+  "yield farming": [
+    "yield optimization"
+  ],
+  "yodlee": [
+    "yodlee api"
+  ],
+  "z-wave": [
+    "zwave"
+  ],
+  "zephyr": [
+    "zephyr rtos"
+  ],
+  "zeplin": [
+    "zeplin handoff"
+  ],
+  "zero trust": [
+    "zero trust architecture",
+    "ztna"
+  ],
+  "zeromq": [
+    "zmq"
+  ],
+  "zigbee": [
+    "zigbee protocol"
+  ],
+  "zipkin": [
+    "zipkin tracing"
+  ]
 }

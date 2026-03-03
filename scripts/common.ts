@@ -59,10 +59,21 @@ export function mergeCandidates(
 
   for (const candidate of candidates) {
     const canonical = normalize(candidate.canonical);
+    
+    // Skip empty canonicals
+    if (!canonical || canonical.length === 0) continue;
 
     if (taxonomy[canonical] !== undefined) {
       // Entry exists — merge new aliases
-      const existingAliases = new Set(taxonomy[canonical].map((a) => a.toLowerCase()));
+      const existingEntry = taxonomy[canonical];
+      
+      // Safety check: ensure existing entry is an array
+      if (!Array.isArray(existingEntry)) {
+        console.warn(`  [merge] Skipping invalid entry: ${canonical}`);
+        continue;
+      }
+      
+      const existingAliases = new Set(existingEntry.map((a) => a.toLowerCase()));
       for (const alias of candidate.aliases) {
         const normalizedAlias = normalize(alias);
         if (normalizedAlias !== '' && !existingAliases.has(normalizedAlias) && !known.has(normalizedAlias)) {

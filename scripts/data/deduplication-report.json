@@ -1,0 +1,60 @@
+{
+  "merges": [
+    {
+      "termA": "styled components",
+      "termB": "styled-components",
+      "similarity": 0.9389705882352941,
+      "method": "token",
+      "recommendation": "merge"
+    },
+    {
+      "termA": "cross functional",
+      "termB": "cross-functional",
+      "similarity": 0.935,
+      "method": "token",
+      "recommendation": "merge"
+    },
+    {
+      "termA": "machine learning",
+      "termB": "machine-learning",
+      "similarity": 0.9321428571428572,
+      "method": "token",
+      "recommendation": "merge"
+    },
+    {
+      "termA": "problem solving",
+      "termB": "problem-solving",
+      "similarity": 0.9304761904761905,
+      "method": "token",
+      "recommendation": "merge"
+    },
+    {
+      "termA": "micro services",
+      "termB": "micro-services",
+      "similarity": 0.9214285714285715,
+      "method": "token",
+      "recommendation": "merge"
+    },
+    {
+      "termA": "deep learning",
+      "termB": "deep-learning",
+      "similarity": 0.9192307692307693,
+      "method": "token",
+      "recommendation": "merge"
+    },
+    {
+      "termA": "material ui",
+      "termB": "material-ui",
+      "similarity": 0.9036363636363636,
+      "method": "token",
+      "recommendation": "merge"
+    }
+  ],
+  "conflicts": [],
+  "stats": {
+    "totalTerms": 568,
+    "uniqueTerms": 568,
+    "potentialDuplicates": 7,
+    "mergeRecommendations": 7
+  }
+}

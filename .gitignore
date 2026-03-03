@@ -1,3 +1,11 @@
 node_modules/
 dist/
 *.tsbuildinfo
+
+# Environment variables (contains API keys)
+.env
+.env.local
+.env.*.local
+
+# Validation data (can be large)
+scripts/data/validation/

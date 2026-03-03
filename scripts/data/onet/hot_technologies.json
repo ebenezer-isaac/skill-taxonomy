@@ -1,0 +1,410 @@
+[
+  {
+    "name": "Python",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Java",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "JavaScript",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "C++",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "C#",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "SQL",
+    "category": "Database Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "TypeScript",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Go",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Rust",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "R",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Scala",
+    "category": "Programming Language",
+    "hotTechnology": false,
+    "inDemand": true
+  },
+  {
+    "name": "Kotlin",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Swift",
+    "category": "Programming Language",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Amazon Web Services (AWS)",
+    "category": "Cloud Platform",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Microsoft Azure",
+    "category": "Cloud Platform",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Google Cloud Platform",
+    "category": "Cloud Platform",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Docker",
+    "category": "Containerization",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Kubernetes",
+    "category": "Container Orchestration",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Terraform",
+    "category": "Infrastructure as Code",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Ansible",
+    "category": "Configuration Management",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Jenkins",
+    "category": "CI/CD",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Git",
+    "category": "Version Control",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "GitHub",
+    "category": "Development Platform",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "GitLab",
+    "category": "Development Platform",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "MySQL",
+    "category": "RDBMS",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "PostgreSQL",
+    "category": "RDBMS",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "MongoDB",
+    "category": "NoSQL Database",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Microsoft SQL Server",
+    "category": "RDBMS",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Oracle Database",
+    "category": "RDBMS",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Redis",
+    "category": "In-Memory Database",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Elasticsearch",
+    "category": "Search Engine",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Apache Kafka",
+    "category": "Message Queue",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Cassandra",
+    "category": "NoSQL Database",
+    "hotTechnology": false,
+    "inDemand": true
+  },
+  {
+    "name": "React",
+    "category": "Frontend Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Angular",
+    "category": "Frontend Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Vue.js",
+    "category": "Frontend Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Node.js",
+    "category": "Runtime",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Django",
+    "category": "Web Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Spring Boot",
+    "category": "Web Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": ".NET Core",
+    "category": "Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Express.js",
+    "category": "Web Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Flask",
+    "category": "Web Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "FastAPI",
+    "category": "Web Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Next.js",
+    "category": "Web Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "TensorFlow",
+    "category": "ML Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "PyTorch",
+    "category": "ML Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Apache Spark",
+    "category": "Big Data",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Hadoop",
+    "category": "Big Data",
+    "hotTechnology": false,
+    "inDemand": true
+  },
+  {
+    "name": "Tableau",
+    "category": "BI Tool",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Power BI",
+    "category": "BI Tool",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Pandas",
+    "category": "Data Library",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Scikit-learn",
+    "category": "ML Library",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Apache Airflow",
+    "category": "Workflow Orchestration",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Snowflake",
+    "category": "Data Warehouse",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Databricks",
+    "category": "Data Platform",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "OWASP",
+    "category": "Security Standards",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "OAuth",
+    "category": "Authentication",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "JWT",
+    "category": "Authentication",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "SSL/TLS",
+    "category": "Security Protocol",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "React Native",
+    "category": "Mobile Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Flutter",
+    "category": "Mobile Framework",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "iOS Development",
+    "category": "Mobile Development",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Android Development",
+    "category": "Mobile Development",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Salesforce",
+    "category": "CRM",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "SAP",
+    "category": "ERP",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "ServiceNow",
+    "category": "ITSM",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Jira",
+    "category": "Project Management",
+    "hotTechnology": true,
+    "inDemand": true
+  },
+  {
+    "name": "Confluence",
+    "category": "Documentation",
+    "hotTechnology": true,
+    "inDemand": true
+  }
+]

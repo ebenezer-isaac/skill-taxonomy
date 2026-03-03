@@ -1,7 +1,7 @@
 {
   "name": "@llmconveyors/skill-taxonomy",
-  "version": "1.0.0",
-  "description": "Open-source skill taxonomy for ATS resume scoring — 263 canonical skills with 569 total aliases",
+  "version": "2.0.0",
+  "description": "Enterprise-grade skill taxonomy for ATS resume scoring — comprehensive ontology with hierarchical relationships, multi-source ingestion, and semantic deduplication",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -13,13 +13,15 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "validate": "tsx scripts/validate.ts",
-    "import:esco": "tsx scripts/import-esco.ts",
-    "import:onet": "tsx scripts/import-onet.ts",
-    "import:survey": "tsx scripts/import-stackoverflow.ts",
+    "fetch:api": "tsx scripts/fetch-via-api.ts",
     "import:linkedin": "tsx scripts/import-linkedin.ts",
-    "import:verticals": "tsx scripts/import-verticals.ts",
+    "import:lightcast": "tsx scripts/import-lightcast.ts",
+    "import:verticals": "tsx scripts/import-verticals-enhanced.ts",
     "expand:aliases": "tsx scripts/expand-aliases.ts",
-    "promote:misses": "tsx scripts/promote-misses.ts"
+    "deduplicate": "tsx scripts/deduplicate-taxonomy.ts",
+    "merge:all": "tsx scripts/merge-all.ts",
+    "promote:misses": "tsx scripts/promote-misses.ts",
+    "validate:llm": "tsx scripts/validate-with-llm.ts"
   },
   "keywords": [
     "ats",
@@ -37,7 +39,7 @@
     "url": "https://github.com/ebenezer-isaac/skill-taxonomy"
   },
   "devDependencies": {
-    "mongodb": "^7.1.0",
+    "@types/node": "^25.3.3",
     "tsx": "^4.19.0",
     "typescript": "^5.5.0",
     "vitest": "^2.0.0"

@@ -1,0 +1,5242 @@
+[
+  {
+    "canonical": "bloomberg terminal",
+    "aliases": [
+      "bloomberg",
+      "bbg",
+      "bloomberg api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "reuters eikon",
+    "aliases": [
+      "eikon",
+      "refinitiv eikon"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "kdb+",
+    "aliases": [
+      "kdb",
+      "kx",
+      "kdb/q",
+      "q language"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "fix protocol",
+    "aliases": [
+      "fix",
+      "financial information exchange",
+      "fix api",
+      "quickfix"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "algorithmic trading",
+    "aliases": [
+      "algo trading",
+      "automated trading",
+      "systematic trading"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "high-frequency trading",
+    "aliases": [
+      "hft",
+      "low-latency trading"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "market making",
+    "aliases": [
+      "market maker"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "order management system",
+    "aliases": [
+      "oms",
+      "trading oms"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "execution management system",
+    "aliases": [
+      "ems"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "smart order routing",
+    "aliases": [
+      "sor"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "quantitative analysis",
+    "aliases": [
+      "quant",
+      "quantitative finance",
+      "quant finance"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "financial modeling",
+    "aliases": [
+      "financial models"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "monte carlo simulation",
+    "aliases": [
+      "monte carlo methods"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "black-scholes",
+    "aliases": [
+      "black scholes model",
+      "options pricing"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "value at risk",
+    "aliases": [
+      "var",
+      "market risk"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "risk management",
+    "aliases": [
+      "risk analysis",
+      "risk assessment",
+      "enterprise risk"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "credit risk",
+    "aliases": [
+      "credit risk modeling"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "portfolio optimization",
+    "aliases": [
+      "portfolio management",
+      "asset allocation"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "derivatives pricing",
+    "aliases": [
+      "derivatives",
+      "exotic options"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "fixed income",
+    "aliases": [
+      "bonds",
+      "fixed income trading"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "swift messaging",
+    "aliases": [
+      "swift mt",
+      "swift mx",
+      "iso 20022",
+      "swift network"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "payment processing",
+    "aliases": [
+      "payment gateway",
+      "payments",
+      "payment systems"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "core banking",
+    "aliases": [
+      "core banking system",
+      "cbs"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "open banking",
+    "aliases": [
+      "psd2",
+      "open banking api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "real-time payments",
+    "aliases": [
+      "instant payments",
+      "faster payments"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "card processing",
+    "aliases": [
+      "card payments",
+      "emv",
+      "chip and pin"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "ach",
+    "aliases": [
+      "automated clearing house"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "wire transfer",
+    "aliases": [
+      "wire transfers",
+      "fedwire"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "stripe",
+    "aliases": [
+      "stripe api",
+      "stripe payments",
+      "stripe connect"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "plaid",
+    "aliases": [
+      "plaid api",
+      "plaid link"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "square",
+    "aliases": [
+      "square api",
+      "square payments"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "adyen",
+    "aliases": [
+      "adyen api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "braintree",
+    "aliases": [
+      "braintree api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "finicity",
+    "aliases": [
+      "finicity api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "yodlee",
+    "aliases": [
+      "yodlee api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "dwolla",
+    "aliases": [
+      "dwolla api"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "kyc",
+    "aliases": [
+      "know your customer",
+      "kyc/aml"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "aml",
+    "aliases": [
+      "anti-money laundering",
+      "aml compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "regulatory compliance",
+    "aliases": [
+      "compliance",
+      "finreg",
+      "financial regulations"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "sox compliance",
+    "aliases": [
+      "sarbanes-oxley",
+      "sox"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "mifid ii",
+    "aliases": [
+      "mifid",
+      "markets in financial instruments directive"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "dodd-frank",
+    "aliases": [
+      "dodd frank act"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "basel iii",
+    "aliases": [
+      "basel",
+      "basel compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "gdpr",
+    "aliases": [
+      "data protection",
+      "privacy compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "pci dss",
+    "aliases": [
+      "pci compliance",
+      "payment card industry"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "sanctions screening",
+    "aliases": [
+      "ofac",
+      "sanctions compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Financial Services & FinTech"
+  },
+  {
+    "canonical": "hl7",
+    "aliases": [
+      "health level 7",
+      "hl7 v2",
+      "hl7 v3"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "fhir",
+    "aliases": [
+      "fast healthcare interoperability resources",
+      "hl7 fhir",
+      "fhir api"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "cda",
+    "aliases": [
+      "clinical document architecture",
+      "c-cda"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "dicom",
+    "aliases": [
+      "digital imaging and communications in medicine",
+      "dicom viewer"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "icd-10",
+    "aliases": [
+      "icd coding",
+      "icd-10-cm",
+      "icd-11"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "snomed ct",
+    "aliases": [
+      "snomed",
+      "systematized nomenclature of medicine"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "loinc",
+    "aliases": [
+      "logical observation identifiers names and codes"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "cpt codes",
+    "aliases": [
+      "cpt",
+      "current procedural terminology"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "ndc",
+    "aliases": [
+      "national drug code"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "rxnorm",
+    "aliases": [
+      "rx norm"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "ehr",
+    "aliases": [
+      "electronic health records",
+      "emr",
+      "electronic medical records"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "epic systems",
+    "aliases": [
+      "epic ehr",
+      "epic",
+      "epic mychart"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "cerner",
+    "aliases": [
+      "oracle cerner",
+      "cerner millennium"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "allscripts",
+    "aliases": [
+      "allscripts ehr"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "meditech",
+    "aliases": [
+      "meditech expanse"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "athenahealth",
+    "aliases": [
+      "athena health"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "nextgen",
+    "aliases": [
+      "nextgen healthcare"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "practice management",
+    "aliases": [
+      "pm system"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "laboratory information system",
+    "aliases": [
+      "lis",
+      "lab information system"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "radiology information system",
+    "aliases": [
+      "ris"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "pacs",
+    "aliases": [
+      "picture archiving and communication system"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "clinical trials",
+    "aliases": [
+      "clinical research",
+      "clinical data management",
+      "ctms"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "clinical decision support",
+    "aliases": [
+      "cds",
+      "cdss"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "adverse event reporting",
+    "aliases": [
+      "pharmacovigilance",
+      "drug safety"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "regulatory submissions",
+    "aliases": [
+      "fda submissions",
+      "ectd"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "good clinical practice",
+    "aliases": [
+      "gcp",
+      "ich gcp"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "electronic data capture",
+    "aliases": [
+      "edc",
+      "medidata",
+      "veeva vault"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "biostatistics",
+    "aliases": [
+      "clinical biostatistics"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "medical imaging",
+    "aliases": [
+      "radiology",
+      "imaging analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "genomics",
+    "aliases": [
+      "bioinformatics",
+      "genomic analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "proteomics",
+    "aliases": [
+      "protein analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "hipaa",
+    "aliases": [
+      "hipaa compliance",
+      "health insurance portability"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "hitech",
+    "aliases": [
+      "hitech act"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "phi",
+    "aliases": [
+      "protected health information",
+      "pii/phi"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "meaningful use",
+    "aliases": [
+      "promoting interoperability"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "21 cfr part 11",
+    "aliases": [
+      "electronic records",
+      "electronic signatures"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "gxp",
+    "aliases": [
+      "gmp",
+      "glp",
+      "good manufacturing practice"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "medical devices",
+    "aliases": [
+      "medtech",
+      "medical device software"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "fda 510k",
+    "aliases": [
+      "510k clearance",
+      "premarket notification"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "pma",
+    "aliases": [
+      "premarket approval"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "udi",
+    "aliases": [
+      "unique device identification"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "iso 13485",
+    "aliases": [
+      "medical device quality"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "iec 62304",
+    "aliases": [
+      "medical device software lifecycle"
+    ],
+    "source": "industry-vertical",
+    "category": "Healthcare & Life Sciences"
+  },
+  {
+    "canonical": "data warehouse",
+    "aliases": [
+      "data warehousing",
+      "dwh",
+      "enterprise data warehouse"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "dimensional modeling",
+    "aliases": [
+      "star schema",
+      "kimball methodology"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "snowflake schema",
+    "aliases": [
+      "normalized schema"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data vault",
+    "aliases": [
+      "data vault 2.0",
+      "dan linstedt"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "slowly changing dimensions",
+    "aliases": [
+      "scd",
+      "scd type 2"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "fact table",
+    "aliases": [
+      "fact tables",
+      "factless fact"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "dimension table",
+    "aliases": [
+      "dimension tables",
+      "conformed dimensions"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "snowflake",
+    "aliases": [
+      "snowflake data cloud",
+      "snowpark"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "databricks",
+    "aliases": [
+      "databricks lakehouse",
+      "delta lake"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "bigquery",
+    "aliases": [
+      "google bigquery",
+      "bq"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "redshift",
+    "aliases": [
+      "amazon redshift",
+      "redshift spectrum"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "synapse analytics",
+    "aliases": [
+      "azure synapse",
+      "synapse"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "teradata",
+    "aliases": [
+      "teradata vantage"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "vertica",
+    "aliases": [
+      "micro focus vertica"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "clickhouse",
+    "aliases": [
+      "click house"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "dremio",
+    "aliases": [
+      "dremio data lake"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "firebolt",
+    "aliases": [
+      "firebolt db"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "dbt",
+    "aliases": [
+      "data build tool",
+      "dbt core",
+      "dbt cloud"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "etl",
+    "aliases": [
+      "extract transform load",
+      "elt"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data pipeline",
+    "aliases": [
+      "data pipelines",
+      "pipeline orchestration"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "apache airflow",
+    "aliases": [
+      "airflow",
+      "airflow dag"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "prefect",
+    "aliases": [
+      "prefect orchestration"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "dagster",
+    "aliases": [
+      "dagster io"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "mage",
+    "aliases": [
+      "mage ai"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "fivetran",
+    "aliases": [
+      "fivetran connector"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "airbyte",
+    "aliases": [
+      "airbyte sync"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "stitch",
+    "aliases": [
+      "stitch data"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "talend",
+    "aliases": [
+      "talend etl"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "informatica",
+    "aliases": [
+      "informatica powercenter"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "matillion",
+    "aliases": [
+      "matillion etl"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "tableau",
+    "aliases": [
+      "tableau desktop",
+      "tableau server",
+      "tableau online"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "power bi",
+    "aliases": [
+      "powerbi",
+      "microsoft power bi",
+      "power bi desktop"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "looker",
+    "aliases": [
+      "looker studio",
+      "google looker",
+      "lookml"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "metabase",
+    "aliases": [
+      "metabase bi"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "apache superset",
+    "aliases": [
+      "superset"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "sisense",
+    "aliases": [
+      "sisense bi"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "qlik",
+    "aliases": [
+      "qlik sense",
+      "qlikview"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "mode analytics",
+    "aliases": [
+      "mode"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "thoughtspot",
+    "aliases": [
+      "thoughtspot bi"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "domo",
+    "aliases": [
+      "domo bi"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data governance",
+    "aliases": [
+      "data stewardship",
+      "data ownership"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data quality",
+    "aliases": [
+      "dq",
+      "data quality management"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data catalog",
+    "aliases": [
+      "data discovery",
+      "data cataloging"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data lineage",
+    "aliases": [
+      "lineage tracking"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "metadata management",
+    "aliases": [
+      "metadata",
+      "technical metadata"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "master data management",
+    "aliases": [
+      "mdm",
+      "master data"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "great expectations",
+    "aliases": [
+      "ge",
+      "data validation"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "monte carlo",
+    "aliases": [
+      "monte carlo data",
+      "data observability"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "atlan",
+    "aliases": [
+      "atlan catalog"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "collibra",
+    "aliases": [
+      "collibra governance"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "alation",
+    "aliases": [
+      "alation catalog"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "datahub",
+    "aliases": [
+      "linkedin datahub"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "olap",
+    "aliases": [
+      "online analytical processing",
+      "olap cube"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "oltp",
+    "aliases": [
+      "online transaction processing"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data lake",
+    "aliases": [
+      "data lakehouse",
+      "lakehouse architecture"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data mesh",
+    "aliases": [
+      "data mesh architecture",
+      "domain-driven data"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "data fabric",
+    "aliases": [
+      "data fabric architecture"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "real-time analytics",
+    "aliases": [
+      "streaming analytics"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "self-service analytics",
+    "aliases": [
+      "self-service bi"
+    ],
+    "source": "industry-vertical",
+    "category": "Data & Analytics"
+  },
+  {
+    "canonical": "figma",
+    "aliases": [
+      "figma design",
+      "figma prototype",
+      "figjam"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "sketch",
+    "aliases": [
+      "sketch app",
+      "sketch design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe xd",
+    "aliases": [
+      "xd",
+      "experience design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "framer",
+    "aliases": [
+      "framer motion",
+      "framer web"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "webflow",
+    "aliases": [
+      "webflow design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "principle",
+    "aliases": [
+      "principle app",
+      "principle animation"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "invision",
+    "aliases": [
+      "invision app",
+      "invision studio"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "zeplin",
+    "aliases": [
+      "zeplin handoff"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "abstract",
+    "aliases": [
+      "abstract design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "avocode",
+    "aliases": [
+      "avocode design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "miro",
+    "aliases": [
+      "miro board",
+      "miro whiteboard"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "figjam",
+    "aliases": [
+      "fig jam"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe creative suite",
+    "aliases": [
+      "adobe cc",
+      "creative cloud"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe illustrator",
+    "aliases": [
+      "illustrator",
+      "ai"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe photoshop",
+    "aliases": [
+      "photoshop",
+      "ps"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe after effects",
+    "aliases": [
+      "after effects",
+      "ae"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe premiere",
+    "aliases": [
+      "premiere pro",
+      "premiere"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe indesign",
+    "aliases": [
+      "indesign",
+      "id"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe lightroom",
+    "aliases": [
+      "lightroom",
+      "lr"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "adobe animate",
+    "aliases": [
+      "animate",
+      "flash"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "user experience",
+    "aliases": [
+      "ux",
+      "ux design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "user interface",
+    "aliases": [
+      "ui",
+      "ui design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "interaction design",
+    "aliases": [
+      "ixd",
+      "interaction designer"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "visual design",
+    "aliases": [
+      "visual designer"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "product design",
+    "aliases": [
+      "product designer"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "service design",
+    "aliases": [
+      "service designer"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "experience design",
+    "aliases": [
+      "xd"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "motion design",
+    "aliases": [
+      "animation design",
+      "micro-interactions"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "information architecture",
+    "aliases": [
+      "ia",
+      "content strategy"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "user research",
+    "aliases": [
+      "ux research",
+      "usability testing"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "usability testing",
+    "aliases": [
+      "usability studies",
+      "user testing"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "a/b testing",
+    "aliases": [
+      "ab testing",
+      "split testing"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "heuristic evaluation",
+    "aliases": [
+      "heuristic analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "card sorting",
+    "aliases": [
+      "card sort"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "tree testing",
+    "aliases": [
+      "tree test"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "persona development",
+    "aliases": [
+      "user personas",
+      "personas"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "customer journey mapping",
+    "aliases": [
+      "journey map",
+      "user journey"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "design thinking",
+    "aliases": [
+      "design sprint",
+      "human-centered design",
+      "hcd"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "jobs to be done",
+    "aliases": [
+      "jtbd",
+      "outcome-driven innovation"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "design systems",
+    "aliases": [
+      "component library",
+      "pattern library"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "atomic design",
+    "aliases": [
+      "atomic design system"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "style guide",
+    "aliases": [
+      "brand guidelines",
+      "design guidelines"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "design tokens",
+    "aliases": [
+      "design token"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "component documentation",
+    "aliases": [
+      "storybook",
+      "design documentation"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "prototyping",
+    "aliases": [
+      "rapid prototyping",
+      "wireframing"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "low-fidelity prototype",
+    "aliases": [
+      "lo-fi",
+      "low fidelity"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "high-fidelity prototype",
+    "aliases": [
+      "hi-fi",
+      "high fidelity"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "interactive prototype",
+    "aliases": [
+      "clickable prototype"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "responsive design",
+    "aliases": [
+      "responsive web design",
+      "rwd"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "mobile-first design",
+    "aliases": [
+      "mobile first"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "accessibility",
+    "aliases": [
+      "a11y",
+      "web accessibility"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "wcag",
+    "aliases": [
+      "wcag 2.1",
+      "web content accessibility guidelines"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "aria",
+    "aliases": [
+      "wai-aria",
+      "accessible rich internet applications"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "screen reader",
+    "aliases": [
+      "screen reader testing",
+      "voiceover",
+      "nvda"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "inclusive design",
+    "aliases": [
+      "universal design"
+    ],
+    "source": "industry-vertical",
+    "category": "UI/UX Design"
+  },
+  {
+    "canonical": "kubernetes",
+    "aliases": [
+      "k8s",
+      "kube",
+      "container orchestration"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "helm",
+    "aliases": [
+      "helm charts",
+      "helm package"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "kustomize",
+    "aliases": [
+      "kustomization"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "openshift",
+    "aliases": [
+      "red hat openshift",
+      "ocp"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "rancher",
+    "aliases": [
+      "rancher kubernetes"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "k3s",
+    "aliases": [
+      "lightweight kubernetes"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "kind",
+    "aliases": [
+      "kubernetes in docker"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "minikube",
+    "aliases": [
+      "mini kube"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "eks",
+    "aliases": [
+      "amazon eks",
+      "elastic kubernetes service"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "aks",
+    "aliases": [
+      "azure kubernetes service"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "gke",
+    "aliases": [
+      "google kubernetes engine"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "istio",
+    "aliases": [
+      "istio service mesh"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "envoy proxy",
+    "aliases": [
+      "envoy"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "linkerd",
+    "aliases": [
+      "linkerd service mesh"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "consul",
+    "aliases": [
+      "hashicorp consul",
+      "consul connect"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "nginx",
+    "aliases": [
+      "nginx ingress",
+      "nginx proxy"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "traefik",
+    "aliases": [
+      "traefik proxy"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "haproxy",
+    "aliases": [
+      "ha proxy",
+      "load balancer"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "kong",
+    "aliases": [
+      "kong gateway",
+      "kong api gateway"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "argocd",
+    "aliases": [
+      "argo cd",
+      "argo",
+      "gitops"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "flux",
+    "aliases": [
+      "fluxcd",
+      "flux cd"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "spinnaker",
+    "aliases": [
+      "spinnaker cd"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "tekton",
+    "aliases": [
+      "tekton pipelines"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "gitops",
+    "aliases": [
+      "git ops"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "terraform",
+    "aliases": [
+      "hashicorp terraform",
+      "tf"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "pulumi",
+    "aliases": [
+      "pulumi iac"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "ansible",
+    "aliases": [
+      "ansible playbook",
+      "ansible automation"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "chef",
+    "aliases": [
+      "chef infra"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "puppet",
+    "aliases": [
+      "puppet enterprise"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "saltstack",
+    "aliases": [
+      "salt",
+      "salt master"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "crossplane",
+    "aliases": [
+      "crossplane kubernetes"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "cloudformation",
+    "aliases": [
+      "aws cloudformation",
+      "cfn"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "arm templates",
+    "aliases": [
+      "azure resource manager"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "bicep",
+    "aliases": [
+      "azure bicep"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "cdk",
+    "aliases": [
+      "aws cdk",
+      "cloud development kit"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "cdktf",
+    "aliases": [
+      "cdk for terraform"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "jenkins",
+    "aliases": [
+      "jenkins pipeline",
+      "jenkinsfile"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "github actions",
+    "aliases": [
+      "gh actions",
+      "github workflows"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "gitlab ci",
+    "aliases": [
+      "gitlab ci/cd",
+      "gitlab pipelines"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "circleci",
+    "aliases": [
+      "circle ci"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "travis ci",
+    "aliases": [
+      "travisci"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "azure devops",
+    "aliases": [
+      "azure pipelines"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "buildkite",
+    "aliases": [
+      "buildkite ci"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "drone ci",
+    "aliases": [
+      "drone"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "concourse",
+    "aliases": [
+      "concourse ci"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "prometheus",
+    "aliases": [
+      "prometheus monitoring"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "grafana",
+    "aliases": [
+      "grafana dashboards",
+      "grafana loki"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "datadog",
+    "aliases": [
+      "datadog apm",
+      "dd"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "new relic",
+    "aliases": [
+      "newrelic",
+      "new relic apm"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "splunk",
+    "aliases": [
+      "splunk enterprise",
+      "splunk cloud"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "elastic stack",
+    "aliases": [
+      "elk stack",
+      "elasticsearch logstash kibana"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "jaeger",
+    "aliases": [
+      "jaeger tracing"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "zipkin",
+    "aliases": [
+      "zipkin tracing"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "opentelemetry",
+    "aliases": [
+      "otel",
+      "opentelemetry collector"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "loki",
+    "aliases": [
+      "grafana loki"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "tempo",
+    "aliases": [
+      "grafana tempo"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "mimir",
+    "aliases": [
+      "grafana mimir"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "platform engineering",
+    "aliases": [
+      "internal developer platform",
+      "idp"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "backstage",
+    "aliases": [
+      "spotify backstage",
+      "backstage.io"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "port",
+    "aliases": [
+      "port.io",
+      "port internal developer portal"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "kratix",
+    "aliases": [
+      "kratix platform"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "humanitec",
+    "aliases": [
+      "humanitec platform"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "site reliability engineering",
+    "aliases": [
+      "sre",
+      "site reliability"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "chaos engineering",
+    "aliases": [
+      "chaos monkey",
+      "litmus chaos",
+      "chaos mesh"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "incident management",
+    "aliases": [
+      "incident response",
+      "on-call"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "pagerduty",
+    "aliases": [
+      "pager duty"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "opsgenie",
+    "aliases": [
+      "ops genie"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "victorops",
+    "aliases": [
+      "victor ops"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "statuspage",
+    "aliases": [
+      "status page"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "runbook",
+    "aliases": [
+      "runbooks",
+      "runbook automation"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "postmortem",
+    "aliases": [
+      "blameless postmortem",
+      "incident review"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "error budget",
+    "aliases": [
+      "error budgets",
+      "slo"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "service level objective",
+    "aliases": [
+      "slo",
+      "sli",
+      "sla"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "blue-green deployment",
+    "aliases": [
+      "blue green",
+      "blue/green"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "canary deployment",
+    "aliases": [
+      "canary release",
+      "progressive delivery"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "rolling deployment",
+    "aliases": [
+      "rolling update"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "feature flags",
+    "aliases": [
+      "feature toggles",
+      "launchdarkly",
+      "split.io"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "dark launch",
+    "aliases": [
+      "dark launching"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "a/b deployment",
+    "aliases": [
+      "ab deployment"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "vault",
+    "aliases": [
+      "hashicorp vault",
+      "secrets management"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "external secrets",
+    "aliases": [
+      "external secrets operator"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "sealed secrets",
+    "aliases": [
+      "bitnami sealed secrets"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "sops",
+    "aliases": [
+      "mozilla sops"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "cert-manager",
+    "aliases": [
+      "cert manager",
+      "certificate management"
+    ],
+    "source": "industry-vertical",
+    "category": "DevOps & Platform Engineering"
+  },
+  {
+    "canonical": "unity",
+    "aliases": [
+      "unity3d",
+      "unity engine",
+      "unity game engine"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "unreal engine",
+    "aliases": [
+      "ue5",
+      "ue4",
+      "unreal",
+      "blueprints"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "godot",
+    "aliases": [
+      "godot engine",
+      "gdscript"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "cryengine",
+    "aliases": [
+      "cry engine"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "source engine",
+    "aliases": [
+      "source 2"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "gamemaker",
+    "aliases": [
+      "game maker",
+      "gms2"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "rpg maker",
+    "aliases": [
+      "rpgmaker"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "construct",
+    "aliases": [
+      "construct 3"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "phaser",
+    "aliases": [
+      "phaser.js",
+      "phaser 3"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "defold",
+    "aliases": [
+      "defold engine"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "opengl",
+    "aliases": [
+      "open gl",
+      "opengl es"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "vulkan",
+    "aliases": [
+      "vulkan api"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "directx",
+    "aliases": [
+      "direct3d",
+      "dx12",
+      "dx11"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "metal",
+    "aliases": [
+      "apple metal"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "webgl",
+    "aliases": [
+      "web gl",
+      "webgl2"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "webgpu",
+    "aliases": [
+      "web gpu"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "shader programming",
+    "aliases": [
+      "shaders",
+      "shader development"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "glsl",
+    "aliases": [
+      "opengl shading language"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "hlsl",
+    "aliases": [
+      "high-level shading language"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "shader graph",
+    "aliases": [
+      "visual shaders"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "compute shaders",
+    "aliases": [
+      "compute shader"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "ray tracing",
+    "aliases": [
+      "rtx",
+      "dxr"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "game design",
+    "aliases": [
+      "game mechanics",
+      "gameplay design"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "level design",
+    "aliases": [
+      "level designer",
+      "world building"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "procedural generation",
+    "aliases": [
+      "pcg",
+      "procedural content"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "physics engine",
+    "aliases": [
+      "game physics",
+      "rigidbody"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "collision detection",
+    "aliases": [
+      "collision system"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "pathfinding",
+    "aliases": [
+      "a* algorithm",
+      "navigation mesh",
+      "navmesh"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "ai behavior",
+    "aliases": [
+      "game ai",
+      "behavior tree",
+      "fsm"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "animation system",
+    "aliases": [
+      "skeletal animation",
+      "animation blending"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "particle system",
+    "aliases": [
+      "particle effects",
+      "vfx"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "game audio",
+    "aliases": [
+      "audio programming"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "fmod",
+    "aliases": [
+      "fmod studio"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "wwise",
+    "aliases": [
+      "audiokinetic wwise"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "spatial audio",
+    "aliases": [
+      "3d audio",
+      "binaural audio"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "multiplayer networking",
+    "aliases": [
+      "game networking",
+      "netcode"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "photon",
+    "aliases": [
+      "photon pun",
+      "photon fusion"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "mirror networking",
+    "aliases": [
+      "mirror"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "fishnet",
+    "aliases": [
+      "fish-networking"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "steamworks",
+    "aliases": [
+      "steam api",
+      "steam sdk"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "playfab",
+    "aliases": [
+      "azure playfab"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "gamesparks",
+    "aliases": [
+      "game sparks"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "nakama",
+    "aliases": [
+      "heroic labs nakama"
+    ],
+    "source": "industry-vertical",
+    "category": "Game Development"
+  },
+  {
+    "canonical": "siem",
+    "aliases": [
+      "security information and event management"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "soc",
+    "aliases": [
+      "security operations center"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "soar",
+    "aliases": [
+      "security orchestration automation response"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "edr",
+    "aliases": [
+      "endpoint detection and response",
+      "endpoint security"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "xdr",
+    "aliases": [
+      "extended detection and response"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "mdr",
+    "aliases": [
+      "managed detection and response"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "threat detection",
+    "aliases": [
+      "threat hunting",
+      "threat intelligence"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "incident response",
+    "aliases": [
+      "ir",
+      "security incident"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "digital forensics",
+    "aliases": [
+      "forensic analysis",
+      "dfir"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "malware analysis",
+    "aliases": [
+      "reverse engineering",
+      "malware reverse"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "penetration testing",
+    "aliases": [
+      "pentest",
+      "pentesting",
+      "ethical hacking"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "vulnerability assessment",
+    "aliases": [
+      "vuln assessment",
+      "vulnerability scan"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "red team",
+    "aliases": [
+      "red teaming"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "blue team",
+    "aliases": [
+      "blue teaming"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "purple team",
+    "aliases": [
+      "purple teaming"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "bug bounty",
+    "aliases": [
+      "bug bounty hunting"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "ctf",
+    "aliases": [
+      "capture the flag"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "burp suite",
+    "aliases": [
+      "burp",
+      "portswigger"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "metasploit",
+    "aliases": [
+      "msf",
+      "metasploit framework"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "nmap",
+    "aliases": [
+      "network mapper"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "wireshark",
+    "aliases": [
+      "packet analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "nessus",
+    "aliases": [
+      "tenable nessus"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "qualys",
+    "aliases": [
+      "qualys guard"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "snort",
+    "aliases": [
+      "snort ids"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "suricata",
+    "aliases": [
+      "suricata ids"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "ossec",
+    "aliases": [
+      "ossec hids"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "crowdstrike",
+    "aliases": [
+      "crowdstrike falcon"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "splunk",
+    "aliases": [
+      "splunk siem"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "qradar",
+    "aliases": [
+      "ibm qradar"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "sentinel",
+    "aliases": [
+      "microsoft sentinel",
+      "azure sentinel"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "elastic security",
+    "aliases": [
+      "elastic siem"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "identity and access management",
+    "aliases": [
+      "iam",
+      "identity management"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "single sign-on",
+    "aliases": [
+      "sso"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "multi-factor authentication",
+    "aliases": [
+      "mfa",
+      "2fa",
+      "two-factor"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "privileged access management",
+    "aliases": [
+      "pam"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "zero trust",
+    "aliases": [
+      "zero trust architecture",
+      "ztna"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "oauth",
+    "aliases": [
+      "oauth2",
+      "oauth 2.0"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "saml",
+    "aliases": [
+      "saml 2.0"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "openid connect",
+    "aliases": [
+      "oidc"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "ldap",
+    "aliases": [
+      "active directory"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "okta",
+    "aliases": [
+      "okta identity"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "auth0",
+    "aliases": [
+      "auth zero"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "ping identity",
+    "aliases": [
+      "pingfederate"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "cloud security",
+    "aliases": [
+      "cloud sec"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "cspm",
+    "aliases": [
+      "cloud security posture management"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "cwpp",
+    "aliases": [
+      "cloud workload protection"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "cnapp",
+    "aliases": [
+      "cloud native application protection"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "casb",
+    "aliases": [
+      "cloud access security broker"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "devsecops",
+    "aliases": [
+      "dev sec ops",
+      "security automation"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "container security",
+    "aliases": [
+      "kubernetes security"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "infrastructure security",
+    "aliases": [
+      "network security"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "nist",
+    "aliases": [
+      "nist cybersecurity framework",
+      "nist csf"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "iso 27001",
+    "aliases": [
+      "iso27001",
+      "isms"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "soc 2",
+    "aliases": [
+      "soc2",
+      "soc 2 type 2"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "cis controls",
+    "aliases": [
+      "cis benchmarks"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "mitre att&ck",
+    "aliases": [
+      "mitre attack",
+      "attack framework"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "owasp",
+    "aliases": [
+      "owasp top 10"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "pci dss",
+    "aliases": [
+      "pci compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "fedramp",
+    "aliases": [
+      "fed ramp"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "cmmc",
+    "aliases": [
+      "cybersecurity maturity model"
+    ],
+    "source": "industry-vertical",
+    "category": "Cybersecurity"
+  },
+  {
+    "canonical": "ethereum",
+    "aliases": [
+      "eth",
+      "ethereum network"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "solana",
+    "aliases": [
+      "sol",
+      "solana blockchain"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "polygon",
+    "aliases": [
+      "matic",
+      "polygon network"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "avalanche",
+    "aliases": [
+      "avax"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "binance smart chain",
+    "aliases": [
+      "bsc",
+      "bnb chain"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "cardano",
+    "aliases": [
+      "ada"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "polkadot",
+    "aliases": [
+      "dot"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "cosmos",
+    "aliases": [
+      "atom",
+      "cosmos sdk"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "near protocol",
+    "aliases": [
+      "near"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "arbitrum",
+    "aliases": [
+      "arbitrum one"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "optimism",
+    "aliases": [
+      "op mainnet"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "base",
+    "aliases": [
+      "base chain"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "hyperledger fabric",
+    "aliases": [
+      "hyperledger",
+      "hlf"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "solidity",
+    "aliases": [
+      "solidity programming"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "rust smart contracts",
+    "aliases": [
+      "anchor",
+      "solana rust"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "vyper",
+    "aliases": [
+      "vyper lang"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "move",
+    "aliases": [
+      "move language"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "cairo",
+    "aliases": [
+      "starknet cairo"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "smart contracts",
+    "aliases": [
+      "smart contract development"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "erc-20",
+    "aliases": [
+      "erc20",
+      "token standard"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "erc-721",
+    "aliases": [
+      "erc721",
+      "nft standard"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "erc-1155",
+    "aliases": [
+      "erc1155",
+      "multi-token"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "hardhat",
+    "aliases": [
+      "hardhat ethereum"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "foundry",
+    "aliases": [
+      "forge",
+      "foundry toolkit"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "truffle",
+    "aliases": [
+      "truffle suite"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "remix",
+    "aliases": [
+      "remix ide"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "wagmi",
+    "aliases": [
+      "wagmi hooks"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "ethers.js",
+    "aliases": [
+      "ethersjs"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "web3.js",
+    "aliases": [
+      "web3js"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "viem",
+    "aliases": [
+      "viem typescript"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "alchemy",
+    "aliases": [
+      "alchemy api"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "infura",
+    "aliases": [
+      "infura api"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "moralis",
+    "aliases": [
+      "moralis api"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "thegraph",
+    "aliases": [
+      "the graph",
+      "subgraph"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "chainlink",
+    "aliases": [
+      "chainlink oracle"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "decentralized finance",
+    "aliases": [
+      "defi"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "automated market maker",
+    "aliases": [
+      "amm",
+      "dex"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "liquidity pool",
+    "aliases": [
+      "liquidity mining"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "yield farming",
+    "aliases": [
+      "yield optimization"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "lending protocol",
+    "aliases": [
+      "defi lending"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "flash loans",
+    "aliases": [
+      "flash loan"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "mev",
+    "aliases": [
+      "maximal extractable value"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "uniswap",
+    "aliases": [
+      "uniswap v3"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "aave",
+    "aliases": [
+      "aave protocol"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "compound",
+    "aliases": [
+      "compound finance"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "smart contract audit",
+    "aliases": [
+      "code audit",
+      "security audit"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "slither",
+    "aliases": [
+      "slither analyzer"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "mythril",
+    "aliases": [
+      "mythril security"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "echidna",
+    "aliases": [
+      "echidna fuzzing"
+    ],
+    "source": "industry-vertical",
+    "category": "Blockchain & Web3"
+  },
+  {
+    "canonical": "arduino",
+    "aliases": [
+      "arduino uno",
+      "arduino mega",
+      "arduino ide"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "raspberry pi",
+    "aliases": [
+      "rpi",
+      "raspi",
+      "raspberry pi os"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "esp32",
+    "aliases": [
+      "esp8266",
+      "espressif",
+      "esp-idf"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "stm32",
+    "aliases": [
+      "stm32cube",
+      "stmicroelectronics"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "arm cortex",
+    "aliases": [
+      "arm cortex-m",
+      "arm microcontroller"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "avr",
+    "aliases": [
+      "avr microcontroller",
+      "atmega"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "pic",
+    "aliases": [
+      "pic microcontroller",
+      "microchip"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "nordic nrf",
+    "aliases": [
+      "nrf52",
+      "nordic semiconductor"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "teensy",
+    "aliases": [
+      "pjrc teensy"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "particle",
+    "aliases": [
+      "particle photon",
+      "particle argon"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "rtos",
+    "aliases": [
+      "real-time operating system",
+      "real time os"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "freertos",
+    "aliases": [
+      "free rtos"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "zephyr",
+    "aliases": [
+      "zephyr rtos"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "riot os",
+    "aliases": [
+      "riot"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "mbed os",
+    "aliases": [
+      "arm mbed"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "nuttx",
+    "aliases": [
+      "apache nuttx"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "vxworks",
+    "aliases": [
+      "wind river vxworks"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "qnx",
+    "aliases": [
+      "blackberry qnx"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "embedded linux",
+    "aliases": [
+      "yocto",
+      "buildroot"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "uart",
+    "aliases": [
+      "universal asynchronous receiver-transmitter",
+      "serial communication"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "spi",
+    "aliases": [
+      "serial peripheral interface"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "i2c",
+    "aliases": [
+      "inter-integrated circuit",
+      "iic",
+      "twi"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "can bus",
+    "aliases": [
+      "can protocol",
+      "controller area network"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "modbus",
+    "aliases": [
+      "modbus rtu",
+      "modbus tcp"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "rs-485",
+    "aliases": [
+      "rs485",
+      "serial bus"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "rs-232",
+    "aliases": [
+      "rs232",
+      "serial port"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "ethernet",
+    "aliases": [
+      "embedded ethernet"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "usb",
+    "aliases": [
+      "usb protocol",
+      "usb device"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "bluetooth",
+    "aliases": [
+      "ble",
+      "bluetooth low energy"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "zigbee",
+    "aliases": [
+      "zigbee protocol"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "z-wave",
+    "aliases": [
+      "zwave"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "lora",
+    "aliases": [
+      "lorawan",
+      "long range"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "nb-iot",
+    "aliases": [
+      "narrowband iot"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "lte-m",
+    "aliases": [
+      "lte cat-m1"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "thread",
+    "aliases": [
+      "thread protocol"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "matter",
+    "aliases": [
+      "matter protocol"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "wifi",
+    "aliases": [
+      "wi-fi",
+      "wireless lan"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "nfc",
+    "aliases": [
+      "near field communication"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "aws iot",
+    "aliases": [
+      "aws iot core",
+      "amazon iot"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "azure iot",
+    "aliases": [
+      "azure iot hub",
+      "azure iot central"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "google cloud iot",
+    "aliases": [
+      "cloud iot core"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "aws greengrass",
+    "aliases": [
+      "greengrass"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "home assistant",
+    "aliases": [
+      "hass"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "thingsboard",
+    "aliases": [
+      "things board"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "node-red",
+    "aliases": [
+      "node red",
+      "nodered"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "embedded c",
+    "aliases": [
+      "embedded c++"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "firmware development",
+    "aliases": [
+      "firmware",
+      "fw development"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "bare metal",
+    "aliases": [
+      "bare metal programming"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "dma",
+    "aliases": [
+      "direct memory access"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "interrupt handling",
+    "aliases": [
+      "isr",
+      "interrupt service routine"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "memory management",
+    "aliases": [
+      "heap management",
+      "stack management"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "low-power design",
+    "aliases": [
+      "power optimization",
+      "sleep modes"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "bootloader",
+    "aliases": [
+      "bootloader development"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "ota update",
+    "aliases": [
+      "over-the-air update",
+      "firmware update"
+    ],
+    "source": "industry-vertical",
+    "category": "IoT & Embedded Systems"
+  },
+  {
+    "canonical": "tensorflow",
+    "aliases": [
+      "tf",
+      "tensorflow 2"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "pytorch",
+    "aliases": [
+      "torch",
+      "pytorch lightning"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "keras",
+    "aliases": [
+      "keras api"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "scikit-learn",
+    "aliases": [
+      "sklearn",
+      "scikit"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "jax",
+    "aliases": [
+      "google jax"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "mxnet",
+    "aliases": [
+      "apache mxnet"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "caffe",
+    "aliases": [
+      "caffe2"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "onnx",
+    "aliases": [
+      "open neural network exchange"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "mlflow",
+    "aliases": [
+      "ml flow"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "kubeflow",
+    "aliases": [
+      "kube flow"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "ray",
+    "aliases": [
+      "ray tune",
+      "ray serve"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "deep learning",
+    "aliases": [
+      "dl",
+      "neural networks"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "convolutional neural network",
+    "aliases": [
+      "cnn",
+      "convnet"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "recurrent neural network",
+    "aliases": [
+      "rnn",
+      "lstm",
+      "gru"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "transformer",
+    "aliases": [
+      "transformer architecture",
+      "attention mechanism"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "generative adversarial network",
+    "aliases": [
+      "gan",
+      "gans"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "variational autoencoder",
+    "aliases": [
+      "vae"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "diffusion models",
+    "aliases": [
+      "stable diffusion",
+      "ddpm"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "natural language processing",
+    "aliases": [
+      "nlp"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "hugging face",
+    "aliases": [
+      "huggingface",
+      "hf",
+      "transformers library"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "bert",
+    "aliases": [
+      "bert model",
+      "bidirectional encoder"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "gpt",
+    "aliases": [
+      "generative pre-trained transformer"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "t5",
+    "aliases": [
+      "text-to-text transfer transformer"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "spacy",
+    "aliases": [
+      "spacy nlp"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "nltk",
+    "aliases": [
+      "natural language toolkit"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "word embeddings",
+    "aliases": [
+      "word2vec",
+      "glove"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "sentiment analysis",
+    "aliases": [
+      "sentiment classification"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "named entity recognition",
+    "aliases": [
+      "ner"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "text classification",
+    "aliases": [
+      "document classification"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "question answering",
+    "aliases": [
+      "qa system"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "machine translation",
+    "aliases": [
+      "neural machine translation",
+      "nmt"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "computer vision",
+    "aliases": [
+      "cv",
+      "image processing"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "opencv",
+    "aliases": [
+      "open cv",
+      "cv2"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "object detection",
+    "aliases": [
+      "yolo",
+      "faster rcnn"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "image segmentation",
+    "aliases": [
+      "semantic segmentation",
+      "instance segmentation"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "image classification",
+    "aliases": [
+      "image recognition"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "face recognition",
+    "aliases": [
+      "facial recognition",
+      "face detection"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "ocr",
+    "aliases": [
+      "optical character recognition",
+      "text detection"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "pose estimation",
+    "aliases": [
+      "keypoint detection"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "large language models",
+    "aliases": [
+      "llm",
+      "llms"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "generative ai",
+    "aliases": [
+      "genai",
+      "gen ai"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "prompt engineering",
+    "aliases": [
+      "prompt design"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "retrieval augmented generation",
+    "aliases": [
+      "rag"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "fine-tuning",
+    "aliases": [
+      "model fine-tuning",
+      "instruction tuning"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "rlhf",
+    "aliases": [
+      "reinforcement learning human feedback"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "langchain",
+    "aliases": [
+      "lang chain"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "llamaindex",
+    "aliases": [
+      "llama index"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "semantic search",
+    "aliases": [
+      "vector search"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "embeddings",
+    "aliases": [
+      "text embeddings",
+      "vector embeddings"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "vector database",
+    "aliases": [
+      "vector db",
+      "pinecone",
+      "weaviate",
+      "milvus",
+      "qdrant"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "mlops",
+    "aliases": [
+      "machine learning operations",
+      "ml operations"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "model deployment",
+    "aliases": [
+      "model serving"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "model monitoring",
+    "aliases": [
+      "ml monitoring"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "feature store",
+    "aliases": [
+      "feature engineering"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "experiment tracking",
+    "aliases": [
+      "ml experiments"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "data versioning",
+    "aliases": [
+      "dvc",
+      "data version control"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "model registry",
+    "aliases": [
+      "model versioning"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "a/b testing ml",
+    "aliases": [
+      "model a/b testing"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "automl",
+    "aliases": [
+      "automated machine learning"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "hyperparameter tuning",
+    "aliases": [
+      "hyperopt",
+      "optuna"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "weights and biases",
+    "aliases": [
+      "wandb",
+      "w&b"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "neptune",
+    "aliases": [
+      "neptune.ai"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "comet",
+    "aliases": [
+      "comet ml"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "sagemaker",
+    "aliases": [
+      "aws sagemaker"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "vertex ai",
+    "aliases": [
+      "google vertex ai"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "azure ml",
+    "aliases": [
+      "azure machine learning"
+    ],
+    "source": "industry-vertical",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "canonical": "shopify",
+    "aliases": [
+      "shopify plus",
+      "shopify api",
+      "liquid"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "magento",
+    "aliases": [
+      "adobe commerce",
+      "magento 2"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "woocommerce",
+    "aliases": [
+      "woo commerce",
+      "woo"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "bigcommerce",
+    "aliases": [
+      "big commerce"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "salesforce commerce cloud",
+    "aliases": [
+      "sfcc",
+      "demandware"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "sap commerce",
+    "aliases": [
+      "hybris",
+      "sap commerce cloud"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "oracle commerce",
+    "aliases": [
+      "atg"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "prestashop",
+    "aliases": [
+      "presta shop"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "opencart",
+    "aliases": [
+      "open cart"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "medusa",
+    "aliases": [
+      "medusajs"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "vendure",
+    "aliases": [
+      "vendure commerce"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "saleor",
+    "aliases": [
+      "saleor commerce"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "headless commerce",
+    "aliases": [
+      "composable commerce"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "commercetools",
+    "aliases": [
+      "commerce tools"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "elasticpath",
+    "aliases": [
+      "elastic path"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "fabric",
+    "aliases": [
+      "fabric commerce"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "nacelle",
+    "aliases": [
+      "nacelle commerce"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "product catalog",
+    "aliases": [
+      "catalog management",
+      "pim"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "inventory management",
+    "aliases": [
+      "stock management"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "order management",
+    "aliases": [
+      "oms",
+      "order management system"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "shopping cart",
+    "aliases": [
+      "cart management"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "checkout",
+    "aliases": [
+      "checkout flow",
+      "one-page checkout"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "product recommendation",
+    "aliases": [
+      "recommendation engine"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "search and discovery",
+    "aliases": [
+      "product search",
+      "algolia"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "personalization",
+    "aliases": [
+      "dynamic content",
+      "customer personalization"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "pricing engine",
+    "aliases": [
+      "dynamic pricing"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "promotion engine",
+    "aliases": [
+      "discount management"
+    ],
+    "source": "industry-vertical",
+    "category": "E-commerce & Retail"
+  },
+  {
+    "canonical": "legal tech",
+    "aliases": [
+      "legaltech",
+      "legal technology"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "contract management",
+    "aliases": [
+      "clm",
+      "contract lifecycle management"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "e-discovery",
+    "aliases": [
+      "ediscovery",
+      "electronic discovery"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "legal research",
+    "aliases": [
+      "case research"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "document automation",
+    "aliases": [
+      "legal document automation"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "legal ai",
+    "aliases": [
+      "legal analytics"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "matter management",
+    "aliases": [
+      "case management"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "docusign",
+    "aliases": [
+      "docu sign",
+      "e-signature"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "ironclad",
+    "aliases": [
+      "ironclad contracts"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "clio",
+    "aliases": [
+      "clio legal"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "relativity",
+    "aliases": [
+      "relativity ediscovery"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "logikcull",
+    "aliases": [
+      "logikcull ediscovery"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "westlaw",
+    "aliases": [
+      "west law"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "lexisnexis",
+    "aliases": [
+      "lexis nexis"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "regulatory compliance",
+    "aliases": [
+      "compliance management"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "sox compliance",
+    "aliases": [
+      "sarbanes oxley"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "gdpr compliance",
+    "aliases": [
+      "data protection"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "ccpa",
+    "aliases": [
+      "california consumer privacy act"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "hipaa compliance",
+    "aliases": [
+      "healthcare compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "aml compliance",
+    "aliases": [
+      "anti-money laundering"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "know your customer",
+    "aliases": [
+      "kyc"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "sanctions compliance",
+    "aliases": [
+      "ofac"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "third-party risk",
+    "aliases": [
+      "vendor risk management"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "audit management",
+    "aliases": [
+      "internal audit"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "policy management",
+    "aliases": [
+      "policy lifecycle"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "grc",
+    "aliases": [
+      "governance risk compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Legal & Compliance"
+  }
+]

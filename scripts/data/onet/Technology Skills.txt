@@ -1,0 +1,69 @@
+O*NET-SOC Code	Title	Example	Commodity Code	Hot Technology	In Demand
+15-1252.00	Software Developer	Python		Y	Y
+15-1252.00	Software Developer	Java		Y	Y
+15-1252.00	Software Developer	JavaScript		Y	Y
+15-1252.00	Software Developer	C++		Y	Y
+15-1252.00	Software Developer	C#		Y	Y
+15-1252.00	Software Developer	SQL		Y	Y
+15-1252.00	Software Developer	TypeScript		Y	Y
+15-1252.00	Software Developer	Go		Y	Y
+15-1252.00	Software Developer	Rust		Y	Y
+15-1252.00	Software Developer	R		Y	Y
+15-1252.00	Software Developer	Scala		N	Y
+15-1252.00	Software Developer	Kotlin		Y	Y
+15-1252.00	Software Developer	Swift		Y	Y
+15-1252.00	Software Developer	Amazon Web Services (AWS)		Y	Y
+15-1252.00	Software Developer	Microsoft Azure		Y	Y
+15-1252.00	Software Developer	Google Cloud Platform		Y	Y
+15-1252.00	Software Developer	Docker		Y	Y
+15-1252.00	Software Developer	Kubernetes		Y	Y
+15-1252.00	Software Developer	Terraform		Y	Y
+15-1252.00	Software Developer	Ansible		Y	Y
+15-1252.00	Software Developer	Jenkins		Y	Y
+15-1252.00	Software Developer	Git		Y	Y
+15-1252.00	Software Developer	GitHub		Y	Y
+15-1252.00	Software Developer	GitLab		Y	Y
+15-1252.00	Software Developer	MySQL		Y	Y
+15-1252.00	Software Developer	PostgreSQL		Y	Y
+15-1252.00	Software Developer	MongoDB		Y	Y
+15-1252.00	Software Developer	Microsoft SQL Server		Y	Y
+15-1252.00	Software Developer	Oracle Database		Y	Y
+15-1252.00	Software Developer	Redis		Y	Y
+15-1252.00	Software Developer	Elasticsearch		Y	Y
+15-1252.00	Software Developer	Apache Kafka		Y	Y
+15-1252.00	Software Developer	Cassandra		N	Y
+15-1252.00	Software Developer	React		Y	Y
+15-1252.00	Software Developer	Angular		Y	Y
+15-1252.00	Software Developer	Vue.js		Y	Y
+15-1252.00	Software Developer	Node.js		Y	Y
+15-1252.00	Software Developer	Django		Y	Y
+15-1252.00	Software Developer	Spring Boot		Y	Y
+15-1252.00	Software Developer	.NET Core		Y	Y
+15-1252.00	Software Developer	Express.js		Y	Y
+15-1252.00	Software Developer	Flask		Y	Y
+15-1252.00	Software Developer	FastAPI		Y	Y
+15-1252.00	Software Developer	Next.js		Y	Y
+15-1252.00	Software Developer	TensorFlow		Y	Y
+15-1252.00	Software Developer	PyTorch		Y	Y
+15-1252.00	Software Developer	Apache Spark		Y	Y
+15-1252.00	Software Developer	Hadoop		N	Y
+15-1252.00	Software Developer	Tableau		Y	Y
+15-1252.00	Software Developer	Power BI		Y	Y
+15-1252.00	Software Developer	Pandas		Y	Y
+15-1252.00	Software Developer	Scikit-learn		Y	Y
+15-1252.00	Software Developer	Apache Airflow		Y	Y
+15-1252.00	Software Developer	Snowflake		Y	Y
+15-1252.00	Software Developer	Databricks		Y	Y
+15-1252.00	Software Developer	OWASP		Y	Y
+15-1252.00	Software Developer	OAuth		Y	Y
+15-1252.00	Software Developer	JWT		Y	Y
+15-1252.00	Software Developer	SSL/TLS		Y	Y
+15-1252.00	Software Developer	React Native		Y	Y
+15-1252.00	Software Developer	Flutter		Y	Y
+15-1252.00	Software Developer	iOS Development		Y	Y
+15-1252.00	Software Developer	Android Development		Y	Y
+15-1252.00	Software Developer	Salesforce		Y	Y
+15-1252.00	Software Developer	SAP		Y	Y
+15-1252.00	Software Developer	ServiceNow		Y	Y
+15-1252.00	Software Developer	Jira		Y	Y
+15-1252.00	Software Developer	Confluence		Y	Y

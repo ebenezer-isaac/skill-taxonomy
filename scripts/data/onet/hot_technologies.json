@@ -1,410 +1,1002 @@
 [
   {
+    "name": "Active Learning",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Active Listening",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Critical Thinking",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Learning Strategies",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Mathematics",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Monitoring",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Reading Comprehension",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Science",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Speaking",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Writing",
+    "category": "Basic Skill"
+  },
+  {
+    "name": "Coordination",
+    "category": "Social Skill"
+  },
+  {
+    "name": "Instructing",
+    "category": "Social Skill"
+  },
+  {
+    "name": "Negotiation",
+    "category": "Social Skill"
+  },
+  {
+    "name": "Persuasion",
+    "category": "Social Skill"
+  },
+  {
+    "name": "Service Orientation",
+    "category": "Social Skill"
+  },
+  {
+    "name": "Social Perceptiveness",
+    "category": "Social Skill"
+  },
+  {
+    "name": "Complex Problem Solving",
+    "category": "Problem Solving"
+  },
+  {
+    "name": "Equipment Maintenance",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Equipment Selection",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Installation",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Operation Monitoring",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Operation and Control",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Operations Analysis",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Programming",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Quality Control Analysis",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Repairing",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Technology Design",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Troubleshooting",
+    "category": "Technical Skill"
+  },
+  {
+    "name": "Judgment and Decision Making",
+    "category": "Systems Skill"
+  },
+  {
+    "name": "Systems Analysis",
+    "category": "Systems Skill"
+  },
+  {
+    "name": "Systems Evaluation",
+    "category": "Systems Skill"
+  },
+  {
+    "name": "Management of Financial Resources",
+    "category": "Resource Management"
+  },
+  {
+    "name": "Management of Material Resources",
+    "category": "Resource Management"
+  },
+  {
+    "name": "Management of Personnel Resources",
+    "category": "Resource Management"
+  },
+  {
+    "name": "Time Management",
+    "category": "Resource Management"
+  },
+  {
+    "name": "Administration and Management",
+    "category": "Knowledge - Business"
+  },
+  {
+    "name": "Biology",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "Building and Construction",
+    "category": "Knowledge - Engineering"
+  },
+  {
+    "name": "Chemistry",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "Clerical",
+    "category": "Knowledge - Business"
+  },
+  {
+    "name": "Communications and Media",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Computers and Electronics",
+    "category": "Knowledge - Technology"
+  },
+  {
+    "name": "Customer and Personal Service",
+    "category": "Knowledge - Business"
+  },
+  {
+    "name": "Design",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Economics and Accounting",
+    "category": "Knowledge - Business"
+  },
+  {
+    "name": "Education and Training",
+    "category": "Knowledge - Education"
+  },
+  {
+    "name": "Engineering and Technology",
+    "category": "Knowledge - Engineering"
+  },
+  {
+    "name": "English Language",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Fine Arts",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Food Production",
+    "category": "Knowledge - Manufacturing"
+  },
+  {
+    "name": "Foreign Language",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Geography",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "History and Archeology",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Law and Government",
+    "category": "Knowledge - Law"
+  },
+  {
+    "name": "Mathematics",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "Mechanical",
+    "category": "Knowledge - Engineering"
+  },
+  {
+    "name": "Medicine and Dentistry",
+    "category": "Knowledge - Health"
+  },
+  {
+    "name": "Personnel and Human Resources",
+    "category": "Knowledge - Business"
+  },
+  {
+    "name": "Philosophy and Theology",
+    "category": "Knowledge - Arts/Humanities"
+  },
+  {
+    "name": "Physics",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "Production and Processing",
+    "category": "Knowledge - Manufacturing"
+  },
+  {
+    "name": "Psychology",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "Public Safety and Security",
+    "category": "Knowledge - Law"
+  },
+  {
+    "name": "Sales and Marketing",
+    "category": "Knowledge - Business"
+  },
+  {
+    "name": "Sociology and Anthropology",
+    "category": "Knowledge - Science"
+  },
+  {
+    "name": "Telecommunications",
+    "category": "Knowledge - Technology"
+  },
+  {
+    "name": "Therapy and Counseling",
+    "category": "Knowledge - Health"
+  },
+  {
+    "name": "Transportation",
+    "category": "Knowledge - Transportation"
+  },
+  {
+    "name": "Achievement/Effort",
+    "category": "Work Style"
+  },
+  {
+    "name": "Adaptability/Flexibility",
+    "category": "Work Style"
+  },
+  {
+    "name": "Analytical Thinking",
+    "category": "Work Style"
+  },
+  {
+    "name": "Attention to Detail",
+    "category": "Work Style"
+  },
+  {
+    "name": "Concern for Others",
+    "category": "Work Style"
+  },
+  {
+    "name": "Cooperation",
+    "category": "Work Style"
+  },
+  {
+    "name": "Dependability",
+    "category": "Work Style"
+  },
+  {
+    "name": "Independence",
+    "category": "Work Style"
+  },
+  {
+    "name": "Initiative",
+    "category": "Work Style"
+  },
+  {
+    "name": "Innovation",
+    "category": "Work Style"
+  },
+  {
+    "name": "Integrity",
+    "category": "Work Style"
+  },
+  {
+    "name": "Leadership",
+    "category": "Work Style"
+  },
+  {
+    "name": "Persistence",
+    "category": "Work Style"
+  },
+  {
+    "name": "Self-Control",
+    "category": "Work Style"
+  },
+  {
+    "name": "Social Orientation",
+    "category": "Work Style"
+  },
+  {
+    "name": "Stress Tolerance",
+    "category": "Work Style"
+  },
+  {
+    "name": "Analyzing Data or Information",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Communicating with People Outside the Organization",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Communicating with Supervisors, Peers, or Subordinates",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Coaching and Developing Others",
+    "category": "Work Activity - People"
+  },
+  {
+    "name": "Controlling Machines and Processes",
+    "category": "Work Activity - Things"
+  },
+  {
+    "name": "Coordinating the Work and Activities of Others",
+    "category": "Work Activity - People"
+  },
+  {
+    "name": "Developing and Building Teams",
+    "category": "Work Activity - People"
+  },
+  {
+    "name": "Developing Objectives and Strategies",
+    "category": "Work Activity - Mental"
+  },
+  {
+    "name": "Documenting/Recording Information",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Establishing and Maintaining Interpersonal Relationships",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Evaluating Information to Determine Compliance with Standards",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Getting Information",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Guiding, Directing, and Motivating Subordinates",
+    "category": "Work Activity - People"
+  },
+  {
+    "name": "Handling and Moving Objects",
+    "category": "Work Activity - Things"
+  },
+  {
+    "name": "Identifying Objects, Actions, and Events",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Inspecting Equipment, Structures, or Materials",
+    "category": "Work Activity - Things"
+  },
+  {
+    "name": "Interacting With Computers",
+    "category": "Work Activity - Technology"
+  },
+  {
+    "name": "Interpreting the Meaning of Information for Others",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Judging the Qualities of Objects, Services, or People",
+    "category": "Work Activity - Mental"
+  },
+  {
+    "name": "Making Decisions and Solving Problems",
+    "category": "Work Activity - Mental"
+  },
+  {
+    "name": "Monitor Processes, Materials, or Surroundings",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Operating Vehicles, Mechanized Devices, or Equipment",
+    "category": "Work Activity - Things"
+  },
+  {
+    "name": "Organizing, Planning, and Prioritizing Work",
+    "category": "Work Activity - Mental"
+  },
+  {
+    "name": "Performing Administrative Activities",
+    "category": "Work Activity - Business"
+  },
+  {
+    "name": "Performing for or Working Directly with the Public",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Performing General Physical Activities",
+    "category": "Work Activity - Physical"
+  },
+  {
+    "name": "Processing Information",
+    "category": "Work Activity - Information"
+  },
+  {
+    "name": "Provide Consultation and Advice to Others",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Repairing and Maintaining Electronic Equipment",
+    "category": "Work Activity - Things"
+  },
+  {
+    "name": "Repairing and Maintaining Mechanical Equipment",
+    "category": "Work Activity - Things"
+  },
+  {
+    "name": "Resolving Conflicts and Negotiating with Others",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Scheduling Work and Activities",
+    "category": "Work Activity - Mental"
+  },
+  {
+    "name": "Selling or Influencing Others",
+    "category": "Work Activity - Communication"
+  },
+  {
+    "name": "Staffing Organizational Units",
+    "category": "Work Activity - People"
+  },
+  {
+    "name": "Thinking Creatively",
+    "category": "Work Activity - Mental"
+  },
+  {
+    "name": "Training and Teaching Others",
+    "category": "Work Activity - People"
+  },
+  {
+    "name": "Updating and Using Relevant Knowledge",
+    "category": "Work Activity - Information"
+  },
+  {
     "name": "Python",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Programming Language"
   },
   {
     "name": "Java",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Programming Language"
   },
   {
     "name": "JavaScript",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "C++",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "C#",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Programming Language"
   },
   {
     "name": "SQL",
-    "category": "Database Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "TypeScript",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Go",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Rust",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "R",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Scala",
-    "category": "Programming Language",
-    "hotTechnology": false,
-    "inDemand": true
-  },
-  {
-    "name": "Kotlin",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Swift",
-    "category": "Programming Language",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Database Language"
   },
   {
     "name": "Amazon Web Services (AWS)",
-    "category": "Cloud Platform",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Cloud Platform"
   },
   {
     "name": "Microsoft Azure",
-    "category": "Cloud Platform",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Cloud Platform"
   },
   {
     "name": "Google Cloud Platform",
-    "category": "Cloud Platform",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Cloud Platform"
   },
   {
     "name": "Docker",
-    "category": "Containerization",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Containerization"
   },
   {
     "name": "Kubernetes",
-    "category": "Container Orchestration",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Terraform",
-    "category": "Infrastructure as Code",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Ansible",
-    "category": "Configuration Management",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Jenkins",
-    "category": "CI/CD",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Git",
-    "category": "Version Control",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "GitHub",
-    "category": "Development Platform",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "GitLab",
-    "category": "Development Platform",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "MySQL",
-    "category": "RDBMS",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "PostgreSQL",
-    "category": "RDBMS",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "MongoDB",
-    "category": "NoSQL Database",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Microsoft SQL Server",
-    "category": "RDBMS",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Oracle Database",
-    "category": "RDBMS",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Redis",
-    "category": "In-Memory Database",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Elasticsearch",
-    "category": "Search Engine",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Apache Kafka",
-    "category": "Message Queue",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Cassandra",
-    "category": "NoSQL Database",
-    "hotTechnology": false,
-    "inDemand": true
+    "category": "Container Orchestration"
   },
   {
     "name": "React",
-    "category": "Frontend Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Angular",
-    "category": "Frontend Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Vue.js",
-    "category": "Frontend Framework",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Frontend Framework"
   },
   {
     "name": "Node.js",
-    "category": "Runtime",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "Runtime"
   },
   {
-    "name": "Django",
-    "category": "Web Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Spring Boot",
-    "category": "Web Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": ".NET Core",
-    "category": "Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Express.js",
-    "category": "Web Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Flask",
-    "category": "Web Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "FastAPI",
-    "category": "Web Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Next.js",
-    "category": "Web Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "TensorFlow",
-    "category": "ML Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "PyTorch",
-    "category": "ML Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Apache Spark",
-    "category": "Big Data",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Hadoop",
-    "category": "Big Data",
-    "hotTechnology": false,
-    "inDemand": true
-  },
-  {
-    "name": "Tableau",
-    "category": "BI Tool",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Power BI",
-    "category": "BI Tool",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Pandas",
-    "category": "Data Library",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Scikit-learn",
-    "category": "ML Library",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Apache Airflow",
-    "category": "Workflow Orchestration",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Snowflake",
-    "category": "Data Warehouse",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Databricks",
-    "category": "Data Platform",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "OWASP",
-    "category": "Security Standards",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "OAuth",
-    "category": "Authentication",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "JWT",
-    "category": "Authentication",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "SSL/TLS",
-    "category": "Security Protocol",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "React Native",
-    "category": "Mobile Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Flutter",
-    "category": "Mobile Framework",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "iOS Development",
-    "category": "Mobile Development",
-    "hotTechnology": true,
-    "inDemand": true
-  },
-  {
-    "name": "Android Development",
-    "category": "Mobile Development",
-    "hotTechnology": true,
-    "inDemand": true
+    "name": "Git",
+    "category": "Version Control"
   },
   {
     "name": "Salesforce",
-    "category": "CRM",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "CRM"
   },
   {
     "name": "SAP",
-    "category": "ERP",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "ERP"
   },
   {
     "name": "ServiceNow",
-    "category": "ITSM",
-    "hotTechnology": true,
-    "inDemand": true
+    "category": "ITSM"
   },
   {
-    "name": "Jira",
-    "category": "Project Management",
-    "hotTechnology": true,
-    "inDemand": true
+    "name": "Microsoft Office",
+    "category": "Productivity Suite"
   },
   {
-    "name": "Confluence",
-    "category": "Documentation",
-    "hotTechnology": true,
-    "inDemand": true
+    "name": "Microsoft Excel",
+    "category": "Spreadsheet"
+  },
+  {
+    "name": "Microsoft Word",
+    "category": "Word Processing"
+  },
+  {
+    "name": "Microsoft PowerPoint",
+    "category": "Presentation"
+  },
+  {
+    "name": "Microsoft Outlook",
+    "category": "Email Client"
+  },
+  {
+    "name": "Microsoft Teams",
+    "category": "Collaboration"
+  },
+  {
+    "name": "Google Workspace",
+    "category": "Productivity Suite"
+  },
+  {
+    "name": "Google Sheets",
+    "category": "Spreadsheet"
+  },
+  {
+    "name": "Slack",
+    "category": "Collaboration"
+  },
+  {
+    "name": "Zoom",
+    "category": "Video Conferencing"
+  },
+  {
+    "name": "SharePoint",
+    "category": "Document Management"
+  },
+  {
+    "name": "Epic Systems",
+    "category": "Healthcare EHR"
+  },
+  {
+    "name": "Cerner",
+    "category": "Healthcare EHR"
+  },
+  {
+    "name": "MEDITECH",
+    "category": "Healthcare EHR"
+  },
+  {
+    "name": "Allscripts",
+    "category": "Healthcare EHR"
+  },
+  {
+    "name": "McKesson",
+    "category": "Healthcare/Pharma"
+  },
+  {
+    "name": "Bloomberg Terminal",
+    "category": "Finance Platform"
+  },
+  {
+    "name": "QuickBooks",
+    "category": "Accounting Software"
+  },
+  {
+    "name": "Sage",
+    "category": "Accounting Software"
+  },
+  {
+    "name": "Xero",
+    "category": "Accounting Software"
+  },
+  {
+    "name": "NetSuite",
+    "category": "ERP/Accounting"
+  },
+  {
+    "name": "FreshBooks",
+    "category": "Accounting Software"
+  },
+  {
+    "name": "ADP",
+    "category": "Payroll/HR"
+  },
+  {
+    "name": "Intuit TurboTax",
+    "category": "Tax Software"
+  },
+  {
+    "name": "Workday",
+    "category": "HCM Platform"
+  },
+  {
+    "name": "BambooHR",
+    "category": "HR Software"
+  },
+  {
+    "name": "Greenhouse",
+    "category": "Recruiting Software"
+  },
+  {
+    "name": "Lever",
+    "category": "Recruiting Software"
+  },
+  {
+    "name": "iCIMS",
+    "category": "Recruiting Software"
+  },
+  {
+    "name": "UKG",
+    "category": "HR/Workforce Management"
+  },
+  {
+    "name": "Ceridian Dayforce",
+    "category": "HCM Platform"
+  },
+  {
+    "name": "Paychex",
+    "category": "Payroll"
+  },
+  {
+    "name": "HubSpot",
+    "category": "Marketing Platform"
+  },
+  {
+    "name": "Mailchimp",
+    "category": "Email Marketing"
+  },
+  {
+    "name": "Google Ads",
+    "category": "Digital Advertising"
+  },
+  {
+    "name": "Google Analytics",
+    "category": "Web Analytics"
+  },
+  {
+    "name": "Meta Ads Manager",
+    "category": "Digital Advertising"
+  },
+  {
+    "name": "Marketo",
+    "category": "Marketing Automation"
+  },
+  {
+    "name": "Pardot",
+    "category": "Marketing Automation"
+  },
+  {
+    "name": "Hootsuite",
+    "category": "Social Media Management"
+  },
+  {
+    "name": "SEMrush",
+    "category": "SEO Tool"
+  },
+  {
+    "name": "Ahrefs",
+    "category": "SEO Tool"
+  },
+  {
+    "name": "Canva",
+    "category": "Graphic Design"
+  },
+  {
+    "name": "WordPress",
+    "category": "CMS"
+  },
+  {
+    "name": "AutoCAD",
+    "category": "CAD Software"
+  },
+  {
+    "name": "Revit",
+    "category": "BIM Software"
+  },
+  {
+    "name": "SolidWorks",
+    "category": "CAD/CAE Software"
+  },
+  {
+    "name": "CATIA",
+    "category": "CAD/CAE Software"
+  },
+  {
+    "name": "Autodesk Inventor",
+    "category": "CAD Software"
+  },
+  {
+    "name": "SketchUp",
+    "category": "CAD Software"
+  },
+  {
+    "name": "Rhino",
+    "category": "CAD Software"
+  },
+  {
+    "name": "Civil 3D",
+    "category": "Civil Engineering Software"
+  },
+  {
+    "name": "Primavera P6",
+    "category": "Project Scheduling"
+  },
+  {
+    "name": "Procore",
+    "category": "Construction Management"
+  },
+  {
+    "name": "Bluebeam",
+    "category": "Construction Document"
+  },
+  {
+    "name": "PlanGrid",
+    "category": "Construction Management"
+  },
+  {
+    "name": "AVEVA",
+    "category": "Engineering Software"
+  },
+  {
+    "name": "Siemens NX",
+    "category": "CAD/CAM"
+  },
+  {
+    "name": "Mastercam",
+    "category": "CAM Software"
+  },
+  {
+    "name": "ANSYS",
+    "category": "Simulation/CAE"
+  },
+  {
+    "name": "MATLAB",
+    "category": "Scientific Computing"
+  },
+  {
+    "name": "LabVIEW",
+    "category": "Test/Measurement"
+  },
+  {
+    "name": "PLC Programming",
+    "category": "Industrial Automation"
+  },
+  {
+    "name": "SCADA",
+    "category": "Industrial Control"
+  },
+  {
+    "name": "Siemens TIA Portal",
+    "category": "Industrial Automation"
+  },
+  {
+    "name": "Allen-Bradley",
+    "category": "Industrial Automation"
+  },
+  {
+    "name": "Wonderware",
+    "category": "Industrial Automation"
+  },
+  {
+    "name": "Kepware",
+    "category": "Industrial IoT"
+  },
+  {
+    "name": "Westlaw",
+    "category": "Legal Research"
+  },
+  {
+    "name": "LexisNexis",
+    "category": "Legal Research"
+  },
+  {
+    "name": "Clio",
+    "category": "Legal Practice Management"
+  },
+  {
+    "name": "DocuSign",
+    "category": "E-Signature"
+  },
+  {
+    "name": "Relativity",
+    "category": "E-Discovery"
+  },
+  {
+    "name": "iManage",
+    "category": "Legal Document Management"
+  },
+  {
+    "name": "Canvas LMS",
+    "category": "Learning Management"
+  },
+  {
+    "name": "Blackboard",
+    "category": "Learning Management"
+  },
+  {
+    "name": "Moodle",
+    "category": "Learning Management"
+  },
+  {
+    "name": "Google Classroom",
+    "category": "Learning Management"
+  },
+  {
+    "name": "Instructure",
+    "category": "EdTech Platform"
+  },
+  {
+    "name": "MLS",
+    "category": "Real Estate Platform"
+  },
+  {
+    "name": "Yardi",
+    "category": "Property Management"
+  },
+  {
+    "name": "AppFolio",
+    "category": "Property Management"
+  },
+  {
+    "name": "CoStar",
+    "category": "Real Estate Data"
+  },
+  {
+    "name": "RealPage",
+    "category": "Property Management"
+  },
+  {
+    "name": "SAP TM",
+    "category": "Transportation Management"
+  },
+  {
+    "name": "Oracle Transportation Management",
+    "category": "TMS"
+  },
+  {
+    "name": "Manhattan Associates",
+    "category": "Supply Chain Software"
+  },
+  {
+    "name": "Blue Yonder",
+    "category": "Supply Chain Software"
+  },
+  {
+    "name": "Descartes",
+    "category": "Logistics Software"
+  },
+  {
+    "name": "ETAP",
+    "category": "Power Systems Analysis"
+  },
+  {
+    "name": "PSS/E",
+    "category": "Power Grid Simulation"
+  },
+  {
+    "name": "OSIsoft PI",
+    "category": "Process Data Management"
+  },
+  {
+    "name": "Aspen HYSYS",
+    "category": "Process Simulation"
+  },
+  {
+    "name": "Petrel",
+    "category": "Reservoir Modeling"
+  },
+  {
+    "name": "ArcGIS",
+    "category": "GIS Software"
+  },
+  {
+    "name": "QGIS",
+    "category": "GIS Software"
+  },
+  {
+    "name": "Google Earth Pro",
+    "category": "GIS Software"
+  },
+  {
+    "name": "John Deere Operations Center",
+    "category": "Precision Agriculture"
+  },
+  {
+    "name": "Trimble Agriculture",
+    "category": "Precision Agriculture"
+  },
+  {
+    "name": "Climate FieldView",
+    "category": "Precision Agriculture"
+  },
+  {
+    "name": "Ag Leader",
+    "category": "Precision Agriculture"
+  },
+  {
+    "name": "Opera PMS",
+    "category": "Hospitality PMS"
+  },
+  {
+    "name": "Micros POS",
+    "category": "Point of Sale"
+  },
+  {
+    "name": "Toast POS",
+    "category": "Restaurant POS"
+  },
+  {
+    "name": "Square POS",
+    "category": "Point of Sale"
+  },
+  {
+    "name": "OpenTable",
+    "category": "Reservation System"
+  },
+  {
+    "name": "Adobe Creative Suite",
+    "category": "Creative Software"
+  },
+  {
+    "name": "Adobe Photoshop",
+    "category": "Image Editing"
+  },
+  {
+    "name": "Adobe Premiere Pro",
+    "category": "Video Editing"
+  },
+  {
+    "name": "Final Cut Pro",
+    "category": "Video Editing"
+  },
+  {
+    "name": "DaVinci Resolve",
+    "category": "Video Editing/Color"
+  },
+  {
+    "name": "Pro Tools",
+    "category": "Audio Production"
+  },
+  {
+    "name": "Ableton Live",
+    "category": "Audio Production"
+  },
+  {
+    "name": "Figma",
+    "category": "UI/UX Design"
   }
 ]

@@ -161,22 +161,18 @@ function loadONETCandidates(): CandidateEntry[] {
   if (fs.existsSync(jsonFile)) {
     try {
       const content = fs.readFileSync(jsonFile, 'utf-8');
-      const techs = JSON.parse(content) as Array<{
+      const items = JSON.parse(content) as Array<{
         name: string;
         category: string;
-        hotTechnology: boolean;
-        inDemand: boolean;
+        hotTechnology?: boolean;
+        inDemand?: boolean;
       }>;
-      
-      return techs.map(tech => ({
-        canonical: normalize(tech.name),
+
+      return items.map(item => ({
+        canonical: normalize(item.name),
         aliases: [],
         source: 'onet' as const,
-        category: tech.category,
-        metadata: {
-          hotTechnology: tech.hotTechnology,
-          inDemand: tech.inDemand,
-        },
+        category: item.category,
       }));
     } catch {
       // Fall through to TSV

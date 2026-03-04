@@ -5238,5 +5238,3719 @@
     ],
     "source": "industry-vertical",
     "category": "Legal & Compliance"
+  },
+  {
+    "canonical": "workday",
+    "aliases": [
+      "workday hcm"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "bamboohr",
+    "aliases": [
+      "bamboo hr"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "greenhouse recruiting",
+    "aliases": [
+      "greenhouse ats"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "lever recruiting",
+    "aliases": [
+      "lever ats"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "icims",
+    "aliases": [
+      "icims ats"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "ukg",
+    "aliases": [
+      "ultimate kronos group",
+      "kronos"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "ceridian dayforce",
+    "aliases": [
+      "dayforce"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "adp workforce now",
+    "aliases": [
+      "adp payroll"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "paychex",
+    "aliases": [
+      "paychex flex"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "namely",
+    "aliases": [
+      "namely hr"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "cornerstone ondemand",
+    "aliases": [
+      "csod"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "sap successfactors",
+    "aliases": [
+      "successfactors"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "oracle hcm",
+    "aliases": [
+      "oracle hcm cloud"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "talent acquisition",
+    "aliases": [
+      "recruiting",
+      "recruitment"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "employee onboarding",
+    "aliases": [
+      "onboarding program"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "performance management",
+    "aliases": [
+      "performance review"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "compensation planning",
+    "aliases": [
+      "comp planning",
+      "salary benchmarking"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "benefits administration",
+    "aliases": [
+      "benefits management"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "workforce planning",
+    "aliases": [
+      "headcount planning"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "succession planning",
+    "aliases": [
+      "talent pipeline"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "organizational development",
+    "aliases": [
+      "od"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "labor relations",
+    "aliases": [
+      "employee relations",
+      "union relations"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "diversity equity inclusion",
+    "aliases": [
+      "dei",
+      "d&i"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "employee engagement",
+    "aliases": [
+      "engagement survey"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "people analytics",
+    "aliases": [
+      "hr analytics",
+      "workforce analytics"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "job evaluation",
+    "aliases": [
+      "hay methodology",
+      "job grading"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "employer branding",
+    "aliases": [
+      "evp",
+      "employer value proposition"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "outplacement",
+    "aliases": [
+      "career transition"
+    ],
+    "source": "industry-vertical",
+    "category": "Human Resources & People Operations"
+  },
+  {
+    "canonical": "quickbooks",
+    "aliases": [
+      "quickbooks online",
+      "qbo"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "sage intacct",
+    "aliases": [
+      "sage 50",
+      "sage accounting"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "xero",
+    "aliases": [
+      "xero accounting"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "netsuite",
+    "aliases": [
+      "oracle netsuite"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "freshbooks",
+    "aliases": [
+      "fresh books"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "wave accounting",
+    "aliases": [
+      "wave financial"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "intuit turbotax",
+    "aliases": [
+      "turbotax"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "lacerte",
+    "aliases": [
+      "intuit lacerte"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "drake tax",
+    "aliases": [
+      "drake software"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "proseries",
+    "aliases": [
+      "intuit proseries"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "caseware",
+    "aliases": [
+      "caseware idea"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "blackline",
+    "aliases": [
+      "black line"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "gaap",
+    "aliases": [
+      "generally accepted accounting principles"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "ifrs",
+    "aliases": [
+      "international financial reporting standards"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "sox compliance",
+    "aliases": [
+      "sarbanes-oxley"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "accounts payable",
+    "aliases": [
+      "ap",
+      "a/p"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "accounts receivable",
+    "aliases": [
+      "ar",
+      "a/r"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "general ledger",
+    "aliases": [
+      "gl",
+      "g/l"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "trial balance",
+    "aliases": [
+      "tb"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "bank reconciliation",
+    "aliases": [
+      "account reconciliation"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "financial close",
+    "aliases": [
+      "month-end close",
+      "year-end close"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "cost accounting",
+    "aliases": [
+      "managerial accounting"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "forensic accounting",
+    "aliases": [
+      "fraud examination"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "tax compliance",
+    "aliases": [
+      "tax planning"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "transfer pricing",
+    "aliases": [
+      "intercompany pricing"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "revenue recognition",
+    "aliases": [
+      "asc 606"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "lease accounting",
+    "aliases": [
+      "asc 842"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "consolidation",
+    "aliases": [
+      "financial consolidation"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "variance analysis",
+    "aliases": [
+      "budget variance"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "cash flow forecasting",
+    "aliases": [
+      "cash flow management"
+    ],
+    "source": "industry-vertical",
+    "category": "Accounting & Financial Planning"
+  },
+  {
+    "canonical": "autocad",
+    "aliases": [
+      "auto cad",
+      "autocad civil 3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "revit",
+    "aliases": [
+      "autodesk revit",
+      "revit architecture"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "building information modeling",
+    "aliases": [
+      "bim",
+      "bim 360"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "procore",
+    "aliases": [
+      "procore construction"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "primavera p6",
+    "aliases": [
+      "oracle primavera"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "bluebeam",
+    "aliases": [
+      "bluebeam revu"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "plangrid",
+    "aliases": [
+      "plan grid"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "navisworks",
+    "aliases": [
+      "autodesk navisworks"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "tekla",
+    "aliases": [
+      "tekla structures"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "archicad",
+    "aliases": [
+      "archi cad"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "sketchup",
+    "aliases": [
+      "sketch up",
+      "sketchup pro"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "enscape",
+    "aliases": [
+      "enscape 3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "lumion",
+    "aliases": [
+      "lumion 3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "rhino",
+    "aliases": [
+      "rhinoceros 3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "grasshopper",
+    "aliases": [
+      "grasshopper 3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "construction management",
+    "aliases": [
+      "site management"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "building codes",
+    "aliases": [
+      "code compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "blueprint reading",
+    "aliases": [
+      "plan reading",
+      "technical drawings"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "cost estimation",
+    "aliases": [
+      "quantity surveying",
+      "construction estimating"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "project scheduling",
+    "aliases": [
+      "critical path method",
+      "cpm"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "osha compliance",
+    "aliases": [
+      "construction safety",
+      "safety management"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "structural analysis",
+    "aliases": [
+      "structural engineering"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "geotechnical engineering",
+    "aliases": [
+      "soil mechanics"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "surveying",
+    "aliases": [
+      "land surveying",
+      "topographic survey"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "concrete technology",
+    "aliases": [
+      "concrete mix design"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "steel fabrication",
+    "aliases": [
+      "steel detailing"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "hvac design",
+    "aliases": [
+      "mechanical engineering"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "mep coordination",
+    "aliases": [
+      "mechanical electrical plumbing"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "stormwater management",
+    "aliases": [
+      "drainage design"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "leed certification",
+    "aliases": [
+      "green building",
+      "sustainable design"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "value engineering",
+    "aliases": [
+      "ve"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "contract administration",
+    "aliases": [
+      "construction contracts"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "punch list",
+    "aliases": [
+      "deficiency list",
+      "snag list"
+    ],
+    "source": "industry-vertical",
+    "category": "Construction & Architecture"
+  },
+  {
+    "canonical": "canvas lms",
+    "aliases": [
+      "canvas learning management"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "blackboard",
+    "aliases": [
+      "blackboard learn"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "moodle",
+    "aliases": [
+      "moodle lms"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "google classroom",
+    "aliases": [
+      "google education"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "schoology",
+    "aliases": [
+      "schoology lms"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "d2l brightspace",
+    "aliases": [
+      "brightspace",
+      "d2l"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "edmodo",
+    "aliases": [
+      "edmodo platform"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "nearpod",
+    "aliases": [
+      "nearpod lessons"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "kahoot",
+    "aliases": [
+      "kahoot quizzes"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "turnitin",
+    "aliases": [
+      "turn it in"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "gradescope",
+    "aliases": [
+      "grade scope"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "articulate storyline",
+    "aliases": [
+      "articulate 360"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "adobe captivate",
+    "aliases": [
+      "captivate"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "camtasia",
+    "aliases": [
+      "techsmith camtasia"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "curriculum development",
+    "aliases": [
+      "curriculum design"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "instructional design",
+    "aliases": [
+      "learning design",
+      "addie model"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "bloom taxonomy",
+    "aliases": [
+      "learning objectives"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "formative assessment",
+    "aliases": [
+      "summative assessment"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "differentiated instruction",
+    "aliases": [
+      "differentiation"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "special education",
+    "aliases": [
+      "sped",
+      "individualized education program",
+      "iep"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "classroom management",
+    "aliases": [
+      "behavior management"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "student engagement",
+    "aliases": [
+      "active learning"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "educational assessment",
+    "aliases": [
+      "test development"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "accreditation",
+    "aliases": [
+      "program accreditation"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "academic advising",
+    "aliases": [
+      "student counseling"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "research methodology",
+    "aliases": [
+      "research methods"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "grant writing",
+    "aliases": [
+      "research funding"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "peer review",
+    "aliases": [
+      "academic publishing"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "pedagogy",
+    "aliases": [
+      "teaching methods"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "andragogy",
+    "aliases": [
+      "adult learning theory"
+    ],
+    "source": "industry-vertical",
+    "category": "Education & Training"
+  },
+  {
+    "canonical": "siemens nx",
+    "aliases": [
+      "nx cad/cam"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "mastercam",
+    "aliases": [
+      "master cam"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "ansys",
+    "aliases": [
+      "ansys simulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "abaqus",
+    "aliases": [
+      "abaqus fea"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "solidworks simulation",
+    "aliases": [
+      "solidworks fea"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "catia",
+    "aliases": [
+      "dassault catia"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "creo",
+    "aliases": [
+      "ptc creo",
+      "pro/engineer"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "labview",
+    "aliases": [
+      "lab view",
+      "national instruments labview"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "matlab",
+    "aliases": [
+      "matlab simulink"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "minitab",
+    "aliases": [
+      "minitab statistical"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "plc programming",
+    "aliases": [
+      "programmable logic controller"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "scada",
+    "aliases": [
+      "supervisory control and data acquisition"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "siemens tia portal",
+    "aliases": [
+      "tia portal"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "allen-bradley",
+    "aliases": [
+      "rockwell automation",
+      "rslogix"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "wonderware",
+    "aliases": [
+      "aveva wonderware"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "fanuc",
+    "aliases": [
+      "fanuc robotics"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "kuka",
+    "aliases": [
+      "kuka robotics"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "abb robotics",
+    "aliases": [
+      "abb robots"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "cnc machining",
+    "aliases": [
+      "cnc programming",
+      "g-code"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "injection molding",
+    "aliases": [
+      "plastic injection"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "lean manufacturing",
+    "aliases": [
+      "lean production",
+      "toyota production system"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "six sigma",
+    "aliases": [
+      "dmaic",
+      "statistical process control"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "total quality management",
+    "aliases": [
+      "tqm"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "iso 9001",
+    "aliases": [
+      "quality management system",
+      "qms"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "iso 14001",
+    "aliases": [
+      "environmental management system",
+      "ems"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "kaizen",
+    "aliases": [
+      "continuous improvement"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "5s",
+    "aliases": [
+      "workplace organization"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "kanban",
+    "aliases": [
+      "pull system"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "value stream mapping",
+    "aliases": [
+      "vsm"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "failure mode effects analysis",
+    "aliases": [
+      "fmea"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "design for manufacturing",
+    "aliases": [
+      "dfm",
+      "dfa"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "process validation",
+    "aliases": [
+      "iq oq pq"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "root cause analysis",
+    "aliases": [
+      "rca",
+      "5 whys",
+      "ishikawa"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "production planning",
+    "aliases": [
+      "production scheduling",
+      "mrp"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "bill of materials",
+    "aliases": [
+      "bom",
+      "bom management"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "preventive maintenance",
+    "aliases": [
+      "predictive maintenance",
+      "tpm"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "oee",
+    "aliases": [
+      "overall equipment effectiveness"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "industrial safety",
+    "aliases": [
+      "lockout tagout",
+      "loto"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "ergonomics",
+    "aliases": [
+      "workplace ergonomics"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "additive manufacturing",
+    "aliases": [
+      "3d printing",
+      "rapid prototyping"
+    ],
+    "source": "industry-vertical",
+    "category": "Manufacturing & Industrial"
+  },
+  {
+    "canonical": "hubspot",
+    "aliases": [
+      "hubspot crm",
+      "hubspot marketing hub"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "mailchimp",
+    "aliases": [
+      "mail chimp"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "marketo",
+    "aliases": [
+      "adobe marketo",
+      "marketo engage"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "pardot",
+    "aliases": [
+      "salesforce pardot"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "google ads",
+    "aliases": [
+      "google adwords",
+      "ppc"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "google analytics",
+    "aliases": [
+      "ga4",
+      "google analytics 4"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "meta ads manager",
+    "aliases": [
+      "facebook ads",
+      "instagram ads"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "linkedin advertising",
+    "aliases": [
+      "linkedin ads"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "tiktok ads",
+    "aliases": [
+      "tiktok business"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "semrush",
+    "aliases": [
+      "sem rush"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "ahrefs",
+    "aliases": [
+      "ahrefs seo"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "moz",
+    "aliases": [
+      "moz pro",
+      "moz seo"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "hootsuite",
+    "aliases": [
+      "hoot suite"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "sprout social",
+    "aliases": [
+      "sprout"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "buffer",
+    "aliases": [
+      "buffer social"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "canva",
+    "aliases": [
+      "canva design"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "wordpress",
+    "aliases": [
+      "wordpress cms"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "contentful",
+    "aliases": [
+      "headless cms"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "klaviyo",
+    "aliases": [
+      "klaviyo email"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "braze",
+    "aliases": [
+      "braze engagement"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "intercom",
+    "aliases": [
+      "intercom messaging"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "hotjar",
+    "aliases": [
+      "hot jar",
+      "heatmap analytics"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "optimizely",
+    "aliases": [
+      "split testing"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "search engine optimization",
+    "aliases": [
+      "seo",
+      "organic search"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "pay-per-click",
+    "aliases": [
+      "ppc",
+      "paid search"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "content marketing",
+    "aliases": [
+      "content strategy"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "social media marketing",
+    "aliases": [
+      "smm"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "brand management",
+    "aliases": [
+      "branding",
+      "brand strategy"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "marketing automation",
+    "aliases": [
+      "marketing ops"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "demand generation",
+    "aliases": [
+      "demand gen",
+      "lead generation"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "conversion rate optimization",
+    "aliases": [
+      "cro"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "customer journey",
+    "aliases": [
+      "marketing funnel"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "copywriting",
+    "aliases": [
+      "content writing",
+      "ad copy"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "public relations",
+    "aliases": [
+      "pr",
+      "media relations"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "affiliate marketing",
+    "aliases": [
+      "partner marketing"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "account-based marketing",
+    "aliases": [
+      "abm"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "growth hacking",
+    "aliases": [
+      "growth marketing"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "marketing attribution",
+    "aliases": [
+      "multi-touch attribution"
+    ],
+    "source": "industry-vertical",
+    "category": "Marketing & Digital Marketing"
+  },
+  {
+    "canonical": "salesforce sales cloud",
+    "aliases": [
+      "sfdc"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "hubspot sales hub",
+    "aliases": [
+      "hubspot sales"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "pipedrive",
+    "aliases": [
+      "pipe drive"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "zoho crm",
+    "aliases": [
+      "zoho sales"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "outreach",
+    "aliases": [
+      "outreach.io"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "salesloft",
+    "aliases": [
+      "sales loft"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "gong",
+    "aliases": [
+      "gong.io",
+      "revenue intelligence"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "chorus",
+    "aliases": [
+      "zoominfo chorus"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "linkedin sales navigator",
+    "aliases": [
+      "sales nav"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "clari",
+    "aliases": [
+      "clari revenue"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "zoominfo",
+    "aliases": [
+      "zoom info"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "docusign",
+    "aliases": [
+      "docu sign",
+      "e-signature"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "conga",
+    "aliases": [
+      "conga cpq"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "salesforce cpq",
+    "aliases": [
+      "configure price quote"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "solution selling",
+    "aliases": [
+      "consultative selling"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "spin selling",
+    "aliases": [
+      "spin sales methodology"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "meddic",
+    "aliases": [
+      "meddpicc",
+      "qualification framework"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "sandler selling",
+    "aliases": [
+      "sandler methodology"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "challenger sale",
+    "aliases": [
+      "challenger selling"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "enterprise sales",
+    "aliases": [
+      "strategic selling"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "inside sales",
+    "aliases": [
+      "sdr",
+      "sales development"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "pipeline management",
+    "aliases": [
+      "sales pipeline"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "sales forecasting",
+    "aliases": [
+      "forecast management"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "territory planning",
+    "aliases": [
+      "territory management"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "quota management",
+    "aliases": [
+      "sales targets"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "customer success",
+    "aliases": [
+      "csm",
+      "customer success management"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "revenue operations",
+    "aliases": [
+      "revops",
+      "rev ops"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "sales enablement",
+    "aliases": [
+      "sales readiness"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "proposal management",
+    "aliases": [
+      "rfp response"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "channel sales",
+    "aliases": [
+      "partner sales",
+      "indirect sales"
+    ],
+    "source": "industry-vertical",
+    "category": "Sales & Business Development"
+  },
+  {
+    "canonical": "sap mm",
+    "aliases": [
+      "sap materials management"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "sap wm",
+    "aliases": [
+      "sap warehouse management"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "sap tm",
+    "aliases": [
+      "sap transportation management"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "oracle scm",
+    "aliases": [
+      "oracle supply chain"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "manhattan associates",
+    "aliases": [
+      "manhattan wms"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "blue yonder",
+    "aliases": [
+      "jda software"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "kinaxis",
+    "aliases": [
+      "kinaxis rapidresponse"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "coupa",
+    "aliases": [
+      "coupa procurement"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "ariba",
+    "aliases": [
+      "sap ariba"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "descartes",
+    "aliases": [
+      "descartes logistics"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "project44",
+    "aliases": [
+      "project 44"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "flexport",
+    "aliases": [
+      "flexport freight"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "supply chain management",
+    "aliases": [
+      "scm"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "procurement",
+    "aliases": [
+      "strategic sourcing"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "logistics management",
+    "aliases": [
+      "transportation logistics"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "warehouse management",
+    "aliases": [
+      "warehousing",
+      "wms"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "inventory optimization",
+    "aliases": [
+      "inventory planning"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "demand planning",
+    "aliases": [
+      "demand forecasting"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "sales and operations planning",
+    "aliases": [
+      "s&op"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "import export compliance",
+    "aliases": [
+      "customs compliance",
+      "trade compliance"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "freight forwarding",
+    "aliases": [
+      "freight management"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "last mile delivery",
+    "aliases": [
+      "last mile logistics"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "reverse logistics",
+    "aliases": [
+      "returns management"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "cold chain management",
+    "aliases": [
+      "cold chain logistics"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "vendor managed inventory",
+    "aliases": [
+      "vmi"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "just-in-time",
+    "aliases": [
+      "jit",
+      "just in time manufacturing"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "bill of lading",
+    "aliases": [
+      "bol",
+      "shipping documentation"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "incoterms",
+    "aliases": [
+      "trade terms"
+    ],
+    "source": "industry-vertical",
+    "category": "Supply Chain & Logistics"
+  },
+  {
+    "canonical": "yardi",
+    "aliases": [
+      "yardi voyager",
+      "yardi breeze"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "appfolio",
+    "aliases": [
+      "app folio"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "realpage",
+    "aliases": [
+      "real page"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "buildium",
+    "aliases": [
+      "buildium pm"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "mri software",
+    "aliases": [
+      "mri real estate"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "costar",
+    "aliases": [
+      "costar group"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "argus",
+    "aliases": [
+      "argus enterprise",
+      "argus dcf"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "reonomy",
+    "aliases": [
+      "reonomy data"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "mls",
+    "aliases": [
+      "multiple listing service"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "zillow",
+    "aliases": [
+      "zillow premier agent"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "property management",
+    "aliases": [
+      "real estate management"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "real estate appraisal",
+    "aliases": [
+      "property valuation"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "commercial real estate",
+    "aliases": [
+      "cre"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "leasing",
+    "aliases": [
+      "lease administration"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "tenant management",
+    "aliases": [
+      "tenant relations"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "cap rate",
+    "aliases": [
+      "capitalization rate"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "cash on cash return",
+    "aliases": [
+      "coc return"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "net operating income",
+    "aliases": [
+      "noi"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "comparative market analysis",
+    "aliases": [
+      "cma"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "1031 exchange",
+    "aliases": [
+      "like-kind exchange"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "zoning",
+    "aliases": [
+      "land use planning"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "title search",
+    "aliases": [
+      "title examination"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "closing process",
+    "aliases": [
+      "settlement"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "property inspection",
+    "aliases": [
+      "home inspection"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "rent roll",
+    "aliases": [
+      "rent analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Real Estate & Property Management"
+  },
+  {
+    "canonical": "john deere operations center",
+    "aliases": [
+      "john deere stellus"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "trimble agriculture",
+    "aliases": [
+      "trimble ag"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "climate fieldview",
+    "aliases": [
+      "climate corporation"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "ag leader",
+    "aliases": [
+      "ag leader technology"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "granular",
+    "aliases": [
+      "granular farm management"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "farmers edge",
+    "aliases": [
+      "farmers edge platform"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "agworld",
+    "aliases": [
+      "ag world"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "precision agriculture",
+    "aliases": [
+      "precision farming"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "gps guidance",
+    "aliases": [
+      "auto-steer",
+      "rtk gps"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "variable rate technology",
+    "aliases": [
+      "vrt",
+      "variable rate application"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "agronomy",
+    "aliases": [
+      "crop science",
+      "crop management"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "soil science",
+    "aliases": [
+      "soil analysis",
+      "soil testing"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "irrigation management",
+    "aliases": [
+      "drip irrigation",
+      "pivot irrigation"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "pest management",
+    "aliases": [
+      "ipm",
+      "integrated pest management"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "crop rotation",
+    "aliases": [
+      "cover cropping"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "livestock management",
+    "aliases": [
+      "herd management",
+      "animal husbandry"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "dairy management",
+    "aliases": [
+      "dairy farming"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "aquaculture",
+    "aliases": [
+      "fish farming"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "food safety",
+    "aliases": [
+      "haccp",
+      "food hygiene"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "gmp",
+    "aliases": [
+      "good manufacturing practice"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "fsma",
+    "aliases": [
+      "food safety modernization act"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "organic certification",
+    "aliases": [
+      "usda organic"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "sustainable agriculture",
+    "aliases": [
+      "regenerative agriculture"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "yield mapping",
+    "aliases": [
+      "yield analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "remote sensing",
+    "aliases": [
+      "ndvi",
+      "satellite imagery"
+    ],
+    "source": "industry-vertical",
+    "category": "Agriculture & Food Production"
+  },
+  {
+    "canonical": "etap",
+    "aliases": [
+      "electrical transient analyzer program"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "pss/e",
+    "aliases": [
+      "power system simulator"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "digsilent",
+    "aliases": [
+      "powerfactory"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "pvsyst",
+    "aliases": [
+      "pv syst",
+      "solar simulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "homer energy",
+    "aliases": [
+      "homer pro"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "aspen hysys",
+    "aliases": [
+      "hysys process simulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "petrel",
+    "aliases": [
+      "schlumberger petrel"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "eclipse",
+    "aliases": [
+      "eclipse reservoir simulator"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "openworks",
+    "aliases": [
+      "landmark openworks"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "osisoft pi",
+    "aliases": [
+      "pi system",
+      "osisoftpi"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "aveva",
+    "aliases": [
+      "aveva e3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "power generation",
+    "aliases": [
+      "power plant operations"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "renewable energy",
+    "aliases": [
+      "clean energy"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "solar energy",
+    "aliases": [
+      "photovoltaic",
+      "solar panel design"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "wind energy",
+    "aliases": [
+      "wind farm",
+      "wind turbine"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "energy storage",
+    "aliases": [
+      "battery storage",
+      "bess"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "smart grid",
+    "aliases": [
+      "grid modernization"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "scada",
+    "aliases": [
+      "energy scada",
+      "grid scada"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "power distribution",
+    "aliases": [
+      "distribution engineering"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "transmission engineering",
+    "aliases": [
+      "high voltage"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "drilling engineering",
+    "aliases": [
+      "well engineering"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "reservoir engineering",
+    "aliases": [
+      "reservoir simulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "pipeline engineering",
+    "aliases": [
+      "pipeline integrity"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "process safety",
+    "aliases": [
+      "process safety management",
+      "psm"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "energy trading",
+    "aliases": [
+      "power trading"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "nerc compliance",
+    "aliases": [
+      "nerc cip"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "ferc regulations",
+    "aliases": [
+      "energy regulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "environmental impact assessment",
+    "aliases": [
+      "eia"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "carbon accounting",
+    "aliases": [
+      "carbon footprint",
+      "ghg emissions"
+    ],
+    "source": "industry-vertical",
+    "category": "Energy & Utilities"
+  },
+  {
+    "canonical": "opera pms",
+    "aliases": [
+      "oracle opera",
+      "opera cloud"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "micros pos",
+    "aliases": [
+      "oracle micros"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "toast pos",
+    "aliases": [
+      "toast restaurant"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "square pos",
+    "aliases": [
+      "square for restaurants"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "aloha pos",
+    "aliases": [
+      "ncr aloha"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "lightspeed pos",
+    "aliases": [
+      "lightspeed restaurant"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "opentable",
+    "aliases": [
+      "open table"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "resy",
+    "aliases": [
+      "resy reservations"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "revinate",
+    "aliases": [
+      "revinate marketing"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "str",
+    "aliases": [
+      "smith travel research"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "hotel management",
+    "aliases": [
+      "hospitality management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "revenue management",
+    "aliases": [
+      "yield management",
+      "revpar"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "food and beverage",
+    "aliases": [
+      "f&b management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "front office management",
+    "aliases": [
+      "front desk operations"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "housekeeping management",
+    "aliases": [
+      "rooms division"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "banquet management",
+    "aliases": [
+      "catering management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "guest experience",
+    "aliases": [
+      "guest satisfaction"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "adr",
+    "aliases": [
+      "average daily rate"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "occupancy rate",
+    "aliases": [
+      "occupancy management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "food cost control",
+    "aliases": [
+      "food cost management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "menu engineering",
+    "aliases": [
+      "menu design"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "server training",
+    "aliases": [
+      "hospitality training"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "starcertification",
+    "aliases": [
+      "hotel classification"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "tourism management",
+    "aliases": [
+      "destination management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "event coordination",
+    "aliases": [
+      "event management",
+      "conference management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "travel agency",
+    "aliases": [
+      "travel management"
+    ],
+    "source": "industry-vertical",
+    "category": "Hospitality & Tourism"
+  },
+  {
+    "canonical": "fedramp",
+    "aliases": [
+      "federal risk authorization"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "fisma",
+    "aliases": [
+      "federal information security"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "far",
+    "aliases": [
+      "federal acquisition regulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "dfar",
+    "aliases": [
+      "defense federal acquisition regulation"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "sam.gov",
+    "aliases": [
+      "system for award management"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "usajobs",
+    "aliases": [
+      "federal hiring"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "grants.gov",
+    "aliases": [
+      "federal grants"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "public policy",
+    "aliases": [
+      "policy analysis"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "government relations",
+    "aliases": [
+      "lobbying",
+      "advocacy"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "public administration",
+    "aliases": [
+      "government administration"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "urban planning",
+    "aliases": [
+      "city planning",
+      "zoning"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "emergency management",
+    "aliases": [
+      "disaster management",
+      "fema"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "law enforcement",
+    "aliases": [
+      "policing"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "diplomacy",
+    "aliases": [
+      "foreign affairs",
+      "international relations"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "public finance",
+    "aliases": [
+      "government budgeting"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "foia",
+    "aliases": [
+      "freedom of information"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "rulemaking",
+    "aliases": [
+      "federal register"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "grant management",
+    "aliases": [
+      "grant administration"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "constituent services",
+    "aliases": [
+      "citizen engagement"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "government contracting",
+    "aliases": [
+      "federal contracting",
+      "govcon"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "clearance",
+    "aliases": [
+      "security clearance"
+    ],
+    "source": "industry-vertical",
+    "category": "Government & Public Administration"
+  },
+  {
+    "canonical": "adobe premiere pro",
+    "aliases": [
+      "premiere",
+      "premiere pro"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "final cut pro",
+    "aliases": [
+      "final cut",
+      "fcpx"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "davinci resolve",
+    "aliases": [
+      "davinci",
+      "blackmagic resolve"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "avid media composer",
+    "aliases": [
+      "avid"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "pro tools",
+    "aliases": [
+      "pro tools audio"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "ableton live",
+    "aliases": [
+      "ableton"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "logic pro",
+    "aliases": [
+      "logic pro x"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "after effects",
+    "aliases": [
+      "adobe after effects",
+      "ae"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "cinema 4d",
+    "aliases": [
+      "c4d",
+      "maxon cinema 4d"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "blender",
+    "aliases": [
+      "blender 3d"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "obs studio",
+    "aliases": [
+      "obs",
+      "open broadcaster"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "journalism",
+    "aliases": [
+      "news reporting",
+      "investigative journalism"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "broadcast journalism",
+    "aliases": [
+      "television news",
+      "tv production"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "photojournalism",
+    "aliases": [
+      "press photography"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "audio production",
+    "aliases": [
+      "podcast production"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "video production",
+    "aliases": [
+      "videography"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "live streaming",
+    "aliases": [
+      "live broadcast"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "ap style",
+    "aliases": [
+      "associated press style"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "fact-checking",
+    "aliases": [
+      "fact verification"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "newsroom management",
+    "aliases": [
+      "editorial management"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "content management system",
+    "aliases": [
+      "cms"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "audience development",
+    "aliases": [
+      "audience engagement"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "media ethics",
+    "aliases": [
+      "journalism ethics"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "digital publishing",
+    "aliases": [
+      "online publishing"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "multimedia storytelling",
+    "aliases": [
+      "data journalism"
+    ],
+    "source": "industry-vertical",
+    "category": "Media & Journalism"
+  },
+  {
+    "canonical": "arcgis",
+    "aliases": [
+      "esri arcgis"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "qgis",
+    "aliases": [
+      "quantum gis"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "envi",
+    "aliases": [
+      "l3harris envi"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "environmental impact assessment",
+    "aliases": [
+      "eia",
+      "nepa"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "environmental remediation",
+    "aliases": [
+      "site remediation"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "hazardous waste management",
+    "aliases": [
+      "hazmat"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "water quality management",
+    "aliases": [
+      "water treatment"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "air quality monitoring",
+    "aliases": [
+      "emissions monitoring"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "iso 14001",
+    "aliases": [
+      "environmental management system"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "esg reporting",
+    "aliases": [
+      "esg",
+      "environmental social governance"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "sustainability reporting",
+    "aliases": [
+      "gri",
+      "global reporting initiative"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "carbon footprint",
+    "aliases": [
+      "carbon accounting",
+      "ghg protocol"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "life cycle assessment",
+    "aliases": [
+      "lca"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "circular economy",
+    "aliases": [
+      "waste reduction"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "biodiversity assessment",
+    "aliases": [
+      "ecological survey"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "wetland delineation",
+    "aliases": [
+      "wetland assessment"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "phase i esa",
+    "aliases": [
+      "environmental site assessment"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "stormwater management",
+    "aliases": [
+      "npdes"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "sustainability strategy",
+    "aliases": [
+      "corporate sustainability"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "climate risk",
+    "aliases": [
+      "climate adaptation"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "renewable energy certificates",
+    "aliases": [
+      "rec",
+      "green certificates"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "science-based targets",
+    "aliases": [
+      "sbti"
+    ],
+    "source": "industry-vertical",
+    "category": "Environmental & Sustainability"
+  },
+  {
+    "canonical": "5g",
+    "aliases": [
+      "5g nr",
+      "fifth generation"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "lte",
+    "aliases": [
+      "lte-advanced",
+      "4g lte"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "fiber optics",
+    "aliases": [
+      "ftth",
+      "fiber to the home"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "voip",
+    "aliases": [
+      "voice over ip",
+      "sip"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "mpls",
+    "aliases": [
+      "multiprotocol label switching"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "sd-wan",
+    "aliases": [
+      "software-defined wan"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "bgp",
+    "aliases": [
+      "border gateway protocol"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "ospf",
+    "aliases": [
+      "open shortest path first"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "rf engineering",
+    "aliases": [
+      "radio frequency"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "antenna design",
+    "aliases": [
+      "antenna engineering"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "network planning",
+    "aliases": [
+      "capacity planning"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "oss/bss",
+    "aliases": [
+      "operations support system",
+      "business support system"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "cisco ios",
+    "aliases": [
+      "cisco networking"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "juniper junos",
+    "aliases": [
+      "juniper networks"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "nokia nsp",
+    "aliases": [
+      "nokia network services"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "ericsson",
+    "aliases": [
+      "ericsson telecom"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "billing system",
+    "aliases": [
+      "telecom billing"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "number portability",
+    "aliases": [
+      "mnp"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "spectrum management",
+    "aliases": [
+      "frequency planning"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
+  },
+  {
+    "canonical": "tower management",
+    "aliases": [
+      "cell site management"
+    ],
+    "source": "industry-vertical",
+    "category": "Telecommunications"
   }
 ]

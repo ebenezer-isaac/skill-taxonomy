@@ -1,4 +1,4 @@
-# Contributing to @llmconveyors/skill-taxonomy
+# Contributing to skill-taxonomy
 
 Thanks for helping build a better skill taxonomy! This file explains how to add skills, fix aliases, and submit your contribution.
 

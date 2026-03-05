@@ -1,4 +1,4 @@
-# @llmconveyors/skill-taxonomy
+# skill-taxonomy
 
 A comprehensive skill taxonomy for ATS resume scoring — 14,774 canonical skills with 175K+ aliases, hierarchical relationships, and 30+ metadata fields per skill.
 
@@ -17,7 +17,7 @@ Each skill entry includes aliases, broader terms, related skills, prerequisites,
 ## Install
 
 ```bash
-npm install @llmconveyors/skill-taxonomy
+npm install skill-taxonomy
 ```
 
 ## Quick start
@@ -29,7 +29,7 @@ import {
   buildReverseLookup,
   buildCanonicalSet,
   getStats,
-} from '@llmconveyors/skill-taxonomy';
+} from 'skill-taxonomy';
 
 // Flat view: canonical → aliases[] (for O(1) keyword matching)
 console.log(taxonomy['python']); // ["py", "python3", "python 3", ...]
@@ -60,7 +60,7 @@ import type {
   SkillTaxonomyMap,
   SkillTaxonomy,
   TaxonomyStats,
-} from '@llmconveyors/skill-taxonomy';
+} from 'skill-taxonomy';
 ```
 
 ### SkillEntry fields

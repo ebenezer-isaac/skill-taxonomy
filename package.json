@@ -1,12 +1,11 @@
 {
-  "name": "@llmconveyors/skill-taxonomy",
+  "name": "skill-taxonomy",
   "version": "2.0.0",
   "description": "Enterprise-grade skill taxonomy for ATS resume scoring — comprehensive ontology with hierarchical relationships, multi-source ingestion, and semantic deduplication",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/",
-    "src/skill-taxonomy.json"
+    "dist/"
   ],
   "scripts": {
     "build": "tsc",

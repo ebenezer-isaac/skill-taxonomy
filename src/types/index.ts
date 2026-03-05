@@ -4,7 +4,7 @@
 export type {
   SkillSource,
   SkillEntry,
-  EnrichedTaxonomy,
+  SkillTaxonomyMap,
   SkillTaxonomy,
   TaxonomyStats,
   CandidateEntry,

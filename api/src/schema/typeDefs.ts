@@ -38,6 +38,7 @@ export const typeDefs = `#graphql
     unresolvedRelatedSkills: [String!]!
     unresolvedPrerequisites: [String!]!
     unresolvedComplementarySkills: [String!]!
+    unresolvedAlternativeSkills: [String!]!
   }
 
   type Industry {
@@ -71,7 +72,7 @@ export const typeDefs = `#graphql
     totalIndustries: Int!
     totalCategories: Int!
     totalRelationships: Int!
-    enrichedSkills: Int!
+    processedSkills: Int!
     skillTypeDistribution: [KeyCount!]!
     demandLevelDistribution: [KeyCount!]!
     trendDistribution: [KeyCount!]!

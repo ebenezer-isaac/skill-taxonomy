@@ -1,8 +1,8 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-export type { SkillEntry, EnrichedTaxonomy, CandidateEntry } from '../src/types/taxonomy.types';
-import type { SkillEntry, EnrichedTaxonomy, CandidateEntry } from '../src/types/taxonomy.types';
+export type { SkillEntry, SkillTaxonomyMap, CandidateEntry } from '../src/types/taxonomy.types';
+import type { SkillEntry, SkillTaxonomyMap, CandidateEntry } from '../src/types/taxonomy.types';
 
 /** Path to the single canonical taxonomy file. */
 const TAXONOMY_PATH = path.join(__dirname, '..', 'src', 'skill-taxonomy.json');
@@ -22,7 +22,7 @@ function backfillEntry(entry: Record<string, unknown>): void {
 }
 
 /** Load the taxonomy from disk. */
-export function loadTaxonomy(): EnrichedTaxonomy {
+export function loadTaxonomy(): SkillTaxonomyMap {
   const raw = JSON.parse(fs.readFileSync(TAXONOMY_PATH, 'utf-8'));
   for (const entry of Object.values(raw) as Record<string, unknown>[]) {
     backfillEntry(entry);
@@ -36,8 +36,8 @@ export function taxonomyExists(): boolean {
 }
 
 /** Save taxonomy to disk (sorted by canonical name). */
-export function saveTaxonomy(taxonomy: EnrichedTaxonomy): void {
-  const sorted: EnrichedTaxonomy = {};
+export function saveTaxonomy(taxonomy: SkillTaxonomyMap): void {
+  const sorted: SkillTaxonomyMap = {};
   for (const key of Object.keys(taxonomy).sort()) {
     const entry = taxonomy[key];
     sorted[key] = {
@@ -59,7 +59,7 @@ export function saveTaxonomy(taxonomy: EnrichedTaxonomy): void {
 }
 
 /** Build a set of all known terms (canonicals + aliases), lowercased. */
-export function buildKnownTerms(taxonomy: EnrichedTaxonomy): Set<string> {
+export function buildKnownTerms(taxonomy: SkillTaxonomyMap): Set<string> {
   const known = new Set<string>();
   for (const [canonical, entry] of Object.entries(taxonomy)) {
     known.add(canonical.toLowerCase());
@@ -82,7 +82,7 @@ export function shouldApply(): boolean {
 
 /** Merge candidates into the taxonomy. Returns count of additions. */
 export function mergeCandidates(
-  taxonomy: EnrichedTaxonomy,
+  taxonomy: SkillTaxonomyMap,
   candidates: readonly CandidateEntry[],
 ): { readonly added: number; readonly aliasesExpanded: number } {
   const known = buildKnownTerms(taxonomy);

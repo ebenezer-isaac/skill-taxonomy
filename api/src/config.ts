@@ -22,7 +22,7 @@ export const config = Object.freeze({
   port: parseInt(process.env.API_PORT ?? '4000', 10),
   neo4jUri: process.env.NEO4J_URI ?? 'bolt://localhost:7687',
   neo4jUser: process.env.NEO4J_USER ?? 'neo4j',
-  neo4jPassword: process.env.NEO4J_PASSWORD ?? 'taxonomy',
+  neo4jPassword: process.env.NEO4J_PASSWORD ?? '',
   taxonomyPath: path.resolve(
     import.meta.dirname,
     process.env.TAXONOMY_PATH ?? '../../src/skill-taxonomy.json',

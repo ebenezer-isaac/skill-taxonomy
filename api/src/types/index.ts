@@ -35,6 +35,7 @@ export interface SkillDTO {
   readonly unresolvedRelatedSkills: readonly string[];
   readonly unresolvedPrerequisites: readonly string[];
   readonly unresolvedComplementarySkills: readonly string[];
+  readonly unresolvedAlternativeSkills: readonly string[];
 }
 
 /** Filter input for skill listing */
@@ -74,7 +75,7 @@ export interface TaxonomyStats {
   readonly totalIndustries: number;
   readonly totalCategories: number;
   readonly totalRelationships: number;
-  readonly enrichedSkills: number;
+  readonly processedSkills: number;
   readonly skillTypeDistribution: readonly KeyCount[];
   readonly demandLevelDistribution: readonly KeyCount[];
   readonly trendDistribution: readonly KeyCount[];

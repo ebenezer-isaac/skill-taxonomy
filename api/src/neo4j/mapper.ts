@@ -35,6 +35,7 @@ export function mapSkillNode(record: Neo4jRecord, key = 's'): SkillDTO {
     unresolvedRelatedSkills: toStringArray(p.unresolvedRelatedSkills),
     unresolvedPrerequisites: toStringArray(p.unresolvedPrerequisites),
     unresolvedComplementarySkills: toStringArray(p.unresolvedComplementarySkills),
+    unresolvedAlternativeSkills: toStringArray(p.unresolvedAlternativeSkills),
   });
 }
 

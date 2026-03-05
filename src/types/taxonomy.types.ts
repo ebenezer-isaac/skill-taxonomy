@@ -1,9 +1,8 @@
 /**
  * Core taxonomy types for the ATS skill matching engine.
  *
- * The canonical format is EnrichedTaxonomy (canonical → SkillEntry).
- * A flat derived view (SkillTaxonomy: canonical → aliases[]) is
- * produced at runtime for O(1) keyword matching.
+ * SkillTaxonomyMap is the canonical format (canonical → SkillEntry).
+ * SkillTaxonomy is a flat derived view (canonical → aliases[]) for O(1) keyword matching.
  */
 
 /** Data sources for skill provenance tracking */
@@ -19,7 +18,7 @@ export type SkillSource =
   | 'unknown';
 
 /**
- * Full skill entry with ATS metadata and LLM-enriched fields.
+ * Full skill entry with ATS metadata.
  *
  * Single source of truth for each skill in the taxonomy.
  */
@@ -88,8 +87,8 @@ export interface SkillEntry {
   emergingYear: number | null;
 }
 
-/** Canonical taxonomy: skill name → full metadata */
-export type EnrichedTaxonomy = Record<string, SkillEntry>;
+/** Canonical taxonomy map: skill name → full metadata */
+export type SkillTaxonomyMap = Record<string, SkillEntry>;
 
 /** Flat derived view for ATS runtime keyword matching (immutable for consumers) */
 export type SkillTaxonomy = Readonly<Record<string, readonly string[]>>;

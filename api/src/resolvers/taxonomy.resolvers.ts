@@ -10,7 +10,7 @@ import {
   TAXONOMY_STATS,
   TOTAL_RELATIONSHIPS,
   TOTAL_CATEGORIES,
-  ENRICHED_COUNT,
+  PROCESSED_COUNT,
   SKILL_TYPE_DISTRIBUTION,
   DEMAND_LEVEL_DISTRIBUTION,
   TREND_DISTRIBUTION,
@@ -59,12 +59,12 @@ export const taxonomyResolvers = {
         finally { await s.close(); }
       };
 
-      const [statsRes, relRes, catRes, enrichedRes, typeRes, demandRes, trendRes] =
+      const [statsRes, relRes, catRes, processedRes, typeRes, demandRes, trendRes] =
         await Promise.all([
           runQuery(TAXONOMY_STATS),
           runQuery(TOTAL_RELATIONSHIPS),
           runQuery(TOTAL_CATEGORIES),
-          runQuery(ENRICHED_COUNT),
+          runQuery(PROCESSED_COUNT),
           runQuery(SKILL_TYPE_DISTRIBUTION),
           runQuery(DEMAND_LEVEL_DISTRIBUTION),
           runQuery(TREND_DISTRIBUTION),
@@ -75,7 +75,7 @@ export const taxonomyResolvers = {
         totalIndustries: statsRes.records[0]?.get('totalIndustries')?.toNumber?.() ?? 0,
         totalCategories: catRes.records[0]?.get('total')?.toNumber?.() ?? 0,
         totalRelationships: relRes.records[0]?.get('total')?.toNumber?.() ?? 0,
-        enrichedSkills: enrichedRes.records[0]?.get('total')?.toNumber?.() ?? 0,
+        processedSkills: processedRes.records[0]?.get('total')?.toNumber?.() ?? 0,
         skillTypeDistribution: typeRes.records.map((r) => ({
           key: r.get('key') as string,
           count: (r.get('count') as neo4j.Integer).toNumber(),

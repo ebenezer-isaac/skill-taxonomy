@@ -172,7 +172,7 @@ export const TOTAL_RELATIONSHIPS = `
   RETURN count(r) AS total
 `;
 
-export const ENRICHED_COUNT = `
+export const PROCESSED_COUNT = `
   MATCH (s:Skill)
   WHERE s.confidence <> 'pending'
   RETURN count(s) AS total

@@ -1,14 +1,14 @@
 /**
- * LLM-powered taxonomy enrichment using Gemini Pro.
+ * LLM-powered taxonomy processing using Gemini Flash.
  *
- * Enriches every skill entry with 29 structured fields including:
+ * Processes every skill entry with 29 structured fields including:
  * category, broader terms, related skills, seniority signal, industry
  * relevance, trend direction, demand level, common job titles, and more.
  *
  * Features:
  * - Batch processing with configurable batch size (default 5)
  * - Checkpoint/resume for long runs
- * - Live apply — each batch is written to enriched taxonomy immediately
+ * - Live apply — each batch is written to taxonomy immediately
  * - Source context injection from ESCO, O*NET, StackExchange, and verticals
  * - Structured output via Gemini's responseSchema (Zod → JSON Schema)
  *
@@ -29,7 +29,7 @@ import {
   taxonomyExists,
   buildKnownTerms,
 } from './common';
-import type { EnrichedTaxonomy, SkillEntry } from './common';
+import type { SkillTaxonomyMap, SkillEntry } from './common';
 
 // Load .env file
 function loadEnv(): void {
@@ -183,10 +183,10 @@ const INDUSTRIES = [
   'general', 'cross-industry',
 ] as const;
 
-// ─── Zod schema (enriched format) ─────────────────────────────────────────────
+// ─── Zod schema (response format) ─────────────────────────────────────────────
 // The LLM returns the COMPLETE alias list (existing valid + new suggestions,
 // misspellings, versions, abbreviations merged). This gets plugged directly
-// into the enriched taxonomy entry.
+// into the taxonomy entry.
 
 const LLMResponseSchema = z.object({
   // Core validation
@@ -906,7 +906,7 @@ function generateReport(results: Map<string, SkillValidation>): void {
   const toMerge = data.filter(r => r.shouldMergeWith).length;
   const toRename = data.filter(r => r.preferredCanonical).length;
   const withInvalidAliases = data.filter(r => r.invalidAliases.length > 0).length;
-  const withEnrichedData = data.filter(r => r.aliases.length > 0 || r.broaderTerms.length > 0).length;
+  const withMetadata = data.filter(r => r.aliases.length > 0 || r.broaderTerms.length > 0).length;
   const totalAliases = data.reduce((s, r) => s + r.aliases.length, 0);
   const totalBroaderTerms = data.reduce((s, r) => s + r.broaderTerms.length, 0);
   const withCerts = data.filter(r => r.certifications.length > 0).length;
@@ -950,7 +950,7 @@ Generated: ${new Date().toISOString()}
 | Should Merge | ${toMerge} | ${pct(toMerge)}% |
 | Should Rename | ${toRename} | ${pct(toRename)}% |
 | Has Invalid Aliases | ${withInvalidAliases} | ${pct(withInvalidAliases)}% |
-| Has Enriched Data | ${withEnrichedData} | ${pct(withEnrichedData)}% |
+| Has Metadata | ${withMetadata} | ${pct(withMetadata)}% |
 | Has Certifications | ${withCerts} | ${pct(withCerts)}% |
 | Has Prerequisites | ${withPrereqs} | ${pct(withPrereqs)}% |
 | Region-Specific | ${regionSpecific} | ${pct(regionSpecific)}% |
@@ -1037,8 +1037,8 @@ ${data.filter(r => r.confidence === 'low').map(r =>
 // ─── Apply enrichment results back to taxonomy ─────────────────────────────
 
 function applyResults(results: Map<string, SkillValidation>): void {
-  const enriched = loadTaxonomy();
-  const known = buildKnownTerms(enriched);
+  const taxonomy = loadTaxonomy();
+  const known = buildKnownTerms(taxonomy);
   let removed = 0;
   let merged = 0;
   let renamed = 0;
@@ -1050,7 +1050,7 @@ function applyResults(results: Map<string, SkillValidation>): void {
   // Pass 1: Remove invalid skills (high confidence only)
   for (const r of data) {
     if (r.shouldRemove && r.confidence === 'high') {
-      delete enriched[r.canonical];
+      delete taxonomy[r.canonical];
       removed++;
     }
   }
@@ -1059,28 +1059,28 @@ function applyResults(results: Map<string, SkillValidation>): void {
   for (const r of data) {
     if (!r.shouldMergeWith || r.shouldRemove) continue;
     const target = normalize(r.shouldMergeWith);
-    if (enriched[target] === undefined || enriched[r.canonical] === undefined) continue;
+    if (taxonomy[target] === undefined || taxonomy[r.canonical] === undefined) continue;
 
     // Merge aliases into target
-    const targetAliasSet = new Set(enriched[target].aliases.map(a => a.toLowerCase()));
-    for (const alias of enriched[r.canonical].aliases) {
+    const targetAliasSet = new Set(taxonomy[target].aliases.map(a => a.toLowerCase()));
+    for (const alias of taxonomy[r.canonical].aliases) {
       if (!targetAliasSet.has(alias.toLowerCase())) {
-        enriched[target].aliases.push(alias);
+        taxonomy[target].aliases.push(alias);
         targetAliasSet.add(alias.toLowerCase());
       }
     }
     // Add old canonical as alias of target
     if (!targetAliasSet.has(r.canonical.toLowerCase())) {
-      enriched[target].aliases.push(r.canonical);
+      taxonomy[target].aliases.push(r.canonical);
     }
     // Merge broader terms
-    const targetBroaderSet = new Set(enriched[target].broaderTerms.map(b => b.toLowerCase()));
-    for (const bt of enriched[r.canonical].broaderTerms) {
+    const targetBroaderSet = new Set(taxonomy[target].broaderTerms.map(b => b.toLowerCase()));
+    for (const bt of taxonomy[r.canonical].broaderTerms) {
       if (!targetBroaderSet.has(bt.toLowerCase())) {
-        enriched[target].broaderTerms.push(bt);
+        taxonomy[target].broaderTerms.push(bt);
       }
     }
-    delete enriched[r.canonical];
+    delete taxonomy[r.canonical];
     merged++;
   }
 
@@ -1088,36 +1088,36 @@ function applyResults(results: Map<string, SkillValidation>): void {
   for (const r of data) {
     if (!r.preferredCanonical || r.shouldRemove || r.shouldMergeWith) continue;
     const preferred = normalize(r.preferredCanonical);
-    if (enriched[r.canonical] === undefined || enriched[preferred] !== undefined) continue;
+    if (taxonomy[r.canonical] === undefined || taxonomy[preferred] !== undefined) continue;
 
-    const entry = enriched[r.canonical];
+    const entry = taxonomy[r.canonical];
     // Add old canonical as alias
     if (!entry.aliases.some(a => a.toLowerCase() === r.canonical.toLowerCase())) {
       entry.aliases.push(r.canonical);
     }
     // Remove preferred from aliases if present
     entry.aliases = entry.aliases.filter(a => a.toLowerCase() !== preferred.toLowerCase());
-    enriched[preferred] = entry;
-    delete enriched[r.canonical];
+    taxonomy[preferred] = entry;
+    delete taxonomy[r.canonical];
     renamed++;
   }
 
   // Pass 4: Remove invalid aliases
   for (const r of data) {
-    if (enriched[r.canonical] === undefined) continue;
+    if (taxonomy[r.canonical] === undefined) continue;
     if (r.invalidAliases.length === 0) continue;
     const badSet = new Set(r.invalidAliases.map(a => a.toLowerCase()));
-    const before = enriched[r.canonical].aliases.length;
-    enriched[r.canonical].aliases = enriched[r.canonical].aliases.filter(
+    const before = taxonomy[r.canonical].aliases.length;
+    taxonomy[r.canonical].aliases = taxonomy[r.canonical].aliases.filter(
       a => !badSet.has(a.toLowerCase())
     );
-    aliasesRemoved += before - enriched[r.canonical].aliases.length;
+    aliasesRemoved += before - taxonomy[r.canonical].aliases.length;
   }
 
-  // Pass 5: Update enriched entries with LLM data
+  // Pass 5: Update entries with LLM data
   for (const r of data) {
-    if (enriched[r.canonical] === undefined) continue;
-    const entry = enriched[r.canonical];
+    if (taxonomy[r.canonical] === undefined) continue;
+    const entry = taxonomy[r.canonical];
 
     // Update aliases from LLM (merge with existing, deduplicate)
     const aliasSet = new Set(entry.aliases.map(a => a.toLowerCase()));
@@ -1160,10 +1160,10 @@ function applyResults(results: Map<string, SkillValidation>): void {
     entry.emergingYear = r.emergingYear;
   }
 
-  saveTaxonomy(enriched);
+  saveTaxonomy(taxonomy);
 
-  const finalSkills = Object.keys(enriched).length;
-  const finalAliases = Object.values(enriched).reduce((s, e) => s + e.aliases.length, 0);
+  const finalSkills = Object.keys(taxonomy).length;
+  const finalAliases = Object.values(taxonomy).reduce((s, e) => s + e.aliases.length, 0);
 
   console.log('\n🔧 Applied enrichment results to taxonomy:');
   console.log(`   Removed: ${removed} invalid skills`);
@@ -1177,12 +1177,12 @@ function applyResults(results: Map<string, SkillValidation>): void {
 // ─── Live enrichment (apply results in real-time after each batch) ───────────
 
 /**
- * Apply enrichment from a batch of LLM results to the in-memory enriched taxonomy.
+ * Apply a batch of LLM results to the in-memory taxonomy.
  * Updates aliases, metadata, and confidence. Structural changes (remove, merge, rename)
  * are deferred to --apply pass.
  */
 function applyBatchLive(
-  enriched: EnrichedTaxonomy,
+  taxonomy: SkillTaxonomyMap,
   known: Set<string>,
   batchResults: ReadonlyArray<SkillValidation>,
 ): number {
@@ -1190,9 +1190,9 @@ function applyBatchLive(
 
   for (const r of batchResults) {
     if (r.confidence === 'low') continue;
-    if (enriched[r.canonical] === undefined) continue;
+    if (taxonomy[r.canonical] === undefined) continue;
 
-    const entry = enriched[r.canonical];
+    const entry = taxonomy[r.canonical];
     const existingAliasSet = new Set(entry.aliases.map(a => a.toLowerCase()));
 
     // Merge LLM aliases into existing
@@ -1258,17 +1258,17 @@ async function main(): Promise<void> {
   console.log('\n📚 Loading source data context...');
   const contextMap = loadSourceContext();
 
-  // Load enriched taxonomy (single source of truth)
+  // Load taxonomy (single source of truth)
   if (!taxonomyExists()) {
     console.error('Taxonomy not found at src/skill-taxonomy.json');
     process.exit(1);
   }
 
-  const enriched = loadTaxonomy();
-  const known = buildKnownTerms(enriched);
+  const taxonomy = loadTaxonomy();
+  const known = buildKnownTerms(taxonomy);
 
   // Filter to skills that need processing (pending confidence)
-  const allEntries = Object.entries(enriched);
+  const allEntries = Object.entries(taxonomy);
   const pendingEntries = allEntries.filter(([, entry]) => entry.confidence === 'pending');
   const total = pendingEntries.length;
 
@@ -1276,13 +1276,13 @@ async function main(): Promise<void> {
   const skills: [string, string[]][] = pendingEntries.map(([canonical, entry]) => [canonical, entry.aliases]);
   const totalBatches = Math.ceil(total / BATCH_SIZE);
 
-  console.log(`📊 Enriched taxonomy: ${allEntries.length} skills total`);
+  console.log(`📊 Taxonomy: ${allEntries.length} skills total`);
   console.log(`   Pending: ${total} skills → ${totalBatches} batches`);
-  console.log(`   Already enriched: ${allEntries.length - total} skills`);
+  console.log(`   Already processed: ${allEntries.length - total} skills`);
   console.log(`⏱  Estimated time: ${Math.ceil((totalBatches * DELAY_BETWEEN_REQUESTS_MS) / 1000 / 60)} minutes\n`);
 
   if (total === 0 && !SINGLE_SKILL && !APPLY_MODE) {
-    console.log('✅ All skills already enriched! Nothing to do.');
+    console.log('✅ All skills already processed! Nothing to do.');
     console.log('   Run with --apply to apply structural changes (remove/merge/rename).');
     return;
   }
@@ -1310,9 +1310,9 @@ async function main(): Promise<void> {
     console.log('\n📋 Result:');
     console.log(JSON.stringify(result, null, 2));
 
-    // Apply to enriched taxonomy
-    applyBatchLive(enriched, known, [result]);
-    saveTaxonomy(enriched);
+    // Apply to taxonomy
+    applyBatchLive(taxonomy, known, [result]);
+    saveTaxonomy(taxonomy);
     console.log('\n💾 Saved to taxonomy');
     return;
   }
@@ -1402,7 +1402,7 @@ async function main(): Promise<void> {
 
     const concurrentResults = await Promise.all(batchIndices.map(idx => processSingleBatch(idx)));
 
-    // Apply all results sequentially (shared state: enriched, known, results)
+    // Apply all results sequentially (shared state: taxonomy, known, results)
     let shouldAbort = false;
     for (const outcome of concurrentResults) {
       if ('error' in outcome) {
@@ -1427,7 +1427,7 @@ async function main(): Promise<void> {
 
         if (isFatal) {
           saveResults(results);
-          saveTaxonomy(enriched);
+          saveTaxonomy(taxonomy);
           saveCheckpoint(outcome.index, total, startedAt);
           console.error('\n🚫 Fatal API error — check your API key, model name, or request format.');
           process.exit(1);
@@ -1435,7 +1435,7 @@ async function main(): Promise<void> {
 
         if (errors > 10) {
           saveResults(results);
-          saveTaxonomy(enriched);
+          saveTaxonomy(taxonomy);
           saveCheckpoint(outcome.index, total, startedAt);
           console.error('\n❌ Too many errors (10+), aborting. Run with --resume to continue.');
           process.exit(1);
@@ -1475,7 +1475,7 @@ async function main(): Promise<void> {
       if (invalidCount === 0 && badAliasCount === 0) console.log(`   ✅ All valid`);
 
       // Live enrichment
-      const aliasesAdded = applyBatchLive(enriched, known, validations);
+      const aliasesAdded = applyBatchLive(taxonomy, known, validations);
       totalAliasesAdded += aliasesAdded;
       if (aliasesAdded > 0) {
         console.log(`   📝 +${aliasesAdded} new aliases applied`);
@@ -1486,11 +1486,11 @@ async function main(): Promise<void> {
     const lastIndex = batchIndices[batchIndices.length - 1] + BATCH_SIZE;
     if (apiCalls % CHECKPOINT_INTERVAL === 0 || shouldAbort) {
       saveResults(results);
-      saveTaxonomy(enriched);
+      saveTaxonomy(taxonomy);
       saveCheckpoint(Math.min(lastIndex, total), total, startedAt);
       const elapsed = (Date.now() - new Date(startedAt).getTime()) / 1000 / 60;
-      const enrichedCount = Object.values(enriched).filter(e => e.confidence !== 'pending').length;
-      console.log(`\n💾 Checkpoint: ${enrichedCount}/${Object.keys(enriched).length} enriched, +${totalAliasesAdded} aliases, ${elapsed.toFixed(1)}m elapsed\n`);
+      const processedCount = Object.values(taxonomy).filter(e => e.confidence !== 'pending').length;
+      console.log(`\n💾 Checkpoint: ${processedCount}/${Object.keys(taxonomy).length} processed, +${totalAliasesAdded} aliases, ${elapsed.toFixed(1)}m elapsed\n`);
     }
 
     if (shouldAbort) {
@@ -1502,20 +1502,20 @@ async function main(): Promise<void> {
 
   // Final save
   saveResults(results);
-  saveTaxonomy(enriched);
+  saveTaxonomy(taxonomy);
   generateReport(results);
 
   // Count final taxonomy stats
-  const finalSkills = Object.keys(enriched).length;
-  const finalAliases = Object.values(enriched).reduce((s, e) => s + e.aliases.length, 0);
-  const finalBroader = Object.values(enriched).reduce((s, e) => s + e.broaderTerms.length, 0);
-  const enrichedCount = Object.values(enriched).filter(e => e.confidence !== 'pending').length;
+  const finalSkills = Object.keys(taxonomy).length;
+  const finalAliases = Object.values(taxonomy).reduce((s, e) => s + e.aliases.length, 0);
+  const finalBroader = Object.values(taxonomy).reduce((s, e) => s + e.broaderTerms.length, 0);
+  const processedCount = Object.values(taxonomy).filter(e => e.confidence !== 'pending').length;
 
   // Summary
   console.log('\n===================================');
-  console.log('✅ Enrichment Complete!');
-  console.log(`   Skills enriched: ${processed}/${total} pending`);
-  console.log(`   Total enriched: ${enrichedCount}/${finalSkills}`);
+  console.log('✅ Processing Complete!');
+  console.log(`   Skills processed: ${processed}/${total} pending`);
+  console.log(`   Total processed: ${processedCount}/${finalSkills}`);
   console.log(`   API calls: ${apiCalls}`);
   console.log(`   Errors: ${errors}`);
   console.log(`   Aliases added (live): ${totalAliasesAdded}`);

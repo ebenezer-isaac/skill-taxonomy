@@ -17,10 +17,8 @@
     "import:linkedin": "tsx scripts/import-linkedin.ts",
     "import:lightcast": "tsx scripts/import-lightcast.ts",
     "import:verticals": "tsx scripts/import-verticals-enhanced.ts",
-    "expand:aliases": "tsx scripts/expand-aliases.ts",
     "deduplicate": "tsx scripts/deduplicate-taxonomy.ts",
     "merge:all": "tsx scripts/merge-all.ts",
-    "promote:misses": "tsx scripts/promote-misses.ts",
     "validate:llm": "tsx scripts/validate-with-llm.ts"
   },
   "keywords": [

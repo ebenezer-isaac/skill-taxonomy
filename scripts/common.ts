@@ -1,37 +1,69 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
+export type { SkillEntry, EnrichedTaxonomy, CandidateEntry } from '../src/types/taxonomy.types';
+import type { SkillEntry, EnrichedTaxonomy, CandidateEntry } from '../src/types/taxonomy.types';
+
+/** Path to the single canonical taxonomy file. */
 const TAXONOMY_PATH = path.join(__dirname, '..', 'src', 'skill-taxonomy.json');
 
-export type SkillTaxonomy = Record<string, string[]>;
-
-export interface CandidateEntry {
-  readonly canonical: string;
-  readonly aliases: string[];
-  readonly source: string;
-  readonly category?: string;
+/** Backfill defaults for fields added after initial data load. No-op for already-populated entries. */
+function backfillEntry(entry: Record<string, unknown>): void {
+  entry.ecosystem ??= '';
+  entry.alternativeSkills ??= [];
+  entry.learningDifficulty ??= 'intermediate';
+  entry.typicalExperienceYears ??= '';
+  entry.salaryImpact ??= 'average';
+  entry.automationRisk ??= 'low';
+  entry.communitySize ??= 'medium';
+  entry.isOpenSource ??= null;
+  entry.keywords ??= [];
+  entry.emergingYear ??= null;
 }
 
-/** Load the current taxonomy from disk. */
-export function loadTaxonomy(): SkillTaxonomy {
-  return JSON.parse(fs.readFileSync(TAXONOMY_PATH, 'utf-8'));
+/** Load the taxonomy from disk. */
+export function loadTaxonomy(): EnrichedTaxonomy {
+  const raw = JSON.parse(fs.readFileSync(TAXONOMY_PATH, 'utf-8'));
+  for (const entry of Object.values(raw) as Record<string, unknown>[]) {
+    backfillEntry(entry);
+  }
+  return raw;
 }
 
-/** Save taxonomy to disk (sorted alphabetically within each group). */
-export function saveTaxonomy(taxonomy: SkillTaxonomy): void {
-  const sorted: SkillTaxonomy = {};
+/** Check if the taxonomy file exists. */
+export function taxonomyExists(): boolean {
+  return fs.existsSync(TAXONOMY_PATH);
+}
+
+/** Save taxonomy to disk (sorted by canonical name). */
+export function saveTaxonomy(taxonomy: EnrichedTaxonomy): void {
+  const sorted: EnrichedTaxonomy = {};
   for (const key of Object.keys(taxonomy).sort()) {
-    sorted[key] = [...taxonomy[key]].sort();
+    const entry = taxonomy[key];
+    sorted[key] = {
+      ...entry,
+      aliases: [...entry.aliases].sort(),
+      industries: [...entry.industries].sort(),
+      broaderTerms: [...entry.broaderTerms].sort(),
+      relatedSkills: [...entry.relatedSkills].sort(),
+      sources: [...entry.sources].sort(),
+      commonJobTitles: [...entry.commonJobTitles].sort(),
+      prerequisites: [...entry.prerequisites].sort(),
+      complementarySkills: [...entry.complementarySkills].sort(),
+      certifications: [...entry.certifications].sort(),
+      alternativeSkills: [...entry.alternativeSkills].sort(),
+      keywords: [...entry.keywords].sort(),
+    };
   }
   fs.writeFileSync(TAXONOMY_PATH, JSON.stringify(sorted, null, 2) + '\n', 'utf-8');
 }
 
 /** Build a set of all known terms (canonicals + aliases), lowercased. */
-export function buildKnownTerms(taxonomy: SkillTaxonomy): Set<string> {
+export function buildKnownTerms(taxonomy: EnrichedTaxonomy): Set<string> {
   const known = new Set<string>();
-  for (const [canonical, aliases] of Object.entries(taxonomy)) {
+  for (const [canonical, entry] of Object.entries(taxonomy)) {
     known.add(canonical.toLowerCase());
-    for (const alias of aliases) {
+    for (const alias of entry.aliases) {
       known.add(alias.toLowerCase());
     }
   }
@@ -50,46 +82,38 @@ export function shouldApply(): boolean {
 
 /** Merge candidates into the taxonomy. Returns count of additions. */
 export function mergeCandidates(
-  taxonomy: SkillTaxonomy,
+  taxonomy: EnrichedTaxonomy,
   candidates: readonly CandidateEntry[],
-): { added: number; aliasesExpanded: number } {
+): { readonly added: number; readonly aliasesExpanded: number } {
   const known = buildKnownTerms(taxonomy);
   let added = 0;
   let aliasesExpanded = 0;
 
   for (const candidate of candidates) {
     const canonical = normalize(candidate.canonical);
-    
-    // Skip empty canonicals
-    if (!canonical || canonical.length === 0) continue;
+    if (canonical === '') continue;
 
     if (taxonomy[canonical] !== undefined) {
-      // Entry exists — merge new aliases
-      const existingEntry = taxonomy[canonical];
-      
-      // Safety check: ensure existing entry is an array
-      if (!Array.isArray(existingEntry)) {
-        console.warn(`  [merge] Skipping invalid entry: ${canonical}`);
-        continue;
-      }
-      
-      const existingAliases = new Set(existingEntry.map((a) => a.toLowerCase()));
+      const entry = taxonomy[canonical];
+      const existing = new Set(entry.aliases.map(a => a.toLowerCase()));
       for (const alias of candidate.aliases) {
-        const normalizedAlias = normalize(alias);
-        if (normalizedAlias !== '' && !existingAliases.has(normalizedAlias) && !known.has(normalizedAlias)) {
-          taxonomy[canonical].push(alias);
-          existingAliases.add(normalizedAlias);
-          known.add(normalizedAlias);
+        const n = normalize(alias);
+        if (n !== '' && !existing.has(n) && !known.has(n)) {
+          entry.aliases.push(alias);
+          existing.add(n);
+          known.add(n);
           aliasesExpanded++;
         }
       }
     } else if (!known.has(canonical)) {
-      // New entry — filter out aliases that conflict with existing terms
-      const safeAliases = candidate.aliases.filter((a) => {
+      const safeAliases = candidate.aliases.filter(a => {
         const n = normalize(a);
         return n !== '' && !known.has(n);
       });
-      taxonomy[canonical] = safeAliases;
+      taxonomy[canonical] = createDefaultSkillEntry(
+        safeAliases,
+        candidate.source ? [candidate.source] : ['unknown'],
+      );
       known.add(canonical);
       for (const a of safeAliases) known.add(normalize(a));
       added++;
@@ -114,15 +138,14 @@ export function reportAndApply(
     return;
   }
 
-  // Dry run: show what would be added
   const known = buildKnownTerms(taxonomy);
-  const newEntries = candidates.filter((c) => !known.has(normalize(c.canonical)) && taxonomy[normalize(c.canonical)] === undefined);
-  const aliasExpansions = candidates.filter((c) => taxonomy[normalize(c.canonical)] !== undefined);
+  const newEntries = candidates.filter(c => !known.has(normalize(c.canonical)) && taxonomy[normalize(c.canonical)] === undefined);
+  const aliasExpansions = candidates.filter(c => taxonomy[normalize(c.canonical)] !== undefined);
 
   if (newEntries.length > 0) {
     console.log(`New entries (${newEntries.length}):`);
     for (const e of newEntries.slice(0, 30)) {
-      console.log(`  + "${e.canonical}": [${e.aliases.map((a) => `"${a}"`).join(', ')}]`);
+      console.log(`  + "${e.canonical}": [${e.aliases.map(a => `"${a}"`).join(', ')}]`);
     }
     if (newEntries.length > 30) console.log(`  ... and ${newEntries.length - 30} more`);
   }
@@ -130,7 +153,7 @@ export function reportAndApply(
   if (aliasExpansions.length > 0) {
     console.log(`\nAlias expansions (${aliasExpansions.length}):`);
     for (const e of aliasExpansions.slice(0, 20)) {
-      console.log(`  ~ "${e.canonical}": +[${e.aliases.map((a) => `"${a}"`).join(', ')}]`);
+      console.log(`  ~ "${e.canonical}": +[${e.aliases.map(a => `"${a}"`).join(', ')}]`);
     }
     if (aliasExpansions.length > 20) console.log(`  ... and ${aliasExpansions.length - 20} more`);
   }
@@ -142,4 +165,39 @@ export function reportAndApply(
   } else {
     console.log('\nDry run — use --apply to write changes');
   }
+}
+
+/** Create a default SkillEntry. */
+export function createDefaultSkillEntry(aliases: string[], sources: string[] = ['unknown']): SkillEntry {
+  return {
+    aliases: [...aliases],
+    category: '',
+    description: '',
+    industries: [],
+    senioritySignal: 'all-levels',
+    broaderTerms: [],
+    relatedSkills: [],
+    isValidSkill: true,
+    confidence: 'pending',
+    sources,
+    skillType: '',
+    trendDirection: 'stable',
+    demandLevel: 'medium',
+    commonJobTitles: [],
+    prerequisites: [],
+    complementarySkills: [],
+    certifications: [],
+    parentCategory: '',
+    isRegionSpecific: null,
+    ecosystem: '',
+    alternativeSkills: [],
+    learningDifficulty: 'intermediate',
+    typicalExperienceYears: '',
+    salaryImpact: 'average',
+    automationRisk: 'low',
+    communitySize: 'medium',
+    isOpenSource: null,
+    keywords: [],
+    emergingYear: null,
+  };
 }

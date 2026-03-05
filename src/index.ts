@@ -1,10 +1,32 @@
 import rawTaxonomy from './skill-taxonomy.json';
-import type { SkillTaxonomy, TaxonomyStats } from './types';
+import type { SkillTaxonomy, EnrichedTaxonomy, SkillEntry, TaxonomyStats } from './types/taxonomy.types';
 
-export type { SkillTaxonomy, TaxonomyStats } from './types';
+export type { SkillTaxonomy, EnrichedTaxonomy, SkillEntry, TaxonomyStats } from './types/taxonomy.types';
 
-/** The full skill taxonomy with canonical entries and aliases. */
-export const taxonomy: SkillTaxonomy = rawTaxonomy;
+// Backfill defaults for any fields not yet present in the JSON
+const rawEntries = rawTaxonomy as unknown as Record<string, Record<string, unknown>>;
+for (const entry of Object.values(rawEntries)) {
+  entry.ecosystem ??= '';
+  entry.alternativeSkills ??= [];
+  entry.learningDifficulty ??= 'intermediate';
+  entry.typicalExperienceYears ??= '';
+  entry.salaryImpact ??= 'average';
+  entry.automationRisk ??= 'low';
+  entry.communitySize ??= 'medium';
+  entry.isOpenSource ??= null;
+  entry.keywords ??= [];
+  entry.emergingYear ??= null;
+}
+
+/** The skill taxonomy — single source of truth. */
+export const enrichedTaxonomy: EnrichedTaxonomy = rawEntries as unknown as EnrichedTaxonomy;
+
+/** Flat derived view: canonical → aliases[] for O(1) keyword matching. */
+export const taxonomy: SkillTaxonomy = Object.freeze(
+  Object.fromEntries(
+    Object.entries(enrichedTaxonomy).map(([k, v]) => [k, Object.freeze([...v.aliases])])
+  )
+) as SkillTaxonomy;
 
 /**
  * Build a reverse lookup map: every alias and canonical (lowercased) → canonical.

@@ -28,7 +28,6 @@ import {
   mergeCandidates,
   normalize,
   shouldApply,
-  type SkillTaxonomy,
   type CandidateEntry,
 } from './common';
 
@@ -67,7 +66,7 @@ function loadVerticalCandidates(): CandidateEntry[] {
   const jsonFile = path.join(DATA_DIR, 'verticals', 'candidates.json');
 
   if (!fs.existsSync(jsonFile)) {
-    console.log('  [verticals] No data found. Run: pnpm import:verticals:enhanced --apply');
+    console.log('  [verticals] No data found. Run: pnpm import:verticals --apply');
     return [];
   }
 
@@ -238,11 +237,10 @@ function loadStackOverflowCandidates(): CandidateEntry[] {
       .filter(tag => !genericTags.has(tag.name.toLowerCase()) && tag.name.length > 1)
       .slice(0, 500) // Top 500 after filtering
       .map(tag => ({
-        canonical: normalize(tag.name.replace(/-/g, ' ')), // Convert kebab-case to space
-        aliases: [normalize(tag.name)], // Keep original as alias
+        canonical: normalize(tag.name.replace(/-/g, ' ')),
+        aliases: [normalize(tag.name)],
         source: 'stackoverflow' as const,
         category: 'popular-tag',
-        metadata: { count: tag.count },
       }));
   } catch (error) {
     console.log(`  [stackoverflow] Error loading data: ${error}`);
@@ -274,7 +272,7 @@ function runMerge(): MergeStats {
   // Load base taxonomy
   const taxonomy = loadTaxonomy();
   const initialCanonicals = Object.keys(taxonomy).length;
-  const initialAliases = Object.values(taxonomy).reduce((sum, a) => sum + a.length, 0);
+  const initialAliases = Object.values(taxonomy).reduce((sum, entry) => sum + entry.aliases.length, 0);
   
   console.log(`[merge] Base taxonomy: ${initialCanonicals} canonicals, ${initialAliases} aliases\n`);
   
@@ -343,7 +341,7 @@ function runMerge(): MergeStats {
   
   // Calculate final stats
   stats.finalCanonicals = Object.keys(taxonomy).length;
-  stats.finalAliases = Object.values(taxonomy).reduce((sum, a) => sum + a.length, 0);
+  stats.finalAliases = Object.values(taxonomy).reduce((sum, entry) => sum + entry.aliases.length, 0);
   
   // Save if applying
   if (shouldApply()) {

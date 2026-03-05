@@ -299,21 +299,6 @@ async function fetchAllSkills(): Promise<LightcastSkill[]> {
   }
 }
 
-/** Search skills by query (for autocomplete-style lookups) */
-async function searchSkills(query: string, limit = 25): Promise<LightcastSkill[]> {
-  const url = `${LIGHTCAST_BASE_URL}/skills/autocomplete?q=${encodeURIComponent(query)}&limit=${limit}`;
-  
-  try {
-    const response = await fetchWithTimeout(url);
-    if (!response.ok) return [];
-    
-    const data: LightcastResponse = await response.json();
-    return data.data || [];
-  } catch {
-    return [];
-  }
-}
-
 async function main(): Promise<void> {
   console.log('[lightcast] Starting Lightcast skills import');
   

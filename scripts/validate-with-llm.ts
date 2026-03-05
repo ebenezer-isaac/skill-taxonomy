@@ -1,28 +1,35 @@
 /**
- * LLM-powered taxonomy validation using Gemini Flash.
+ * LLM-powered taxonomy enrichment using Gemini Pro.
  *
- * Validates each skill entry in the taxonomy by checking:
- * 1. Is this a real technology/skill used in software/tech jobs?
- * 2. Are the aliases correct synonyms/variants?
- * 3. Should any aliases be removed (false positives)?
- * 4. What aliases are missing?
- * 5. Skill categorization, seniority signal, industry relevance
- * 6. Version variants, common misspellings, abbreviations
+ * Enriches every skill entry with 29 structured fields including:
+ * category, broader terms, related skills, seniority signal, industry
+ * relevance, trend direction, demand level, common job titles, and more.
  *
- * Designed to run overnight with rate limiting.
+ * Features:
+ * - Batch processing with configurable batch size (default 5)
+ * - Checkpoint/resume for long runs
+ * - Live apply — each batch is written to enriched taxonomy immediately
+ * - Source context injection from ESCO, O*NET, StackExchange, and verticals
+ * - Structured output via Gemini's responseSchema (Zod → JSON Schema)
  *
  * Usage:
- *   pnpm validate:llm                    # run full validation
+ *   pnpm validate:llm                    # run full enrichment
  *   pnpm validate:llm --resume           # resume from checkpoint
  *   pnpm validate:llm --skill=python     # single skill
  *   pnpm validate:llm --dry-run          # show prompt without calling API
- *   pnpm validate:llm --apply            # apply LLM results back to taxonomy
+ *   pnpm validate:llm --apply            # apply structural changes (remove/merge/rename)
  */
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { z } from 'zod';
-import { loadTaxonomy, saveTaxonomy, normalize, buildKnownTerms } from './common';
-import type { SkillTaxonomy } from './common';
+import {
+  normalize,
+  loadTaxonomy,
+  saveTaxonomy,
+  taxonomyExists,
+  buildKnownTerms,
+} from './common';
+import type { EnrichedTaxonomy, SkillEntry } from './common';
 
 // Load .env file
 function loadEnv(): void {
@@ -45,24 +52,35 @@ loadEnv();
 
 // Configuration
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const GEMINI_MODEL = 'gemini-3-flash-preview';
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
-
-// Rate limiting - Gemini Tier 1: 1500 RPM, but we pace conservatively
-const DELAY_BETWEEN_REQUESTS_MS = 1000; // 1 second between requests (~60 RPM)
-const CHECKPOINT_INTERVAL = 25; // Save progress every N skills
-
-// Output files
-const OUTPUT_DIR = path.join(__dirname, 'data', 'validation');
-const RESULTS_FILE = path.join(OUTPUT_DIR, 'validation-results.json');
-const CHECKPOINT_FILE = path.join(OUTPUT_DIR, 'checkpoint.json');
-const REPORT_FILE = path.join(OUTPUT_DIR, 'validation-report.md');
 
 // CLI args
 const RESUME_MODE = process.argv.includes('--resume');
 const SINGLE_SKILL = process.argv.find(a => a.startsWith('--skill='))?.split('=')[1];
 const DRY_RUN = process.argv.includes('--dry-run');
 const APPLY_MODE = process.argv.includes('--apply');
+const MODEL_ARG = process.argv.find(a => a.startsWith('--model='))?.split('=')[1] ?? 'flash';
+const BATCH_ARG = process.argv.find(a => a.startsWith('--batch='))?.split('=')[1];
+const CONCURRENCY = Math.max(1, parseInt(process.argv.find(a => a.startsWith('--concurrency='))?.split('=')[1] ?? '1', 10));
+
+// Model selection: flash (free) or pro ($2/$12 per 1M tokens)
+const MODELS: Record<string, { model: string; defaultBatch: number; delayMs: number; maxOutputTokens: number; thinkingBudget?: number }> = {
+  flash: { model: 'gemini-3-flash-preview', defaultBatch: 1, delayMs: 1000, maxOutputTokens: 4096, thinkingBudget: 2048 },
+  pro: { model: 'gemini-3.1-pro-preview', defaultBatch: 5, delayMs: 2000, maxOutputTokens: 16384 },
+};
+
+const MODEL_CONFIG = MODELS[MODEL_ARG] ?? MODELS.flash;
+const GEMINI_MODEL = MODEL_CONFIG.model;
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+const BATCH_SIZE = BATCH_ARG ? parseInt(BATCH_ARG, 10) : MODEL_CONFIG.defaultBatch;
+const DELAY_BETWEEN_REQUESTS_MS = MODEL_CONFIG.delayMs;
+const MAX_OUTPUT_TOKENS = MODEL_CONFIG.maxOutputTokens;
+const CHECKPOINT_INTERVAL = 25; // Save checkpoint every N API calls
+
+// Output files
+const OUTPUT_DIR = path.join(__dirname, 'data', 'validation');
+const RESULTS_FILE = path.join(OUTPUT_DIR, 'validation-results.json');
+const CHECKPOINT_FILE = path.join(OUTPUT_DIR, 'checkpoint.json');
+const REPORT_FILE = path.join(OUTPUT_DIR, 'validation-report.md');
 
 // ─── Domain-agnostic enums ───────────────────────────────────────────────────
 
@@ -128,6 +146,16 @@ const SKILL_CATEGORIES = [
   'other', 'invalid',
 ] as const;
 
+const SKILL_TYPES = [
+  'tool', 'framework', 'library', 'language', 'methodology',
+  'certification', 'domain-knowledge', 'soft-skill', 'technique',
+  'platform', 'standard', 'protocol', 'other',
+] as const;
+
+const TREND_DIRECTIONS = ['emerging', 'growing', 'stable', 'declining'] as const;
+
+const DEMAND_LEVELS = ['high', 'medium', 'low', 'niche'] as const;
+
 const SENIORITY_SIGNALS = [
   'entry-level', 'junior', 'mid', 'senior', 'lead',
   'principal', 'executive', 'all-levels',
@@ -155,30 +183,56 @@ const INDUSTRIES = [
   'general', 'cross-industry',
 ] as const;
 
-// ─── Zod schema ──────────────────────────────────────────────────────────────
+// ─── Zod schema (enriched format) ─────────────────────────────────────────────
+// The LLM returns the COMPLETE alias list (existing valid + new suggestions,
+// misspellings, versions, abbreviations merged). This gets plugged directly
+// into the enriched taxonomy entry.
 
 const LLMResponseSchema = z.object({
   // Core validation
   isValidSkill: z.boolean(),
   confidence: z.enum(['high', 'medium', 'low']),
   category: z.string(),
+  description: z.string(),
 
-  // Alias analysis
-  validAliases: z.array(z.string()),
-  invalidAliases: z.array(z.string()),
-  suggestedAliases: z.array(z.string()),
+  // COMPLETE alias list — all valid surface forms for ATS matching
+  aliases: z.array(z.string()),
 
-  // Extended vectors
-  commonMisspellings: z.array(z.string()),
-  versionVariants: z.array(z.string()),
-  abbreviations: z.array(z.string()),
+  // Transferable parent concepts for ATS cross-matching
+  broaderTerms: z.array(z.string()),
+
+  // Related but distinct skills (for recommendations, NOT aliases)
+  relatedSkills: z.array(z.string()),
 
   // Contextual signals
   senioritySignal: z.string(),
   industries: z.array(z.string()),
-  relatedSkills: z.array(z.string()),
 
-  // Recommendations
+  // Extended enrichment fields
+  skillType: z.string(),
+  trendDirection: z.string(),
+  demandLevel: z.string(),
+  commonJobTitles: z.array(z.string()),
+  prerequisites: z.array(z.string()),
+  complementarySkills: z.array(z.string()),
+  certifications: z.array(z.string()),
+  parentCategory: z.string(),
+  isRegionSpecific: z.string().nullable(),
+
+  // Extended enrichment fields (10 new)
+  ecosystem: z.string(),
+  alternativeSkills: z.array(z.string()),
+  learningDifficulty: z.string(),
+  typicalExperienceYears: z.string(),
+  salaryImpact: z.string(),
+  automationRisk: z.string(),
+  communitySize: z.string(),
+  isOpenSource: z.boolean().nullable(),
+  keywords: z.array(z.string()),
+  emergingYear: z.number().nullable(),
+
+  // Operational (not stored in taxonomy)
+  invalidAliases: z.array(z.string()),
   shouldRemove: z.boolean(),
   shouldMergeWith: z.string().nullable(),
   preferredCanonical: z.string().nullable(),
@@ -187,47 +241,92 @@ const LLMResponseSchema = z.object({
 
 type LLMResponse = z.infer<typeof LLMResponseSchema>;
 
-// ─── Gemini JSON schema (mirrors Zod — simplified for API limits) ────────────
-// Category and industry enums are enforced by Zod locally, not in the API schema
-// to avoid "schema too complex" errors. Nullable uses type array per Gemini docs.
+// Batch response: each item includes the skillName it corresponds to
+const BatchItemSchema = LLMResponseSchema.extend({
+  skillName: z.string(),
+});
+type BatchItem = z.infer<typeof BatchItemSchema>;
+const BatchResponseSchema = z.array(BatchItemSchema);
 
+// ─── Gemini JSON schema (mirrors Zod) ────────────────────────────────────────
+
+const GEMINI_SINGLE_ITEM_PROPERTIES = {
+  isValidSkill: { type: 'boolean' },
+  confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
+  category: { type: 'string' },
+  description: { type: 'string' },
+
+  aliases: { type: 'array', items: { type: 'string' } },
+  broaderTerms: { type: 'array', items: { type: 'string' } },
+  relatedSkills: { type: 'array', items: { type: 'string' } },
+
+  senioritySignal: { type: 'string', enum: [...SENIORITY_SIGNALS] },
+  industries: { type: 'array', items: { type: 'string' } },
+
+  skillType: { type: 'string', enum: [...SKILL_TYPES] },
+  trendDirection: { type: 'string', enum: [...TREND_DIRECTIONS] },
+  demandLevel: { type: 'string', enum: [...DEMAND_LEVELS] },
+  commonJobTitles: { type: 'array', items: { type: 'string' } },
+  prerequisites: { type: 'array', items: { type: 'string' } },
+  complementarySkills: { type: 'array', items: { type: 'string' } },
+  certifications: { type: 'array', items: { type: 'string' } },
+  parentCategory: { type: 'string' },
+  isRegionSpecific: { type: 'string', nullable: true },
+
+  ecosystem: { type: 'string' },
+  alternativeSkills: { type: 'array', items: { type: 'string' } },
+  learningDifficulty: { type: 'string', enum: ['beginner', 'intermediate', 'advanced', 'expert'] },
+  typicalExperienceYears: { type: 'string' },
+  salaryImpact: { type: 'string', enum: ['high', 'above-average', 'average', 'below-average', 'low'] },
+  automationRisk: { type: 'string', enum: ['high', 'medium', 'low', 'none'] },
+  communitySize: { type: 'string', enum: ['massive', 'large', 'medium', 'small', 'niche'] },
+  isOpenSource: { type: 'boolean', nullable: true },
+  keywords: { type: 'array', items: { type: 'string' } },
+  emergingYear: { type: 'integer', nullable: true },
+
+  invalidAliases: { type: 'array', items: { type: 'string' } },
+  shouldRemove: { type: 'boolean' },
+  shouldMergeWith: { type: 'string', nullable: true },
+  preferredCanonical: { type: 'string', nullable: true },
+  notes: { type: 'string' },
+} as const;
+
+const GEMINI_SINGLE_ITEM_REQUIRED = [
+  'isValidSkill', 'confidence', 'category', 'description',
+  'aliases', 'broaderTerms', 'relatedSkills',
+  'senioritySignal', 'industries',
+  'skillType', 'trendDirection', 'demandLevel',
+  'commonJobTitles', 'prerequisites', 'complementarySkills',
+  'certifications', 'parentCategory', 'isRegionSpecific',
+  'ecosystem', 'alternativeSkills', 'learningDifficulty', 'typicalExperienceYears',
+  'salaryImpact', 'automationRisk', 'communitySize', 'isOpenSource', 'keywords', 'emergingYear',
+  'invalidAliases', 'shouldRemove', 'shouldMergeWith', 'preferredCanonical', 'notes',
+];
+
+// Single-skill schema (batch=1 fallback)
 const GEMINI_RESPONSE_SCHEMA = {
   type: 'object',
-  properties: {
-    isValidSkill: { type: 'boolean' },
-    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
-    category: { type: 'string' },
+  properties: GEMINI_SINGLE_ITEM_PROPERTIES,
+  required: GEMINI_SINGLE_ITEM_REQUIRED,
+};
 
-    validAliases: { type: 'array', items: { type: 'string' } },
-    invalidAliases: { type: 'array', items: { type: 'string' } },
-    suggestedAliases: { type: 'array', items: { type: 'string' } },
-
-    commonMisspellings: { type: 'array', items: { type: 'string' } },
-    versionVariants: { type: 'array', items: { type: 'string' } },
-    abbreviations: { type: 'array', items: { type: 'string' } },
-
-    senioritySignal: { type: 'string', enum: [...SENIORITY_SIGNALS] },
-    industries: { type: 'array', items: { type: 'string' } },
-    relatedSkills: { type: 'array', items: { type: 'string' } },
-
-    shouldRemove: { type: 'boolean' },
-    shouldMergeWith: { type: 'string', nullable: true },
-    preferredCanonical: { type: 'string', nullable: true },
-    notes: { type: 'string' },
+// Batch schema: array of items, each with a skillName identifier
+const GEMINI_BATCH_SCHEMA = {
+  type: 'array',
+  items: {
+    type: 'object',
+    properties: {
+      skillName: { type: 'string' },
+      ...GEMINI_SINGLE_ITEM_PROPERTIES,
+    },
+    required: ['skillName', ...GEMINI_SINGLE_ITEM_REQUIRED],
   },
-  required: [
-    'isValidSkill', 'confidence', 'category',
-    'validAliases', 'invalidAliases', 'suggestedAliases',
-    'commonMisspellings', 'versionVariants', 'abbreviations',
-    'senioritySignal', 'industries', 'relatedSkills',
-    'shouldRemove', 'shouldMergeWith', 'preferredCanonical', 'notes',
-  ],
 };
 
 /** Validation result for a single skill */
 interface SkillValidation extends LLMResponse {
   canonical: string;
-  aliases: string[];
+  existingAliases: string[];
   timestamp: string;
   rawResponse?: string;
 }
@@ -245,112 +344,450 @@ function sleep(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-/** Call Gemini API with structured output */
-async function callGemini(prompt: string): Promise<LLMResponse> {
+// ─── Source data context loader (ESCO + O*NET + StackOverflow + Verticals) ───
+
+interface SkillContext {
+  /** Rich description from ESCO (multi-sentence) */
+  escoDescription?: string;
+  /** ESCO skill type: skill/competence or knowledge */
+  escoType?: string;
+  /** ESCO reuse level: transversal, cross-sector, sector-specific, occupation-specific */
+  escoReuse?: string;
+  /** ESCO alternative labels from the API (may differ from taxonomy aliases) */
+  escoAltLabels?: string[];
+  /** O*NET category: Basic Skill, Knowledge - Health, Work Style, etc. */
+  onetCategory?: string;
+  /** Stack Overflow / Stack Exchange question count + site */
+  soPopularity?: Array<{ count: number; site: string }>;
+  /** Verticals industry category: Financial Services & FinTech, Healthcare & Life Sciences, etc. */
+  verticalCategory?: string;
+  /** Verticals source aliases (may differ from taxonomy) */
+  verticalAliases?: string[];
+}
+
+/** Load and index all source data into a lookup map keyed by normalized skill name */
+function loadSourceContext(): Map<string, SkillContext> {
+  const ctx = new Map<string, SkillContext>();
+  const DATA_DIR = path.join(__dirname, 'data');
+
+  const getOrCreate = (key: string): SkillContext => {
+    const norm = key.toLowerCase().trim();
+    if (!norm) return {};
+    let entry = ctx.get(norm);
+    if (!entry) { entry = {}; ctx.set(norm, entry); }
+    return entry;
+  };
+
+  // 1. ESCO skills (~13K): descriptions, altLabels, skillType, reuseLevel
+  const escoPath = path.join(DATA_DIR, 'esco', 'skills_api.json');
+  if (fs.existsSync(escoPath)) {
+    try {
+      const esco = JSON.parse(fs.readFileSync(escoPath, 'utf-8')) as Array<{
+        preferredLabel: string;
+        altLabels: string[];
+        description: string;
+        skillType: string;
+        reuseLevel: string;
+      }>;
+      for (const skill of esco) {
+        const entry = getOrCreate(skill.preferredLabel);
+        entry.escoDescription = skill.description;
+        entry.escoType = skill.skillType;
+        entry.escoReuse = skill.reuseLevel;
+        if (skill.altLabels?.length > 0) {
+          entry.escoAltLabels = skill.altLabels;
+        }
+      }
+      console.log(`   📚 ESCO: ${esco.length} skill descriptions loaded`);
+    } catch (e) {
+      console.warn(`   ⚠ Failed to load ESCO data: ${e instanceof Error ? e.message : e}`);
+    }
+  }
+
+  // 2. O*NET hot technologies (~250): name + category (110 unique categories)
+  const onetPath = path.join(DATA_DIR, 'onet', 'hot_technologies.json');
+  if (fs.existsSync(onetPath)) {
+    try {
+      const onet = JSON.parse(fs.readFileSync(onetPath, 'utf-8')) as Array<{
+        name: string;
+        category: string;
+      }>;
+      for (const item of onet) {
+        const entry = getOrCreate(item.name);
+        entry.onetCategory = item.category;
+      }
+      console.log(`   🏛  O*NET: ${onet.length} skills with categories loaded`);
+    } catch (e) {
+      console.warn(`   ⚠ Failed to load O*NET data: ${e instanceof Error ? e.message : e}`);
+    }
+  }
+
+  // 3. Stack Overflow / Stack Exchange tags (~7K): name + count + site
+  const soPath = path.join(DATA_DIR, 'stackoverflow', 'popular_tags.json');
+  if (fs.existsSync(soPath)) {
+    try {
+      const tags = JSON.parse(fs.readFileSync(soPath, 'utf-8')) as Array<{
+        name: string;
+        count: number;
+        site: string;
+      }>;
+      for (const tag of tags) {
+        const entry = getOrCreate(tag.name);
+        if (!entry.soPopularity) entry.soPopularity = [];
+        entry.soPopularity.push({ count: tag.count, site: tag.site });
+      }
+      console.log(`   📊 StackExchange: ${tags.length} tags with popularity loaded`);
+    } catch (e) {
+      console.warn(`   ⚠ Failed to load SO data: ${e instanceof Error ? e.message : e}`);
+    }
+  }
+
+  // 4. Verticals (~1K): canonical + aliases + category (28 industries)
+  const vertPath = path.join(DATA_DIR, 'verticals', 'candidates.json');
+  if (fs.existsSync(vertPath)) {
+    try {
+      const verts = JSON.parse(fs.readFileSync(vertPath, 'utf-8')) as Array<{
+        canonical: string;
+        aliases: string[];
+        source: string;
+        category: string;
+      }>;
+      for (const v of verts) {
+        const entry = getOrCreate(v.canonical);
+        entry.verticalCategory = v.category;
+        if (v.aliases?.length > 0) {
+          entry.verticalAliases = v.aliases;
+        }
+      }
+      console.log(`   🏭 Verticals: ${verts.length} skills with industry categories loaded`);
+    } catch (e) {
+      console.warn(`   ⚠ Failed to load Verticals data: ${e instanceof Error ? e.message : e}`);
+    }
+  }
+
+  console.log(`   📦 Total context entries: ${ctx.size}`);
+  return ctx;
+}
+
+/** Format source context for a single skill into a compact string for the LLM prompt */
+function formatContext(canonical: string, contextMap: Map<string, SkillContext>): string {
+  const ctx = contextMap.get(canonical.toLowerCase().trim());
+  if (!ctx) return '';
+
+  const parts: string[] = [];
+
+  if (ctx.escoDescription) {
+    parts.push(`ESCO: ${ctx.escoDescription}`);
+  }
+  if (ctx.escoType || ctx.escoReuse) {
+    const tags = [ctx.escoType, ctx.escoReuse].filter(Boolean).join(', ');
+    parts.push(`ESCO type: ${tags}`);
+  }
+  if (ctx.escoAltLabels?.length) {
+    parts.push(`ESCO alt labels: ${ctx.escoAltLabels.join(', ')}`);
+  }
+  if (ctx.onetCategory) {
+    parts.push(`O*NET category: ${ctx.onetCategory}`);
+  }
+  if (ctx.soPopularity?.length) {
+    const top = ctx.soPopularity
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 3)
+      .map(t => `${t.site}:${t.count.toLocaleString()}`)
+      .join(', ');
+    parts.push(`StackExchange popularity: ${top}`);
+  }
+  if (ctx.verticalCategory) {
+    parts.push(`Industry vertical: ${ctx.verticalCategory}`);
+  }
+  if (ctx.verticalAliases?.length) {
+    parts.push(`Vertical aliases: ${ctx.verticalAliases.join(', ')}`);
+  }
+
+  return parts.length > 0 ? parts.join(' | ') : '';
+}
+
+// ─── Retry logic for Gemini API ──────────────────────────────────────────────
+
+/** HTTP status codes that are safe to retry with exponential backoff */
+const RETRYABLE_STATUS_CODES = new Set([
+  429, // RESOURCE_EXHAUSTED — rate limit hit
+  500, // INTERNAL — Google-side transient error
+  503, // UNAVAILABLE — service overloaded/down
+  504, // DEADLINE_EXCEEDED — processing timeout
+]);
+
+/** HTTP status codes that indicate a permanent/fatal error — never retry */
+const FATAL_STATUS_CODES = new Set([
+  400, // INVALID_ARGUMENT or FAILED_PRECONDITION — bad request
+  403, // PERMISSION_DENIED — wrong API key / auth
+  404, // NOT_FOUND — wrong model or resource
+]);
+
+class GeminiApiError extends Error {
+  constructor(
+    public readonly status: number,
+    public readonly body: string,
+    public readonly retryable: boolean,
+  ) {
+    super(`Gemini API error ${status}: ${body.slice(0, 200)}`);
+    this.name = 'GeminiApiError';
+  }
+}
+
+const MAX_RETRIES = 5;
+const INITIAL_RETRY_DELAY_MS = 2000; // 2 seconds
+const MAX_RETRY_DELAY_MS = 60000; // 60 seconds cap
+
+/**
+ * Execute a Gemini API call with exponential backoff retry.
+ * Retries on 429/500/503/504. Fails immediately on 400/403/404.
+ */
+async function callGeminiWithRetry<T>(
+  requestBody: Record<string, unknown>,
+  parseResponse: (text: string) => T,
+): Promise<T> {
   if (!GEMINI_API_KEY) {
     throw new Error('GEMINI_API_KEY environment variable not set');
   }
 
-  const response = await fetch(GEMINI_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
+  let lastError: Error | undefined;
+
+  for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const response = await fetch(GEMINI_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        const errorBody = await response.text();
+        const retryable = RETRYABLE_STATUS_CODES.has(response.status);
+
+        // Fatal errors — don't waste retries
+        if (FATAL_STATUS_CODES.has(response.status)) {
+          throw new GeminiApiError(response.status, errorBody, false);
+        }
+
+        // Retryable errors — throw to trigger backoff
+        if (retryable) {
+          throw new GeminiApiError(response.status, errorBody, true);
+        }
+
+        // Unknown status — treat as retryable once, then give up
+        throw new GeminiApiError(response.status, errorBody, attempt < 1);
+      }
+
+      const data = await response.json() as {
+        candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+      };
+
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!text) {
+        throw new Error('Empty response from Gemini (no text in candidates)');
+      }
+
+      const parsed = JSON.parse(text);
+      return parseResponse(parsed);
+
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error(String(error));
+
+      // Don't retry fatal (non-retryable) errors
+      if (error instanceof GeminiApiError && !error.retryable) {
+        throw error;
+      }
+
+      // Don't retry on last attempt
+      if (attempt === MAX_RETRIES) {
+        break;
+      }
+
+      // Exponential backoff with jitter: 2s, 4s, 8s, 16s, 32s (capped at 60s)
+      const baseDelay = INITIAL_RETRY_DELAY_MS * Math.pow(2, attempt);
+      const jitter = Math.random() * 1000;
+      const delay = Math.min(baseDelay + jitter, MAX_RETRY_DELAY_MS);
+
+      const statusInfo = error instanceof GeminiApiError ? ` (HTTP ${error.status})` : '';
+      console.warn(`   ⚠ Attempt ${attempt + 1}/${MAX_RETRIES + 1} failed${statusInfo}, retrying in ${(delay / 1000).toFixed(1)}s...`);
+
+      await sleep(delay);
+    }
+  }
+
+  throw lastError ?? new Error('callGeminiWithRetry: all retries exhausted');
+}
+
+/** Call Gemini API with structured output (single skill) — with retry */
+async function callGemini(prompt: string): Promise<LLMResponse> {
+  return callGeminiWithRetry(
+    {
       contents: [{ parts: [{ text: prompt }] }],
       generationConfig: {
         temperature: 0.1,
-        maxOutputTokens: 2048,
+        maxOutputTokens: MAX_OUTPUT_TOKENS,
         responseMimeType: 'application/json',
         responseSchema: GEMINI_RESPONSE_SCHEMA,
+        ...(MODEL_CONFIG.thinkingBudget ? { thinkingConfig: { thinkingBudget: MODEL_CONFIG.thinkingBudget } } : {}),
       },
-    }),
-  });
-
-  if (!response.ok) {
-    const error = await response.text();
-    throw new Error(`Gemini API error: ${response.status} - ${error}`);
-  }
-
-  const data = await response.json() as {
-    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
-  };
-
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!text) {
-    throw new Error('Empty response from Gemini');
-  }
-
-  const parsed = JSON.parse(text);
-  return LLMResponseSchema.parse(parsed);
+    },
+    (parsed) => LLMResponseSchema.parse(parsed),
+  );
 }
 
-/** Build validation prompt for a skill */
-function buildPrompt(canonical: string, aliases: string[]): string {
-  return `You are an expert skill taxonomy curator for a universal ATS (Applicant Tracking System) that parses resumes and matches them to job descriptions across ALL industries — not just tech.
+/** Call Gemini API with structured output (batch of skills) — with retry */
+async function callGeminiBatch(prompt: string): Promise<BatchItem[]> {
+  return callGeminiWithRetry(
+    {
+      contents: [{ parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0.1,
+        maxOutputTokens: MAX_OUTPUT_TOKENS,
+        responseMimeType: 'application/json',
+        responseSchema: GEMINI_BATCH_SCHEMA,
+        ...(MODEL_CONFIG.thinkingBudget ? { thinkingConfig: { thinkingBudget: MODEL_CONFIG.thinkingBudget } } : {}),
+      },
+    },
+    (parsed) => BatchResponseSchema.parse(parsed),
+  );
+}
 
-This taxonomy covers every profession: software, healthcare, finance, law, engineering, manufacturing, marketing, HR, education, construction, science, government, hospitality, agriculture, transportation, and more.
+/**
+ * Build an LLM validation prompt for one or more skills.
+ *
+ * Single-skill calls embed the skill inline with full source context.
+ * Batch calls format a numbered list with per-skill context suffixes.
+ * Both share the same instructions and field definitions.
+ */
+function buildPrompt(
+  skills: ReadonlyArray<{ readonly canonical: string; readonly aliases: string[] }>,
+  contextMap: Map<string, SkillContext>,
+): string {
+  const isBatch = skills.length > 1;
 
-Analyze this skill entry thoroughly:
-- Canonical name: "${canonical}"
-- Current aliases: ${JSON.stringify(aliases)}
+  // ── Skill input block ──────────────────────────────────────────────
+  let skillBlock: string;
+  if (isBatch) {
+    const skillList = skills.map((s, i) => {
+      const ctx = formatContext(s.canonical, contextMap);
+      const ctxSuffix = ctx ? ` | Context: ${ctx}` : '';
+      return `${i + 1}. Canonical: "${s.canonical}" | Aliases: ${JSON.stringify(s.aliases)}${ctxSuffix}`;
+    }).join('\n');
+    skillBlock = `Analyze EACH of these ${skills.length} skill entries:\n\n${skillList}\n\nFor EACH skill, return:`;
+  } else {
+    const { canonical, aliases } = skills[0];
+    const ctx = formatContext(canonical, contextMap);
+    const contextLine = ctx
+      ? `\nSOURCE CONTEXT (use this to inform your analysis — it comes from ESCO, O*NET, StackExchange, and industry databases):\n${ctx}\n`
+      : '';
+    skillBlock = `Analyze this skill entry:\n- Canonical name: "${canonical}"\n- Current aliases: ${JSON.stringify(aliases)}\n${contextLine}\nReturn these fields:`;
+  }
 
-Evaluate along these vectors:
+  // ── Batch-specific rules (only for multi-skill prompts) ────────────
+  const batchRules = isBatch
+    ? `\n- Return a JSON array with EXACTLY ${skills.length} objects, one per skill, in the same order\n- Each object MUST include "skillName" matching the canonical name exactly`
+    : '';
+  const skillNameField = isBatch
+    ? '\n- skillName: The EXACT canonical name from the input (must match precisely)'
+    : '';
 
-CORE VALIDATION:
-- isValidSkill: Is this a real skill, tool, technology, methodology, certification, technique, or competency that appears on resumes or job descriptions in ANY industry?
-- confidence: How certain are you? (high/medium/low)
-- category: Best-fit category from the enum
+  return `You are an expert skill taxonomy curator for ATS (Applicant Tracking System) resume-to-job-description matching.
 
-ALIAS ANALYSIS:
-- validAliases: Which current aliases are TRUE synonyms/abbreviations/variants?
-- invalidAliases: Which current aliases are WRONG (different concept, too generic, or unrelated)?
-- suggestedAliases: 3-10 missing aliases that job seekers or recruiters commonly use. Think broadly:
-  - Full names and short forms ("Certified Public Accountant" ↔ "CPA")
-  - Regional variants ("CV" ↔ "resume", "maths" ↔ "math")
-  - Brand names vs generic ("Salesforce" ↔ "SFDC")
-  - Formal vs informal ("financial modeling" ↔ "fin modeling")
+PURPOSE: This taxonomy powers keyword matching between resumes and job descriptions. When a candidate lists a skill on their resume, the ATS looks up ALL aliases to find matches against job description requirements, and vice versa. The goal is to maximize LEGITIMATE matches so qualified candidates are not filtered out due to terminology differences.
 
-EXPANDED ALIAS VECTORS:
-- commonMisspellings: Frequent typos/misspellings seen on resumes across all industries
-  Examples: "managment", "liason", "anaesthesia"/"anesthesia", "gauge"/"gage", "licence"/"license"
-- versionVariants: Version-specific or edition-specific forms if applicable
-  Examples: "AutoCAD 2024", "ICD-10", "GAAP 2023", "Python 3.12", "ISO 9001:2015"
-- abbreviations: Common short forms, acronyms, or initialisms not already in aliases
-  Examples: "k8s", "CPR", "HVAC", "P&L", "GAAP", "OSHA", "PMP", "GMP"
+KEY PRINCIPLE — SKILL TRANSFERENCE:
+Many skills are niche or specialized, but they imply broader, transferable competencies. The taxonomy must capture these generalizations so candidates are not penalized for using specific terminology when the JD uses general terms, or vice versa.
 
-CONTEXTUAL SIGNALS:
-- senioritySignal: Does this skill signal a particular career level?
-  entry-level | junior | mid | senior | lead | principal | executive | all-levels
-- industries: Which industries commonly require this skill? Select all that apply
-- relatedSkills: 2-5 closely related but DISTINCT skills (for cross-referencing, NOT aliases)
-  Example: for "python" → ["django", "pandas", "flask"] (related, not aliases)
-  Example: for "project management" → ["risk management", "stakeholder management", "agile"]
+Example: "Adobe Experience Manager" is a niche enterprise CMS built on Java/OSGi.
+  - Direct aliases: "AEM", "Adobe CQ", "CQ5" (same product, different names)
+  - Broader terms: "enterprise cms", "web content management", "wcm" (generalized equivalents — these should be in broaderTerms)
+  - Implied underlying skills: "java", "osgi", "jcr", "apache sling" (separate skills the practitioner inherently has — these go in relatedSkills, NOT aliases)
 
-RECOMMENDATIONS:
-- shouldRemove: true ONLY if this is not a real skill/competency in any profession
-- shouldMergeWith: If this duplicates another common skill, give the canonical name to merge into, else null
-- preferredCanonical: If the canonical name isn't the standard industry form, suggest the better one, else null
-- notes: Brief explanation of your assessment
+This applies across ALL industries and professions — not just tech.
 
-RULES:
-- This is a UNIVERSAL taxonomy — do not assume everything is a tech skill
-- Aliases must be TRUE synonyms, not related-but-different concepts
-- Be aggressive with misspellings — resumes across all industries have typos
-- Include regional/international spelling variants (US vs UK English)
-- Abbreviations should be what hiring managers actually search for
-- relatedSkills are for cross-referencing only, NEVER include them as aliases
-- If a skill spans multiple industries, list all relevant ones`;
+${skillBlock}
+
+CORE:${skillNameField}
+- isValidSkill: Is this a real skill/tool/technology/methodology/certification/technique/competency on resumes or JDs in ANY industry?
+- confidence: high | medium | low
+- category: Best-fit category
+- description: One clear sentence describing what this skill IS, what domain it belongs to, and what it is used for. This should help a non-expert understand the skill.
+
+ALIASES (COMPLETE list — all valid ways someone might write this skill on a resume or search for in a JD):
+Return ONE merged array called "aliases" containing ALL of the following:
+  - Existing aliases that are correct (drop any that are wrong)
+  - Missing synonyms, full names ↔ short forms ("Certified Public Accountant" ↔ "CPA")
+  - Regional/international variants ("colour grading" ↔ "color grading")
+  - Brand names ↔ generic terms ("Salesforce" ↔ "SFDC")
+  - Hyphenated/spaced/concatenated variants ("e-commerce" ↔ "ecommerce")
+  - Common misspellings and typos found on real resumes ("managment", "liason")
+  - Version/edition variants if applicable ("AutoCAD 2024", "ICD-10", "Python 3.12")
+  - Acronyms or initialisms ("k8s", "HVAC", "P&L", "GMP")
+  Do NOT include broaderTerms or relatedSkills as aliases.
+
+BROADER TERMS (transferable parent concepts):
+- broaderTerms: 2-6 generalized equivalents — the broader category or discipline this skill belongs to. These help candidates with niche skills match general JD requirements:
+  - A specialized tool should map to its generic function
+  - A niche methodology should map to its parent discipline
+  - A proprietary product should map to the general capability it provides
+  Example: niche EHR system → "ehr administration", "health informatics"
+  Example: specific CAD software → "cad modeling", "computer-aided design"
+
+RELATED SKILLS:
+- relatedSkills: 2-5 closely related but DISTINCT skills that a practitioner would likely also possess. NOT aliases, NOT parents — separate competencies.
+
+EXTENDED ENRICHMENT:
+- skillType: Classification of this skill (tool | framework | library | language | methodology | certification | domain-knowledge | soft-skill | technique | platform | standard | protocol | other)
+- trendDirection: Market trajectory (emerging | growing | stable | declining)
+- demandLevel: Job market demand level (high | medium | low | niche)
+- commonJobTitles: 3-5 job titles that commonly list this skill in their requirements
+- prerequisites: 2-3 foundational skills someone should know BEFORE learning this
+- complementarySkills: 3-5 skills commonly paired with this in job descriptions (not prerequisites, not the same as relatedSkills — these are "frequently seen together")
+- certifications: Relevant professional certifications that validate expertise in this skill (empty array if none exist)
+- parentCategory: The immediate hierarchical parent for taxonomy navigation (e.g. "JavaScript" → "programming-language", "Scrum" → "agile-methodology")
+- isRegionSpecific: If the skill is only relevant in a specific country/region, name it (e.g. "United States" for HIPAA, "European Union" for GDPR). null if globally applicable.
+
+ECOSYSTEM & MARKET:
+- ecosystem: Primary technology or professional ecosystem this skill belongs to (e.g. "javascript", "jvm", "aws", "healthcare", ".net", "data-science"). Use lowercase kebab-case.
+- alternativeSkills: 2-5 competing or directly substitutable skills (React vs Angular vs Vue, PostgreSQL vs MySQL). NOT aliases — genuinely different skills that serve the same purpose.
+- learningDifficulty: How hard is this to learn? (beginner | intermediate | advanced | expert)
+- typicalExperienceYears: Typical experience range when this appears on resumes (e.g. "1-3", "3-5", "5-10", "0-1"). Use a range string.
+- salaryImpact: Salary/compensation impact of having this skill (high | above-average | average | below-average | low)
+- automationRisk: Risk of this skill being automated or obsoleted (high | medium | low | none)
+- communitySize: Size of practitioner/user community (massive | large | medium | small | niche)
+- isOpenSource: Is this open-source software? true/false, or null if not applicable (e.g. soft skills, methodologies)
+- keywords: 3-8 cross-cutting discovery tags for search and filtering (e.g. for "React": ["frontend", "ui", "spa", "component-based", "virtual-dom"])
+- emergingYear: Year this skill/technology was first introduced or emerged. null if unknown or ancient/traditional.
+
+OPERATIONAL:
+- invalidAliases: Which current aliases should be REMOVED (wrong concept, different skill)?
+- senioritySignal: Career level signal (entry-level | junior | mid | senior | lead | principal | executive | all-levels)
+- industries: Which industries commonly require this? List all that apply.
+- shouldRemove: true ONLY if this is not a real skill in any profession
+- shouldMergeWith: canonical to merge into if duplicate, else null
+- preferredCanonical: better canonical name if current isn't standard, else null
+- notes: Brief reasoning
+
+RULES:${batchRules}
+- This taxonomy covers ALL industries and professions universally
+- "aliases" must ONLY contain terms that mean THE SAME THING as the canonical
+- "broaderTerms" are PARENT concepts for transferability, NOT aliases
+- "relatedSkills" are SEPARATE competencies, NOT aliases or parents
+- Be aggressive with misspellings — real resumes are full of typos
+- Include US/UK spelling variants ("analyse"/"analyze", "colour"/"color")`;
 }
 
 /** Parse LLM response into full validation result */
 function toValidation(
   canonical: string,
-  aliases: string[],
+  existingAliases: string[],
   llmResponse: LLMResponse,
   rawResponse?: string
 ): SkillValidation {
   return {
     canonical,
-    aliases,
+    existingAliases,
     timestamp: new Date().toISOString(),
     ...llmResponse,
     rawResponse,
@@ -358,23 +795,40 @@ function toValidation(
 }
 
 /** Create default validation for errors */
-function defaultValidation(canonical: string, aliases: string[], error: string): SkillValidation {
+function defaultValidation(canonical: string, existingAliases: string[], error: string): SkillValidation {
   return {
     canonical,
-    aliases,
+    existingAliases,
     timestamp: new Date().toISOString(),
     isValidSkill: true,
     confidence: 'low',
     category: 'other',
-    validAliases: aliases,
+    description: '',
+    aliases: existingAliases,
     invalidAliases: [],
-    suggestedAliases: [],
-    commonMisspellings: [],
-    versionVariants: [],
-    abbreviations: [],
+    broaderTerms: [],
     senioritySignal: 'all-levels',
     industries: ['general'],
     relatedSkills: [],
+    skillType: 'other',
+    trendDirection: 'stable',
+    demandLevel: 'medium',
+    commonJobTitles: [],
+    prerequisites: [],
+    complementarySkills: [],
+    certifications: [],
+    parentCategory: '',
+    isRegionSpecific: null,
+    ecosystem: '',
+    alternativeSkills: [],
+    learningDifficulty: 'intermediate',
+    typicalExperienceYears: '',
+    salaryImpact: 'average',
+    automationRisk: 'low',
+    communitySize: 'medium',
+    isOpenSource: null,
+    keywords: [],
+    emergingYear: null,
     shouldRemove: false,
     shouldMergeWith: null,
     preferredCanonical: null,
@@ -452,30 +906,36 @@ function generateReport(results: Map<string, SkillValidation>): void {
   const toMerge = data.filter(r => r.shouldMergeWith).length;
   const toRename = data.filter(r => r.preferredCanonical).length;
   const withInvalidAliases = data.filter(r => r.invalidAliases.length > 0).length;
-  const withSuggestions = data.filter(r =>
-    r.suggestedAliases.length + r.commonMisspellings.length +
-    r.versionVariants.length + r.abbreviations.length > 0
-  ).length;
-  const totalNewAliases = data.reduce((s, r) =>
-    s + r.suggestedAliases.length + r.commonMisspellings.length +
-    r.versionVariants.length + r.abbreviations.length, 0
-  );
+  const withEnrichedData = data.filter(r => r.aliases.length > 0 || r.broaderTerms.length > 0).length;
+  const totalAliases = data.reduce((s, r) => s + r.aliases.length, 0);
+  const totalBroaderTerms = data.reduce((s, r) => s + r.broaderTerms.length, 0);
+  const withCerts = data.filter(r => r.certifications.length > 0).length;
+  const withPrereqs = data.filter(r => r.prerequisites.length > 0).length;
+  const regionSpecific = data.filter(r => r.isRegionSpecific !== null).length;
 
-  // Category breakdown
-  const byCategory = new Map<string, number>();
-  for (const r of data) byCategory.set(r.category, (byCategory.get(r.category) ?? 0) + 1);
+  // Breakdowns
+  const breakdownMap = (extract: (r: SkillValidation) => string) => {
+    const map = new Map<string, number>();
+    for (const r of data) { const k = extract(r); map.set(k, (map.get(k) ?? 0) + 1); }
+    return [...map.entries()].sort((a, b) => b[1] - a[1]);
+  };
+  const breakdownArrayMap = (extract: (r: SkillValidation) => string[]) => {
+    const map = new Map<string, number>();
+    for (const r of data) for (const v of extract(r)) map.set(v, (map.get(v) ?? 0) + 1);
+    return [...map.entries()].sort((a, b) => b[1] - a[1]);
+  };
 
-  // Industry breakdown
-  const byIndustry = new Map<string, number>();
-  for (const r of data) for (const ind of r.industries) byIndustry.set(ind, (byIndustry.get(ind) ?? 0) + 1);
-
-  // Seniority breakdown
-  const bySeniority = new Map<string, number>();
-  for (const r of data) bySeniority.set(r.senioritySignal, (bySeniority.get(r.senioritySignal) ?? 0) + 1);
+  const byCategory = breakdownMap(r => r.category);
+  const byIndustry = breakdownArrayMap(r => r.industries);
+  const bySeniority = breakdownMap(r => r.senioritySignal);
+  const byConfidence = breakdownMap(r => r.confidence);
+  const bySkillType = breakdownMap(r => r.skillType);
+  const byTrend = breakdownMap(r => r.trendDirection);
+  const byDemand = breakdownMap(r => r.demandLevel);
 
   const pct = (n: number) => ((n / total) * 100).toFixed(1);
 
-  const report = `# Taxonomy Validation Report
+  const report = `# Taxonomy Enrichment Report
 
 Generated: ${new Date().toISOString()}
 
@@ -490,26 +950,54 @@ Generated: ${new Date().toISOString()}
 | Should Merge | ${toMerge} | ${pct(toMerge)}% |
 | Should Rename | ${toRename} | ${pct(toRename)}% |
 | Has Invalid Aliases | ${withInvalidAliases} | ${pct(withInvalidAliases)}% |
-| Has Suggested Additions | ${withSuggestions} | ${pct(withSuggestions)}% |
-| Total New Aliases Available | ${totalNewAliases} | — |
+| Has Enriched Data | ${withEnrichedData} | ${pct(withEnrichedData)}% |
+| Has Certifications | ${withCerts} | ${pct(withCerts)}% |
+| Has Prerequisites | ${withPrereqs} | ${pct(withPrereqs)}% |
+| Region-Specific | ${regionSpecific} | ${pct(regionSpecific)}% |
+| Total Aliases (LLM) | ${totalAliases} | — |
+| Total Broader Terms | ${totalBroaderTerms} | — |
+
+## Confidence Distribution
+
+| Level | Count |
+|-------|-------|
+${byConfidence.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
+
+## Skill Type Distribution
+
+| Type | Count |
+|------|-------|
+${bySkillType.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
+
+## Trend Direction
+
+| Trend | Count |
+|-------|-------|
+${byTrend.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
+
+## Demand Level
+
+| Level | Count |
+|-------|-------|
+${byDemand.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
 
 ## Categories
 
 | Category | Count |
 |----------|-------|
-${[...byCategory.entries()].sort((a, b) => b[1] - a[1]).map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
+${byCategory.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
 
 ## Industries
 
 | Industry | Skills |
 |----------|--------|
-${[...byIndustry.entries()].sort((a, b) => b[1] - a[1]).map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
+${byIndustry.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
 
 ## Seniority Distribution
 
 | Level | Count |
 |-------|-------|
-${[...bySeniority.entries()].sort((a, b) => b[1] - a[1]).map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
+${bySeniority.map(([c, n]) => `| ${c} | ${n} |`).join('\n')}
 
 ## Skills to Remove
 
@@ -529,26 +1017,10 @@ ${data.filter(r => r.invalidAliases.length > 0).map(r =>
   '- **' + r.canonical + '**: Remove `' + r.invalidAliases.join('`, `') + '`'
 ).join('\n') || 'None'}
 
-## Suggested Aliases (by vector)
+## Broader / Transferable Terms
 
-### Direct Synonyms
-${data.filter(r => r.suggestedAliases.length > 0).slice(0, 100).map(r =>
-  '- **' + r.canonical + '**: ' + r.suggestedAliases.join(', ')
-).join('\n') || 'None'}
-
-### Common Misspellings
-${data.filter(r => r.commonMisspellings.length > 0).slice(0, 100).map(r =>
-  '- **' + r.canonical + '**: ' + r.commonMisspellings.join(', ')
-).join('\n') || 'None'}
-
-### Version Variants
-${data.filter(r => r.versionVariants.length > 0).slice(0, 100).map(r =>
-  '- **' + r.canonical + '**: ' + r.versionVariants.join(', ')
-).join('\n') || 'None'}
-
-### Abbreviations
-${data.filter(r => r.abbreviations.length > 0).slice(0, 100).map(r =>
-  '- **' + r.canonical + '**: ' + r.abbreviations.join(', ')
+${data.filter(r => r.broaderTerms.length > 0).slice(0, 100).map(r =>
+  '- **' + r.canonical + '**: ' + r.broaderTerms.join(', ')
 ).join('\n') || 'None'}
 
 ## Low Confidence
@@ -562,23 +1034,23 @@ ${data.filter(r => r.confidence === 'low').map(r =>
   console.log(`\n📄 Report saved to: ${REPORT_FILE}`);
 }
 
-// ─── Apply validation results back to taxonomy ──────────────────────────────
+// ─── Apply enrichment results back to taxonomy ─────────────────────────────
 
 function applyResults(results: Map<string, SkillValidation>): void {
-  const taxonomy = loadTaxonomy();
-  const known = buildKnownTerms(taxonomy);
+  const enriched = loadTaxonomy();
+  const known = buildKnownTerms(enriched);
   let removed = 0;
   let merged = 0;
   let renamed = 0;
   let aliasesRemoved = 0;
-  let aliasesAdded = 0;
+  let aliasesUpdated = 0;
 
   const data = [...results.values()].filter(r => r.confidence !== 'low');
 
-  // Pass 1: Remove invalid skills (high/medium confidence only)
+  // Pass 1: Remove invalid skills (high confidence only)
   for (const r of data) {
     if (r.shouldRemove && r.confidence === 'high') {
-      delete taxonomy[r.canonical];
+      delete enriched[r.canonical];
       removed++;
     }
   }
@@ -587,90 +1059,184 @@ function applyResults(results: Map<string, SkillValidation>): void {
   for (const r of data) {
     if (!r.shouldMergeWith || r.shouldRemove) continue;
     const target = normalize(r.shouldMergeWith);
-    if (taxonomy[target] === undefined || taxonomy[r.canonical] === undefined) continue;
+    if (enriched[target] === undefined || enriched[r.canonical] === undefined) continue;
 
-    // Move all aliases from source to target
-    const targetAliases = new Set(taxonomy[target].map(a => a.toLowerCase()));
-    for (const alias of taxonomy[r.canonical]) {
-      if (!targetAliases.has(alias.toLowerCase())) {
-        taxonomy[target].push(alias);
+    // Merge aliases into target
+    const targetAliasSet = new Set(enriched[target].aliases.map(a => a.toLowerCase()));
+    for (const alias of enriched[r.canonical].aliases) {
+      if (!targetAliasSet.has(alias.toLowerCase())) {
+        enriched[target].aliases.push(alias);
+        targetAliasSet.add(alias.toLowerCase());
       }
     }
-    // Add the old canonical as an alias of the target
-    if (!targetAliases.has(r.canonical.toLowerCase())) {
-      taxonomy[target].push(r.canonical);
+    // Add old canonical as alias of target
+    if (!targetAliasSet.has(r.canonical.toLowerCase())) {
+      enriched[target].aliases.push(r.canonical);
     }
-    delete taxonomy[r.canonical];
+    // Merge broader terms
+    const targetBroaderSet = new Set(enriched[target].broaderTerms.map(b => b.toLowerCase()));
+    for (const bt of enriched[r.canonical].broaderTerms) {
+      if (!targetBroaderSet.has(bt.toLowerCase())) {
+        enriched[target].broaderTerms.push(bt);
+      }
+    }
+    delete enriched[r.canonical];
     merged++;
   }
 
-  // Pass 3: Rename canonicals (preferred form)
+  // Pass 3: Rename canonicals
   for (const r of data) {
     if (!r.preferredCanonical || r.shouldRemove || r.shouldMergeWith) continue;
     const preferred = normalize(r.preferredCanonical);
-    if (taxonomy[r.canonical] === undefined || taxonomy[preferred] !== undefined) continue;
+    if (enriched[r.canonical] === undefined || enriched[preferred] !== undefined) continue;
 
-    const aliases = [...taxonomy[r.canonical]];
+    const entry = enriched[r.canonical];
     // Add old canonical as alias
-    if (!aliases.some(a => a.toLowerCase() === r.canonical.toLowerCase())) {
-      aliases.push(r.canonical);
+    if (!entry.aliases.some(a => a.toLowerCase() === r.canonical.toLowerCase())) {
+      entry.aliases.push(r.canonical);
     }
     // Remove preferred from aliases if present
-    const filtered = aliases.filter(a => a.toLowerCase() !== preferred.toLowerCase());
-    taxonomy[preferred] = filtered;
-    delete taxonomy[r.canonical];
+    entry.aliases = entry.aliases.filter(a => a.toLowerCase() !== preferred.toLowerCase());
+    enriched[preferred] = entry;
+    delete enriched[r.canonical];
     renamed++;
   }
 
-  // Rebuild known terms after structural changes
-  const updatedKnown = buildKnownTerms(taxonomy);
-
   // Pass 4: Remove invalid aliases
   for (const r of data) {
-    if (taxonomy[r.canonical] === undefined) continue;
+    if (enriched[r.canonical] === undefined) continue;
     if (r.invalidAliases.length === 0) continue;
     const badSet = new Set(r.invalidAliases.map(a => a.toLowerCase()));
-    const before = taxonomy[r.canonical].length;
-    taxonomy[r.canonical] = taxonomy[r.canonical].filter(
+    const before = enriched[r.canonical].aliases.length;
+    enriched[r.canonical].aliases = enriched[r.canonical].aliases.filter(
       a => !badSet.has(a.toLowerCase())
     );
-    aliasesRemoved += before - taxonomy[r.canonical].length;
+    aliasesRemoved += before - enriched[r.canonical].aliases.length;
   }
 
-  // Pass 5: Add new aliases (suggestedAliases + misspellings + versions + abbreviations)
+  // Pass 5: Update enriched entries with LLM data
   for (const r of data) {
-    if (taxonomy[r.canonical] === undefined) continue;
-    const existingAliases = new Set(taxonomy[r.canonical].map(a => a.toLowerCase()));
-    const newAliases = [
-      ...r.suggestedAliases,
-      ...r.commonMisspellings,
-      ...r.versionVariants,
-      ...r.abbreviations,
-    ];
-    for (const alias of newAliases) {
+    if (enriched[r.canonical] === undefined) continue;
+    const entry = enriched[r.canonical];
+
+    // Update aliases from LLM (merge with existing, deduplicate)
+    const aliasSet = new Set(entry.aliases.map(a => a.toLowerCase()));
+    for (const alias of r.aliases) {
       const norm = normalize(alias);
-      if (norm && !existingAliases.has(norm) && !updatedKnown.has(norm)) {
-        taxonomy[r.canonical].push(alias.toLowerCase());
-        existingAliases.add(norm);
-        updatedKnown.add(norm);
-        aliasesAdded++;
+      if (norm && !aliasSet.has(norm) && norm !== r.canonical.toLowerCase()) {
+        entry.aliases.push(alias.toLowerCase());
+        aliasSet.add(norm);
+        aliasesUpdated++;
       }
     }
+
+    // Update metadata
+    entry.category = r.category;
+    if (r.description) entry.description = r.description;
+    entry.broaderTerms = r.broaderTerms;
+    entry.relatedSkills = r.relatedSkills;
+    entry.senioritySignal = r.senioritySignal;
+    entry.industries = r.industries;
+    entry.isValidSkill = r.isValidSkill;
+    entry.confidence = r.confidence as 'high' | 'medium' | 'low';
+    entry.skillType = r.skillType;
+    entry.trendDirection = r.trendDirection;
+    entry.demandLevel = r.demandLevel;
+    entry.commonJobTitles = r.commonJobTitles;
+    entry.prerequisites = r.prerequisites;
+    entry.complementarySkills = r.complementarySkills;
+    entry.certifications = r.certifications;
+    entry.parentCategory = r.parentCategory;
+    entry.isRegionSpecific = r.isRegionSpecific;
+    entry.ecosystem = r.ecosystem;
+    entry.alternativeSkills = r.alternativeSkills;
+    entry.learningDifficulty = r.learningDifficulty;
+    entry.typicalExperienceYears = r.typicalExperienceYears;
+    entry.salaryImpact = r.salaryImpact;
+    entry.automationRisk = r.automationRisk;
+    entry.communitySize = r.communitySize;
+    entry.isOpenSource = r.isOpenSource;
+    entry.keywords = r.keywords;
+    entry.emergingYear = r.emergingYear;
   }
 
-  saveTaxonomy(taxonomy);
+  saveTaxonomy(enriched);
 
-  // Count final stats
-  const finalSkills = Object.keys(taxonomy).length;
-  const finalAliases = Object.values(taxonomy).reduce((s, a) => s + a.length, 0);
+  const finalSkills = Object.keys(enriched).length;
+  const finalAliases = Object.values(enriched).reduce((s, e) => s + e.aliases.length, 0);
 
-  console.log('\n🔧 Applied validation results to taxonomy:');
+  console.log('\n🔧 Applied enrichment results to taxonomy:');
   console.log(`   Removed: ${removed} invalid skills`);
   console.log(`   Merged: ${merged} duplicates`);
   console.log(`   Renamed: ${renamed} canonicals`);
   console.log(`   Aliases removed: ${aliasesRemoved}`);
-  console.log(`   Aliases added: ${aliasesAdded}`);
+  console.log(`   Aliases updated: ${aliasesUpdated}`);
   console.log(`\n📊 Final taxonomy: ${finalSkills} skills, ${finalAliases} aliases, ${finalSkills + finalAliases} total terms`);
+}
+
+// ─── Live enrichment (apply results in real-time after each batch) ───────────
+
+/**
+ * Apply enrichment from a batch of LLM results to the in-memory enriched taxonomy.
+ * Updates aliases, metadata, and confidence. Structural changes (remove, merge, rename)
+ * are deferred to --apply pass.
+ */
+function applyBatchLive(
+  enriched: EnrichedTaxonomy,
+  known: Set<string>,
+  batchResults: ReadonlyArray<SkillValidation>,
+): number {
+  let aliasesAdded = 0;
+
+  for (const r of batchResults) {
+    if (r.confidence === 'low') continue;
+    if (enriched[r.canonical] === undefined) continue;
+
+    const entry = enriched[r.canonical];
+    const existingAliasSet = new Set(entry.aliases.map(a => a.toLowerCase()));
+
+    // Merge LLM aliases into existing
+    for (const alias of r.aliases) {
+      const norm = normalize(alias);
+      if (norm && !existingAliasSet.has(norm) && !known.has(norm) && norm !== r.canonical.toLowerCase()) {
+        entry.aliases.push(alias.toLowerCase());
+        existingAliasSet.add(norm);
+        known.add(norm);
+        aliasesAdded++;
+      }
+    }
+
+    // Update metadata from LLM
+    entry.category = r.category;
+    if (r.description) entry.description = r.description;
+    entry.broaderTerms = r.broaderTerms;
+    entry.relatedSkills = r.relatedSkills;
+    entry.senioritySignal = r.senioritySignal;
+    entry.industries = r.industries;
+    entry.isValidSkill = r.isValidSkill;
+    entry.confidence = r.confidence as 'high' | 'medium' | 'low';
+    entry.skillType = r.skillType;
+    entry.trendDirection = r.trendDirection;
+    entry.demandLevel = r.demandLevel;
+    entry.commonJobTitles = r.commonJobTitles;
+    entry.prerequisites = r.prerequisites;
+    entry.complementarySkills = r.complementarySkills;
+    entry.certifications = r.certifications;
+    entry.parentCategory = r.parentCategory;
+    entry.isRegionSpecific = r.isRegionSpecific;
+    entry.ecosystem = r.ecosystem;
+    entry.alternativeSkills = r.alternativeSkills;
+    entry.learningDifficulty = r.learningDifficulty;
+    entry.typicalExperienceYears = r.typicalExperienceYears;
+    entry.salaryImpact = r.salaryImpact;
+    entry.automationRisk = r.automationRisk;
+    entry.communitySize = r.communitySize;
+    entry.isOpenSource = r.isOpenSource;
+    entry.keywords = r.keywords;
+    entry.emergingYear = r.emergingYear;
+  }
+
+  return aliasesAdded;
 }
 
 /** Main validation loop */
@@ -681,27 +1247,57 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  console.log('🔍 LLM-Powered Taxonomy Validation');
+  console.log('🔍 LLM-Powered Taxonomy Enrichment');
   console.log('===================================\n');
+  console.log(`🤖 Model: ${GEMINI_MODEL}`);
+  console.log(`📦 Batch size: ${BATCH_SIZE}`);
+  console.log(`🚀 Concurrency: ${CONCURRENCY}`);
+  console.log(`⏱  Delay: ${DELAY_BETWEEN_REQUESTS_MS}ms between requests`);
 
-  // Load taxonomy
-  const taxonomy = loadTaxonomy();
-  const skills = Object.entries(taxonomy);
-  const total = skills.length;
+  // Load source data context (ESCO + O*NET + SO + Verticals)
+  console.log('\n📚 Loading source data context...');
+  const contextMap = loadSourceContext();
 
-  console.log(`📊 Taxonomy: ${total} skills to validate`);
-  console.log(`⏱  Estimated time: ${Math.ceil((total * DELAY_BETWEEN_REQUESTS_MS) / 1000 / 60)} minutes\n`);
+  // Load enriched taxonomy (single source of truth)
+  if (!taxonomyExists()) {
+    console.error('Taxonomy not found at src/skill-taxonomy.json');
+    process.exit(1);
+  }
 
-  // Handle single skill mode
+  const enriched = loadTaxonomy();
+  const known = buildKnownTerms(enriched);
+
+  // Filter to skills that need processing (pending confidence)
+  const allEntries = Object.entries(enriched);
+  const pendingEntries = allEntries.filter(([, entry]) => entry.confidence === 'pending');
+  const total = pendingEntries.length;
+
+  // Convert to [canonical, aliases] pairs for prompt building
+  const skills: [string, string[]][] = pendingEntries.map(([canonical, entry]) => [canonical, entry.aliases]);
+  const totalBatches = Math.ceil(total / BATCH_SIZE);
+
+  console.log(`📊 Enriched taxonomy: ${allEntries.length} skills total`);
+  console.log(`   Pending: ${total} skills → ${totalBatches} batches`);
+  console.log(`   Already enriched: ${allEntries.length - total} skills`);
+  console.log(`⏱  Estimated time: ${Math.ceil((totalBatches * DELAY_BETWEEN_REQUESTS_MS) / 1000 / 60)} minutes\n`);
+
+  if (total === 0 && !SINGLE_SKILL && !APPLY_MODE) {
+    console.log('✅ All skills already enriched! Nothing to do.');
+    console.log('   Run with --apply to apply structural changes (remove/merge/rename).');
+    return;
+  }
+
+  // Handle single skill mode (always uses single-skill prompt)
   if (SINGLE_SKILL) {
-    const entry = skills.find(([k]) => k === SINGLE_SKILL.toLowerCase());
+    const entry = allEntries.find(([k]) => k === SINGLE_SKILL.toLowerCase());
     if (!entry) {
       console.error(`❌ Skill "${SINGLE_SKILL}" not found in taxonomy`);
       process.exit(1);
     }
 
-    console.log(`🎯 Validating single skill: ${entry[0]}`);
-    const prompt = buildPrompt(entry[0], entry[1]);
+    const [canonical, skillEntry] = entry;
+    console.log(`🎯 Validating single skill: ${canonical}`);
+    const prompt = buildPrompt([{ canonical, aliases: skillEntry.aliases }], contextMap);
     
     if (DRY_RUN) {
       console.log('\n📝 Prompt:\n', prompt);
@@ -709,10 +1305,15 @@ async function main(): Promise<void> {
     }
 
     const llmResponse = await callGemini(prompt);
-    const result = toValidation(entry[0], entry[1], llmResponse);
+    const result = toValidation(canonical, skillEntry.aliases, llmResponse);
     
     console.log('\n📋 Result:');
     console.log(JSON.stringify(result, null, 2));
+
+    // Apply to enriched taxonomy
+    applyBatchLive(enriched, known, [result]);
+    saveTaxonomy(enriched);
+    console.log('\n💾 Saved to taxonomy');
     return;
   }
 
@@ -723,104 +1324,212 @@ async function main(): Promise<void> {
   const startedAt = checkpoint?.startedAt ?? new Date().toISOString();
 
   if (RESUME_MODE && checkpoint) {
-    console.log(`📌 Resuming from checkpoint: ${startIndex}/${total}`);
+    console.log(`📌 Resuming from checkpoint: skill ${startIndex}/${total}`);
     console.log(`   Started: ${checkpoint.startedAt}`);
     console.log(`   Already validated: ${results.size} skills\n`);
   }
 
   if (DRY_RUN) {
-    console.log('🏃 Dry run mode - no API calls will be made');
-    const [testCanonical, testAliases] = skills[0];
-    console.log('\nSample prompt for first skill:');
-    console.log(buildPrompt(testCanonical, testAliases));
+    console.log('🏃 Dry run mode - no API calls will be made\n');
+    if (BATCH_SIZE > 1) {
+      const sampleBatch = skills.slice(0, BATCH_SIZE);
+      console.log(`Sample BATCH prompt (${sampleBatch.length} skills):\n`);
+      console.log(buildPrompt(sampleBatch.map(([c, a]) => ({ canonical: c, aliases: a })), contextMap));
+    } else {
+      const [testCanonical, testAliases] = skills[0];
+      console.log('Sample prompt for first skill:\n');
+      console.log(buildPrompt([{ canonical: testCanonical, aliases: testAliases }], contextMap));
+    }
     return;
   }
 
-  // Main validation loop
+  // Main enrichment loop (chunked by BATCH_SIZE, with concurrency)
   let processed = 0;
   let errors = 0;
+  let apiCalls = 0;
+  let totalAliasesAdded = 0;
 
-  for (let i = startIndex; i < total; i++) {
-    const [canonical, aliases] = skills[i];
-    
-    // Skip if already validated
-    if (results.has(canonical)) {
-      console.log(`⏭  [${i + 1}/${total}] ${canonical} (cached)`);
-      continue;
-    }
+  /** Process a single batch index, returning validations or an error */
+  async function processSingleBatch(
+    i: number,
+  ): Promise<{ index: number; validations: SkillValidation[] } | { index: number; error: unknown }> {
+    const batchEnd = Math.min(i + BATCH_SIZE, total);
+    const batchSkills = skills.slice(i, batchEnd);
+    const toValidate = batchSkills.filter(([canonical]) => !results.has(canonical));
 
-    console.log(`🔄 [${i + 1}/${total}] Validating: ${canonical}`);
+    if (toValidate.length === 0) return { index: i, validations: [] };
+
+    const batchNum = Math.floor(i / BATCH_SIZE) + 1;
+    const skillNames = toValidate.map(([c]) => c);
+    console.log(`🔄 [batch ${batchNum}/${totalBatches}] Enriching ${toValidate.length} skills: ${skillNames.slice(0, 3).join(', ')}${skillNames.length > 3 ? ` +${skillNames.length - 3} more` : ''}`);
 
     try {
-      const prompt = buildPrompt(canonical, aliases);
-      const llmResponse = await callGemini(prompt);
-      const result = toValidation(canonical, aliases, llmResponse);
-      
-      results.set(canonical, result);
-      processed++;
+      let batchValidations: SkillValidation[];
 
-      // Log key findings
-      if (!result.isValidSkill) {
-        console.log(`   ❌ Invalid skill`);
-      } else if (result.invalidAliases.length > 0) {
-        console.log(`   ⚠  Invalid aliases: ${result.invalidAliases.join(', ')}`);
-      } else if (result.suggestedAliases.length > 0) {
-        console.log(`   💡 Suggestions: ${result.suggestedAliases.join(', ')}`);
+      if (toValidate.length === 1) {
+        const [canonical, aliases] = toValidate[0];
+        const prompt = buildPrompt([{ canonical, aliases }], contextMap);
+        const llmResponse = await callGemini(prompt);
+        batchValidations = [toValidation(canonical, aliases, llmResponse)];
       } else {
-        console.log(`   ✅ Valid (${result.category})`);
+        const prompt = buildPrompt(toValidate.map(([c, a]) => ({ canonical: c, aliases: a })), contextMap);
+        const batchItems = await callGeminiBatch(prompt);
+        const responseMap = new Map(batchItems.map(item => [item.skillName.toLowerCase(), item]));
+        batchValidations = [];
+        for (const [canonical, aliases] of toValidate) {
+          const item = responseMap.get(canonical.toLowerCase());
+          if (item) {
+            batchValidations.push(toValidation(canonical, aliases, item));
+          } else {
+            console.warn(`   ⚠ Missing response for: ${canonical}`);
+            batchValidations.push(defaultValidation(canonical, aliases, 'Not returned in batch response'));
+          }
+        }
       }
 
-      // Save checkpoint periodically
-      if (processed % CHECKPOINT_INTERVAL === 0) {
-        saveResults(results);
-        saveCheckpoint(i + 1, total, startedAt);
-        console.log(`\n💾 Checkpoint saved (${results.size} validated)\n`);
-      }
-
+      return { index: i, validations: batchValidations };
     } catch (error) {
-      errors++;
-      const errorMessage = error instanceof Error ? error.message : String(error);
-      console.error(`   ❌ Error: ${errorMessage}`);
-      
-      // Save default validation with error note
-      results.set(canonical, defaultValidation(canonical, aliases, errorMessage));
-      
-      // Save progress on error
-      saveResults(results);
-      saveCheckpoint(i, total, startedAt);
-      
-      // If too many errors, abort
-      if (errors > 10) {
-        console.error('\n❌ Too many errors, aborting. Run with --resume to continue.');
-        process.exit(1);
-      }
-      
-      // Wait longer on error (might be rate limit)
-      await sleep(10000);
+      return { index: i, error };
+    }
+  }
+
+  for (let i = startIndex; i < total; i += BATCH_SIZE * CONCURRENCY) {
+    // Launch up to CONCURRENCY batches in parallel
+    const batchIndices: number[] = [];
+    for (let c = 0; c < CONCURRENCY && i + c * BATCH_SIZE < total; c++) {
+      batchIndices.push(i + c * BATCH_SIZE);
     }
 
-    // Rate limiting delay
-    await sleep(DELAY_BETWEEN_REQUESTS_MS);
+    const concurrentResults = await Promise.all(batchIndices.map(idx => processSingleBatch(idx)));
+
+    // Apply all results sequentially (shared state: enriched, known, results)
+    let shouldAbort = false;
+    for (const outcome of concurrentResults) {
+      if ('error' in outcome) {
+        errors++;
+        const isFatal = outcome.error instanceof GeminiApiError && !(outcome.error as GeminiApiError).retryable;
+        const errorMessage = outcome.error instanceof Error ? (outcome.error as Error).message : String(outcome.error);
+
+        if (isFatal) {
+          console.error(`   🚫 Fatal error (no retry): ${errorMessage}`);
+        } else {
+          console.error(`   ❌ Batch error (retries exhausted): ${errorMessage}`);
+        }
+
+        // Save default validations for failed batch
+        const batchEnd = Math.min(outcome.index + BATCH_SIZE, total);
+        const batchSkills = skills.slice(outcome.index, batchEnd);
+        for (const [canonical, aliases] of batchSkills) {
+          if (!results.has(canonical)) {
+            results.set(canonical, defaultValidation(canonical, aliases, errorMessage));
+          }
+        }
+
+        if (isFatal) {
+          saveResults(results);
+          saveTaxonomy(enriched);
+          saveCheckpoint(outcome.index, total, startedAt);
+          console.error('\n🚫 Fatal API error — check your API key, model name, or request format.');
+          process.exit(1);
+        }
+
+        if (errors > 10) {
+          saveResults(results);
+          saveTaxonomy(enriched);
+          saveCheckpoint(outcome.index, total, startedAt);
+          console.error('\n❌ Too many errors (10+), aborting. Run with --resume to continue.');
+          process.exit(1);
+        }
+
+        shouldAbort = true;
+        continue;
+      }
+
+      // Successful batch — apply results
+      const { validations } = outcome;
+      if (validations.length === 0) {
+        const batchNum = Math.floor(outcome.index / BATCH_SIZE) + 1;
+        const batchEnd = Math.min(outcome.index + BATCH_SIZE, total);
+        const batchSkills = skills.slice(outcome.index, batchEnd);
+        console.log(`⏭  [batch ${batchNum}/${totalBatches}] All ${batchSkills.length} skills cached`);
+        continue;
+      }
+
+      apiCalls++;
+
+      for (const result of validations) {
+        results.set(result.canonical, result);
+        processed++;
+      }
+
+      // Log summary
+      const invalidCount = validations.filter(r => !r.isValidSkill).length;
+      const aliasCount = validations.reduce((s, r) => s + r.aliases.length, 0);
+      const broaderCount = validations.reduce((s, r) => s + r.broaderTerms.length, 0);
+      const badAliasCount = validations.reduce((s, r) => s + r.invalidAliases.length, 0);
+
+      if (invalidCount > 0) console.log(`   ❌ ${invalidCount} invalid`);
+      if (badAliasCount > 0) console.log(`   ⚠  ${badAliasCount} invalid aliases flagged`);
+      if (aliasCount > 0) console.log(`   💡 ${aliasCount} aliases returned`);
+      if (broaderCount > 0) console.log(`   🔗 ${broaderCount} broader terms`);
+      if (invalidCount === 0 && badAliasCount === 0) console.log(`   ✅ All valid`);
+
+      // Live enrichment
+      const aliasesAdded = applyBatchLive(enriched, known, validations);
+      totalAliasesAdded += aliasesAdded;
+      if (aliasesAdded > 0) {
+        console.log(`   📝 +${aliasesAdded} new aliases applied`);
+      }
+    }
+
+    // Checkpoint after each concurrent round
+    const lastIndex = batchIndices[batchIndices.length - 1] + BATCH_SIZE;
+    if (apiCalls % CHECKPOINT_INTERVAL === 0 || shouldAbort) {
+      saveResults(results);
+      saveTaxonomy(enriched);
+      saveCheckpoint(Math.min(lastIndex, total), total, startedAt);
+      const elapsed = (Date.now() - new Date(startedAt).getTime()) / 1000 / 60;
+      const enrichedCount = Object.values(enriched).filter(e => e.confidence !== 'pending').length;
+      console.log(`\n💾 Checkpoint: ${enrichedCount}/${Object.keys(enriched).length} enriched, +${totalAliasesAdded} aliases, ${elapsed.toFixed(1)}m elapsed\n`);
+    }
+
+    if (shouldAbort) {
+      await sleep(5000);
+    } else {
+      await sleep(DELAY_BETWEEN_REQUESTS_MS);
+    }
   }
 
   // Final save
   saveResults(results);
+  saveTaxonomy(enriched);
   generateReport(results);
+
+  // Count final taxonomy stats
+  const finalSkills = Object.keys(enriched).length;
+  const finalAliases = Object.values(enriched).reduce((s, e) => s + e.aliases.length, 0);
+  const finalBroader = Object.values(enriched).reduce((s, e) => s + e.broaderTerms.length, 0);
+  const enrichedCount = Object.values(enriched).filter(e => e.confidence !== 'pending').length;
 
   // Summary
   console.log('\n===================================');
-  console.log('✅ Validation Complete!');
-  console.log(`   Total: ${total}`);
-  console.log(`   Processed: ${processed}`);
+  console.log('✅ Enrichment Complete!');
+  console.log(`   Skills enriched: ${processed}/${total} pending`);
+  console.log(`   Total enriched: ${enrichedCount}/${finalSkills}`);
+  console.log(`   API calls: ${apiCalls}`);
   console.log(`   Errors: ${errors}`);
+  console.log(`   Aliases added (live): ${totalAliasesAdded}`);
+  console.log(`   Taxonomy: ${finalSkills} skills, ${finalAliases} aliases, ${finalBroader} broader terms`);
   console.log(`   Results: ${RESULTS_FILE}`);
   console.log(`   Report: ${REPORT_FILE}`);
 
-  // Apply results if --apply flag is set
+  // Apply structural changes (remove, merge, rename) if --apply flag is set
   if (APPLY_MODE) {
+    console.log('\n🔧 Applying structural changes (remove/merge/rename)...');
     applyResults(results);
   } else {
-    console.log('\n💡 Run with --apply to update the taxonomy with these results');
+    console.log('\n💡 Run with --apply to also apply structural changes (remove/merge/rename)');
+    console.log('   (Metadata enrichment has already been applied live)');
   }
 }
 

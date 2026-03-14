@@ -1,7 +1,11 @@
 import rawTaxonomy from './skill-taxonomy.json';
 import type { SkillTaxonomy, SkillTaxonomyMap, SkillEntry, TaxonomyStats } from './types/taxonomy.types';
+import { AhoCorasickAutomaton, buildAutomaton } from './aho-corasick';
+import type { AhoCorasickMatch } from './aho-corasick';
 
 export type { SkillTaxonomy, SkillTaxonomyMap, SkillEntry, TaxonomyStats } from './types/taxonomy.types';
+export { AhoCorasickAutomaton, buildAutomaton } from './aho-corasick';
+export type { AhoCorasickMatch } from './aho-corasick';
 
 // Backfill defaults for any fields not yet present in the JSON
 const rawEntries = rawTaxonomy as unknown as Record<string, Record<string, unknown>>;
@@ -54,4 +58,17 @@ export function getStats(t: SkillTaxonomy): TaxonomyStats {
   const canonicals = Object.keys(t).length;
   const aliases = Object.values(t).reduce((sum, a) => sum + a.length, 0);
   return { canonicals, aliases, total: canonicals + aliases };
+}
+
+/**
+ * Build an Aho-Corasick automaton directly from a SkillTaxonomy.
+ * Chains buildReverseLookup → buildAutomaton in one call.
+ *
+ * Usage:
+ *   const automaton = buildTaxonomyAutomaton(taxonomy);
+ *   const skills = automaton.extractSkills('I know python and react');
+ *   // Set { 'python', 'react' }
+ */
+export function buildTaxonomyAutomaton(t: SkillTaxonomy): AhoCorasickAutomaton {
+  return buildAutomaton(buildReverseLookup(t));
 }

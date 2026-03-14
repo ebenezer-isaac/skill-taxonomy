@@ -1,7 +1,7 @@
 {
   "name": "skill-taxonomy",
-  "version": "2.0.0",
-  "description": "Enterprise-grade skill taxonomy for ATS resume scoring — comprehensive ontology with hierarchical relationships, multi-source ingestion, and semantic deduplication",
+  "version": "3.0.0",
+  "description": "14,774 skills + Aho-Corasick automaton for O(n) multi-pattern matching. The largest open-source skill taxonomy with 175K+ aliases, hierarchical relationships, and built-in keyword extraction.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -26,14 +26,24 @@
     "skills",
     "taxonomy",
     "keyword-matching",
+    "aho-corasick",
+    "string-matching",
+    "nlp",
     "hiring",
-    "recruitment"
+    "recruitment",
+    "job-search",
+    "skill-extraction",
+    "text-analysis"
   ],
   "author": "Ebenezer Isaac",
   "license": "MIT",
+  "homepage": "https://github.com/ebenezer-isaac/skill-taxonomy#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/ebenezer-isaac/skill-taxonomy"
+  },
+  "bugs": {
+    "url": "https://github.com/ebenezer-isaac/skill-taxonomy/issues"
   },
   "devDependencies": {
     "@types/node": "^25.3.3",

@@ -1,6 +1,6 @@
 {
   "name": "skill-taxonomy",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "14,774 skills + Aho-Corasick automaton for O(n) multi-pattern matching. The largest open-source skill taxonomy with 175K+ aliases, hierarchical relationships, and built-in keyword extraction.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -44,6 +44,10 @@
   },
   "bugs": {
     "url": "https://github.com/ebenezer-isaac/skill-taxonomy/issues"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://llmconveyors.com"
   },
   "devDependencies": {
     "@types/node": "^25.3.3",
